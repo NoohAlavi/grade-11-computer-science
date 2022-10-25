@@ -97,7 +97,19 @@ public class NoohAlaviAssignment11 {
                 System.out.println("b) Talk");
                 System.out.println("c) Retreat");
             case "b":
-                break;
+                System.out.println("You do not know whether the extraterrestial enemies have already taken control of Mars, so you decide to explore the ship instead, trying\n"
+                        + "to find resources to fix your ship.\n");
+                System.out.println("You walk around the ship until you reach an intersection. Which room would you like to go to?");
+                
+                // Decision 3
+                switch (keyedInput.next()) {
+                    case "a":
+                        break;
+                    case "b":
+                        break;
+                    default:
+                        break;
+                }
             default:
                 break;
         }
