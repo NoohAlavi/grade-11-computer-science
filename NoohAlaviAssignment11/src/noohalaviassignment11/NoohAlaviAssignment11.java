@@ -20,9 +20,11 @@ public class NoohAlaviAssignment11 {
         
         Scanner keyedInput = new Scanner(System.in);
         String username;
+        String inputPrompt = ">>> ";
 
         // Get username
-        System.out.print("Welcome, User! Please enter your name to continue:\n>>> ");
+        System.out.println("Welcome, User! Please enter your name to continue:");
+        System.out.print(inputPrompt);
         username = keyedInput.nextLine();
         // Intro
         System.out.println("\n------------------------------------------------------------------------------------------");
@@ -47,7 +49,7 @@ public class NoohAlaviAssignment11 {
         // Decision 1
         System.out.println("a) Approach fleet from the front.");
         System.out.println("b) Sneak around the fleet from the back.\n");
-        System.out.print(">>> ");
+        System.out.print(inputPrompt);
             
         switch (keyedInput.next().toLowerCase()) {
             case "a":
@@ -83,7 +85,7 @@ public class NoohAlaviAssignment11 {
         //Decision 2
         System.out.println("a) Search the planet for resources.");
         System.out.println("b) Search the ship for resources.\n");
-        System.out.print(">>> ");
+        System.out.print(inputPrompt);
         
         switch (keyedInput.next().toLowerCase()) {
             case "a":
@@ -92,22 +94,90 @@ public class NoohAlaviAssignment11 {
                         + "What do you do?\n");
                 
                 //Decision 3
-                System.out.println("a) Attack.");
+                System.out.println("a) Fight.");
                 System.out.println("b) Talk.");
                 System.out.println("c) Retreat.\n");
-                System.out.print(">>> ");
+                System.out.print(inputPrompt);
+                
+                switch (keyedInput.next().toLowerCase()) {
+                    case "a":
+                        System.out.println("\n    As the creature curiously looks at you, you pull out your blaster, and point it at its head. The alien, realizing the danger\n"
+                                + "that he is in, bares his teeth and pounces at you. However, you manage to fire your blaster, and the dog falls to the ground mere \n"
+                                + "milliseconds before it can bite you. As it succumbs to its wounds, it lets out a blood-curdling howl.");
+                        System.out.println("\n    The creature's call summons many others of its kind, undoubtedly members of its now-grieving family. They stare at \n"
+                                + "you, a murderer, in anger, baring their teeth and desiring vengeance.\n");
+                        
+                        // Decision 4
+                        System.out.println("    Should you run or hold your ground?\n");
+                        System.out.println("a) Fight.");
+                        System.out.println("b) Run away.\n");
+                        System.out.print(inputPrompt);
+                        
+                        switch (keyedInput.next().toLowerCase()) {
+                            case "a":
+                                System.out.println("\n    You grasp firmly onto your blaster, pointing it at your enemies, one by one. For a moment, both you and your \n"
+                                        + "enemies are too afraid to make a move. You fire, shooting balls of plasmic light towards the alien group. They pounce, \n"
+                                        + "and you cannot fight them all at once.");
+                                System.out.println("\n    GAME OVER: YOU LOSE!");
+                                System.out.println("------------------------------------------------------------------------------------------\n");
+                                return;
+                            case "b":
+                                System.out.println("\n    You look around at the extraterrestial army, and know that you do not have a chance against them. You \n"
+                                        + "turn around and run away, trying to get back to the ship. You quickly look back, and realize that every single alien \n"
+                                        + "dog is chasing you. You keep running for what feels like eternity, and finally see the doors of the ship.");
+                                System.out.println("\n    The door is open, and you sprint towards it. When you are about to step into the safety of the ship, \n"
+                                        + "you feel one of the aliens pounce on your back and you fall over. You were so close.");
+                                System.out.println("\n    GAME OVER: YOU LOSE!");
+                                System.out.println("------------------------------------------------------------------------------------------\n");
+                                return;
+                            default:
+                                break;
+                        }
+                        break;
+                    case "b":
+                        System.out.println("\n    You signal that you come in peace, and slowly approach the dog with a smile on your face. It, however, is \n"
+                                + "not very friendly and bites off your leg.");
+                        System.out.println("\n    You fall on the floor, and the evil creature bares its teeth, ready for the finishing blow. What do you do?\n");
+                        System.out.print(inputPrompt);
+                        
+                        // Decision 4
+                        System.out.println("a) Fight.");
+                        System.out.println("b) Run.\n");
+                        System.out.print(inputPrompt);
+                        
+                        switch (keyedInput.next().toLowerCase()) {
+                            case "a":
+                                System.out.println("\n    You pull out your blaster and point it at the alien's deformed skull. But before you can do \n"
+                                        + "anything, it attacks.");
+                                System.out.println("\n    GAME OVER: YOU LOSE!");
+                                System.out.println("------------------------------------------------------------------------------------------\n");
+                                return;
+                            case "b":
+                                System.out.println("\n    You turn around and try to run away, but your one leg does not get you very far. The alien \n"
+                                        + "licks its brown lips, ready for supper."); 
+                               break;
+                            default:
+                                break;
+                        }
+                        
+                        break;
+                    case "c":
+                        break;
+                    default:
+                        break;
+                }
                 
                 break;
             case "b":
                 System.out.println("\n    You do not know whether the extraterrestial enemies have already taken control of Mars, so you decide to explore the ship instead, trying\n"
-                        + "to find resources to fix your ship. You walk around the ship until you reach an intersection.");
+                        + "to find resources to fix your ship. You walk around the ship until you reach an intersection.\n");
                 
                 // Decision 3
                 while (true) {
-                    System.out.println(" Which room would you like to go to?\n");
+                    System.out.println("    Which room would you like to go to?\n");
                     System.out.println("a) Communication room.");
                     System.out.println("b) Storage room.\n");
-                    System.out.print(">>> ");
+                    System.out.print(inputPrompt);
                 
                     switch (keyedInput.next().toLowerCase()) {
                         case "a":
@@ -117,19 +187,19 @@ public class NoohAlaviAssignment11 {
                             // Decision 4
                             System.out.println("a) Try to communicate.");
                             System.out.println("b) Leave room.\n");
-                            System.out.print(">>> ");
+                            System.out.print(inputPrompt);
                             
                             switch (keyedInput.next().toLowerCase()) {
                                 case "a":
                                     System.out.println("    \nYou send out an SOS signal with your coordinates, and the computer lets out a successful *beep*. You wait patiently for a response,\n"
                                             + "and then you see it; a huge ship just outside the planet's atomosphere. Suddenly, your heart drops. That's not a human ship. The aliens must have \n"
                                             + "intercepted your message!");
-                                    System.out.println("A laser beam powers up from the ship, and fires towards Mars, destroying the entire planet.");
+                                    System.out.println("    A laser beam powers up from the ship, and fires towards Mars, destroying the entire planet.");
                                     System.out.println("\n    GAME OVER: YOU LOSE!");
                                     System.out.println("------------------------------------------------------------------------------------------\n");
                                     return;
                                 case "b":
-                                    // breaking here will go back to the selection due to the loop
+                                    // breaking here will go back to the selection due to the while true loop
                                     break;
                                 default:
                                     break;
@@ -142,7 +212,7 @@ public class NoohAlaviAssignment11 {
                             //Decision 4
                             System.out.println("a) Fire at the ship.");
                             System.out.println("b) Hide in the ship.\n");
-                            System.out.print(">>> ");
+                            System.out.print(inputPrompt);
                             
                             switch (keyedInput.next().toLowerCase()) {
                                 case "a":
@@ -162,7 +232,7 @@ public class NoohAlaviAssignment11 {
                                     // Decision 5
                                     System.out.println("a) Jump out of the closet and shoot the intruders.");
                                     System.out.println("b) Stay hidden.\n");
-                                    System.out.print(">>> ");
+                                    System.out.print(inputPrompt);
                                     
                                     switch (keyedInput.next().toLowerCase()) {
                                         case "a":
@@ -174,7 +244,7 @@ public class NoohAlaviAssignment11 {
                                             System.out.println("a) Hide back in the closet.");
                                             System.out.println("b) Fight the aliens.");
                                             System.out.println("c) Stay still, and hope that the aliens are blind.\n");
-                                            System.out.print(">>> ");
+                                            System.out.print(inputPrompt);
                                             
                                             switch(keyedInput.next().toLowerCase()) {
                                                 case "a":
@@ -184,7 +254,11 @@ public class NoohAlaviAssignment11 {
                                                     System.out.println("------------------------------------------------------------------------------------------\n");
                                                     return;
                                                 case "b":
-                                                    break;
+                                                    System.out.println("\n    You pull out your blaster as no less than twenty aliens, all armed, walk into the hallway, surrounding you. You starting firing your blaster, \n"
+                                                            + "and a few them fall to the ground. However, reinforcements are quickly streaming into the hall, and you are no match for them.");
+                                                    System.out.println("\n    GAME OVER: YOU LOSE!");
+                                                    System.out.println("------------------------------------------------------------------------------------------\n");
+                                                    return;
                                                 case "c":
                                                     System.out.println("\n    You rememeber watching Guardians of the Galaxy, and remember the scene where Drax became invisible by standing still. You decide to try out his \n"
                                                             + "strategy, but as the aliens surround you and power up their blasters, you realize that Marvel lied to you.");
