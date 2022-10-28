@@ -10,6 +10,7 @@ import java.util.Scanner;
 /**
  *
  * @author s201119359
+ * ** FLOWCHART LINK: https://drive.google.com/file/d/1zJXyGjKRsj2fxQ3_jOSEyG25LfFUscPS/view?usp=sharing **
  */
 public class NoohAlaviAssignment11 {
 
@@ -192,11 +193,11 @@ public class NoohAlaviAssignment11 {
                                 System.out.println("    You manage to sneak into the ship without triggering the alarms or the radars. So far so \n"
                                         + "good. You find an intersection, and there are three doors, labeled in an alien tongue. One has the \n"
                                         + "universal bathroom symbol, the second has a window that shows that it leads to the cockpit, and the last \n"
-                                        + "door has a distinct blaster shape encarved onto the metal");
+                                        + "door has a distinct blaster shape encarved onto the metal.");
                                 
                                 // Decision 6
                                 while (true){
-                                    System.out.println("Which door do you choose?\n");
+                                    System.out.println("    Which door do you choose?\n");
                                                                 
                                     System.out.println("a) The bathroom.");
                                     System.out.println("b) The cockpit.");
@@ -245,6 +246,75 @@ public class NoohAlaviAssignment11 {
                                                     System.out.println("------------------------------------------------------------------------------------------\n");
                                                     return;
                                                 case "b":
+                                                    System.out.println("\n    You decide to manoeuvre through the fleet, and finally locate the giant \n"
+                                                            + "mothership. It is impossible to miss, as it dwarfs all of the other ships, and has a \n"
+                                                            + "distinct blood-red colour, which shines in the sun's light.");
+                                                    System.out.println("\n    You need to do something. Destroy it maybe. Or get in and find the \n"
+                                                            + "aliens' plans.\n");
+                                                    
+                                                    // Decision 8
+                                                    System.out.println("a) Fire at the ship's weak spot and destroy it.");
+                                                    System.out.println("b) Sneak into the ship.\n");
+                                                    System.out.print(INPUT_PROMPT);
+                                                    
+                                                    switch (keyedInput.next().toLowerCase()) {
+                                                        case "a":
+                                                            System.out.println("\n    You charge up your cannon and shoot it at the mothership's engines. But \n"
+                                                                    + "right before it hits, its seemingly stopped by an invisible object. A force field. The \n"
+                                                                    + "cannon blast bounces back and hits your ship. You don't have a force field.");
+                                                            System.out.println("\nGAME OVER: YOU LOSE!");
+                                                            System.out.println("------------------------------------------------------------------------------------------\n");
+                                                            return;
+                                                        case "b":
+                                                            System.out.println("\n    You sneak into the mothership, and see three giant doors. They are all labelled, \n"
+                                                                    + "but in symbols and shapes that are obviously alien. There are no icons or windows to help you out. You \n"
+                                                                    + "just need to pick a door.");
+                                                            
+                                                            // Decision 9
+                                                            System.out.println("a) Far left door.");
+                                                            System.out.println("b) Middle door.");
+                                                            System.out.println("b) Far right door.\n");
+                                                            System.out.print(INPUT_PROMPT);
+                                                            
+                                                            switch (keyedInput.next().toLowerCase()) {
+                                                                case "a":
+                                                                    System.out.println("\n    You open the door to see an alien creature that looks like a giant lizard. It is bright pink, has \n"
+                                                                            + "three heads, and many sharp teeth. The creature smiles as the door closes behind you. It's lunch time.");
+                                                                    System.out.println("\nGAME OVER: YOU LOSE!");
+                                                                    System.out.println("------------------------------------------------------------------------------------------\n");
+                                                                    return;
+                                                                case "b":
+                                                                    System.out.println("\n    Oh, that was the door to the airlock. You should not have opened that.");
+                                                                    System.out.println("\nGAME OVER: YOU LOSE!");
+                                                                    System.out.println("------------------------------------------------------------------------------------------\n");
+                                                                    return;
+                                                                case "c":
+                                                                    System.out.println("\n    You find the engine room and walk inside. You feel the blaster in your pocket. You can be a hero.\n"
+                                                                            + "You can stop the alien invasion by destroying these engines. The resulting blast would disintegrate all of the \n"
+                                                                            + "nearby enemy ships. But if you do it, you will never be able to see your family again. What do you do?\n");
+                                                                    
+                                                                    // Decision 10
+                                                                    System.out.println("a) Destroy the engines.");
+                                                                    System.out.println("b) Explore a bit more.\n");
+                                                                    System.out.print(INPUT_PROMPT);
+                                                                    
+                                                                    switch (keyedInput.next().toLowerCase()) {
+                                                                        case "a":
+                                                                            break;
+                                                                        case "b":
+                                                                            break;
+                                                                        default:
+                                                                            System.out.println("\nERROR: INVALID INPUT @ DECISION 10");
+                                                                            break;
+                                                                    }
+                                                                    break;
+                                                                default:
+                                                                    break;
+                                                            }
+                                                            break;
+                                                        default:
+                                                            break;
+                                                    }
                                                     break;
                                             }  
                                             break;
@@ -274,6 +344,8 @@ public class NoohAlaviAssignment11 {
                                                 case "b":
                                                     System.out.println("You leave the room, returning to the hall.");
                                                     break; // return to decision 7
+                                                default:
+                                                    break;
                                             }
                                             break;
                                         default:
