@@ -27,7 +27,10 @@ public class NoohAlaviAssignment11 {
         // Get username
         System.out.println("Welcome, User! Please enter your name to continue:");
         System.out.print(INPUT_PROMPT);
-        username = keyedInput.nextLine();
+        
+        username = keyedInput.nextLine().toLowerCase();
+        username = username.substring(0, 1).toUpperCase() + username.substring(1); //capitalize name
+        
         // Intro
         System.out.println("\n------------------------------------------------------------------------------------------");
         System.out.println("    “" + username + "!“" + " You snap back to attention as you hear a voice call your name. “" + username + "!“");
@@ -112,8 +115,7 @@ public class NoohAlaviAssignment11 {
                         // Decision 4
                         System.out.println("    Should you run or hold your ground?\n");
                         System.out.println("a) Fight.");
-                        System.out.println("b) Run away..");
-                        System.out.println("c) Fight.\n");
+                        System.out.println("b) Run away.\n");
                         System.out.print(INPUT_PROMPT);
                         
                         switch (keyedInput.next().toLowerCase()) {
@@ -121,7 +123,7 @@ public class NoohAlaviAssignment11 {
                                 System.out.println("\n    You grasp firmly onto your blaster, pointing it at your enemies, one by one. For a moment, both you and your \n"
                                         + "enemies are too afraid to make a move. You fire, shooting balls of plasmic light towards the alien group. They pounce, \n"
                                         + "and you cannot fight them all at once.");
-                                System.out.println("\n    GAME OVER: YOU LOSE!");
+                                System.out.println("\nGAME OVER: YOU LOSE!");
                                 System.out.println("------------------------------------------------------------------------------------------\n");
                                 return;
                             case "b":
@@ -130,7 +132,7 @@ public class NoohAlaviAssignment11 {
                                         + "dog is chasing you. You keep running for what feels like eternity, and finally see the doors of the ship.");
                                 System.out.println("\n    The door is open, and you sprint towards it. When you are about to step into the safety of the ship, \n"
                                         + "you feel one of the aliens pounce on your back and you fall over. You were so close.");
-                                System.out.println("\n    GAME OVER: YOU LOSE!");
+                                System.out.println("\nGAME OVER: YOU LOSE!");
                                 System.out.println("------------------------------------------------------------------------------------------\n");
                                 return;
                             default:
@@ -141,7 +143,6 @@ public class NoohAlaviAssignment11 {
                         System.out.println("\n    You signal that you come in peace, and slowly approach the dog with a smile on your face. It, however, is \n"
                                 + "not very friendly and bites off your leg.");
                         System.out.println("\n    You fall on the floor, and the evil creature bares its teeth, ready for the finishing blow. What do you do?\n");
-                        System.out.print(INPUT_PROMPT);
                         
                         // Decision 4
                         System.out.println("a) Fight.");
@@ -152,13 +153,13 @@ public class NoohAlaviAssignment11 {
                             case "a":
                                 System.out.println("\n    You pull out your blaster and point it at the alien's deformed skull. But before you can do \n"
                                         + "anything, it attacks.");
-                                System.out.println("\n    GAME OVER: YOU LOSE!");
+                                System.out.println("\nGAME OVER: YOU LOSE!");
                                 System.out.println("------------------------------------------------------------------------------------------\n");
                                 return;
                             case "b":
                                 System.out.println("\n    You turn around and try to run away, but your one leg does not get you very far. You fall on \n"
                                         + "the ground, and the alien licks its brown lips, ready for lunch.");
-                                System.out.println("\n    GAME OVER: YOU LOSE!");
+                                System.out.println("\nGAME OVER: YOU LOSE!");
                                 System.out.println("------------------------------------------------------------------------------------------\n");
                                 return;
                             default:
@@ -167,7 +168,7 @@ public class NoohAlaviAssignment11 {
                         
                         break;
                     case "c":
-                        System.out.print("\n   “Nope,“ you say, turning around 360° and running back to the ship. “There are some weird \n"
+                        System.out.println("\n   “Nope,“ you say, turning around 360° and running back to the ship. “There are some weird \n"
                                 + "extraterrestial creatures around here, possibly hostile,“ you tell them.");
                         System.out.println("    “Don't worry, we were just about to go find you. We got some parts from the ship's storage room and \n"
                                 + "managed to get it up and going,“ Patel tells you. “Hop in!“");
@@ -209,15 +210,44 @@ public class NoohAlaviAssignment11 {
                                                     + "of the hall and walk through another door, they click a button on the dashboard and it closes \n"
                                                     + "behind you. Before you realize what is happening, the airlock is opened and you are flung \n"
                                                     + "into the vastness of outer space.");
-                                            System.out.println("\n    GAME OVER: YOU LOSE!");
+                                            System.out.println("\nGAME OVER: YOU LOSE!");
                                             System.out.println("------------------------------------------------------------------------------------------\n");
                                             return;
                                         case "b":
+                                            if (!hasWeapon) {
+                                                System.out.println("\n    You open the door to the cockpit, and stare blankly towards the two giant guards. \n"
+                                                        + "Before you can react, they pull out their blasters and deal with the terran intruder.");
+                                                System.out.println("\nGAME OVER: YOU LOSE!");
+                                                System.out.println("------------------------------------------------------------------------------------------\n");
+                                                return;
+                                            }
                                             System.out.println("\n    You open the door to the cockpit, and stare blankly towards the two giant guards. \n"
-                                                    + "Before you can react, they pull out their blasters and deal with the terran intruder.");
-                                            System.out.println("\n    GAME OVER: YOU LOSE!");
-                                            System.out.println("------------------------------------------------------------------------------------------\n");
-                                            return;
+                                                    + "Before you can react, they pull out their blasters, but you are faster. You point your weapon \n"
+                                                    + "at them and hit both of your targets. You only have one left—the pilot—who you promptly deal \n"
+                                                    + "with.\n    You run the ship's life scanners and realize that there were no other aliens in this \n"
+                                                    + "vessel. This is now YOUR ship. Do you want to blend in with the enemy fleet, or try to locate \n"
+                                                    + "the alien mothership?\n");
+                                            
+                                            // Decision 7
+                                            System.out.println("a) Blend in with enemy fleet.");
+                                            System.out.println("b) Try to locate alien mothership.\n");
+                                            System.out.print(INPUT_PROMPT);
+                                            
+                                            switch (keyedInput.next().toLowerCase()) {
+                                                case "a":
+                                                    System.out.println("\n    You decide to join the enemy fleet, to blend in and try to find out \n"
+                                                            + "their plan. You follow them for a few hours until they reach Earth. Oh no. You cannot \n"
+                                                            + "do anything now. It's too late.");
+                                                    System.out.println("\n    You see the alien fleets charging up their plasma cannons, and can only \n"
+                                                            + "helplessly watch as Earth is destroyed. As it turns into a ball of fire, all you can \n"
+                                                            + "think of is your poor family and how you failed them.");
+                                                    System.out.println("\nGAME OVER: YOU LOSE!");
+                                                    System.out.println("------------------------------------------------------------------------------------------\n");
+                                                    return;
+                                                case "b":
+                                                    break;
+                                            }  
+                                            break;
                                         case "c":
                                             System.out.println("\n    You walk into the weapon room and find that all of the weapons are inside of locked \n"
                                                     + "storage containers, except a plasma blaster lying on the table. What do you do?\n");
@@ -230,9 +260,20 @@ public class NoohAlaviAssignment11 {
                                             
                                             switch (keyedInput.next().toLowerCase()) {
                                                 case "a":
-                                                    break;
+                                                    if (!hasWeapon) {
+                                                        System.out.println("\n    You pick up the blaster and feel the plasmic power pulsating within it. You leave \n"
+                                                                + "the room, weapon in hand.");
+                                                        hasWeapon = true;
+                                                        break; // return to decision 7
+                                                    } else {
+                                                        // if user has weapon already
+                                                        System.out.println("\n    You have already picked up the blaster, and the rest of the weapons are locked. You \n"
+                                                                + "return to the hall.");
+                                                        break; //return to decision 7
+                                                    }
                                                 case "b":
-                                                    break;
+                                                    System.out.println("You leave the room, returning to the hall.");
+                                                    break; // return to decision 7
                                             }
                                             break;
                                         default:
@@ -245,7 +286,7 @@ public class NoohAlaviAssignment11 {
                                         + "fires from the ship's cannon, flies towards the enemy shuttle, and goes right through. It is a decoy. \n"
                                         + "Your ship's radar suddenly beeps, and you all realize that the real ship is behind you. It charges \n"
                                         + "its blaster and fires.");
-                                System.out.println("\n    GAME OVER: YOU LOSE!");
+                                System.out.println("\nGAME OVER: YOU LOSE!");
                                 System.out.println("------------------------------------------------------------------------------------------\n");
                                 return;
                         }
@@ -282,12 +323,11 @@ public class NoohAlaviAssignment11 {
                                             + "and then you see it; a huge ship just outside the planet's atomosphere. Suddenly, your heart drops. That's not a human ship. The aliens must have \n"
                                             + "intercepted your message!");
                                     System.out.println("    A laser beam powers up from the ship, and fires towards Mars, destroying the entire planet.");
-                                    System.out.println("\n    GAME OVER: YOU LOSE!");
+                                    System.out.println("\nGAME OVER: YOU LOSE!");
                                     System.out.println("------------------------------------------------------------------------------------------\n");
                                     return;
                                 case "b":
-                                    // breaking here will go back to the selection due to the while true loop
-                                    break;
+                                    break; //return to decision 4
                                 default:
                                     break;
                             }
@@ -307,7 +347,7 @@ public class NoohAlaviAssignment11 {
                                     System.out.println("    “You heard him,” General Moss says to the weapon crew, “we get them before they get us.”");
                                     System.out.println("    You see the weapon crew charge up their blaster cannons, and a bright light and a loud sound confirms that the alien ship is no more. However, before\n"
                                             + "you can celebrate, a group of alien canine-like creatures surrounds the ship. There are too many to fight off, and the space dogs are happy to have found their lunch.");
-                                    System.out.println("\n    GAME OVER: YOU LOSE!");
+                                    System.out.println("\nGAME OVER: YOU LOSE!");
                                     System.out.println("------------------------------------------------------------------------------------------\n");
                                     return;
                                 case "b":
@@ -337,19 +377,19 @@ public class NoohAlaviAssignment11 {
                                                 case "a":
                                                     System.out.println("\n    You move quickly, hiding back into the closet, closing the door behind you. A whole swarm of aliens storms into the hallway, and all of them \n"
                                                             + "are armed. You see one of them holding a device. Oh no. It's a lifeform detector. As it beeps, you realize that you have been caught.");
-                                                    System.out.println("\n    GAME OVER: YOU LOSE!");
+                                                    System.out.println("\nGAME OVER: YOU LOSE!");
                                                     System.out.println("------------------------------------------------------------------------------------------\n");
                                                     return;
                                                 case "b":
                                                     System.out.println("\n    You pull out your blaster as no less than twenty aliens, all armed, walk into the hallway, surrounding you. You starting firing your blaster, \n"
                                                             + "and a few them fall to the ground. However, reinforcements are quickly streaming into the hall, and you are no match for them.");
-                                                    System.out.println("\n    GAME OVER: YOU LOSE!");
+                                                    System.out.println("\nGAME OVER: YOU LOSE!");
                                                     System.out.println("------------------------------------------------------------------------------------------\n");
                                                     return;
                                                 case "c":
                                                     System.out.println("\n    You rememeber watching Guardians of the Galaxy, and remember the scene where Drax became invisible by standing still. You decide to try out his \n"
                                                             + "strategy, but as the aliens surround you and power up their blasters, you realize that Marvel lied to you.");
-                                                    System.out.println("\n    GAME OVER: YOU LOSE!");
+                                                    System.out.println("\nGAME OVER: YOU LOSE!");
                                                     System.out.println("------------------------------------------------------------------------------------------\n");
                                                     return;
                                             }
@@ -358,7 +398,7 @@ public class NoohAlaviAssignment11 {
                                             System.out.println("\n    You let go of the gun. What were you thinking, you ask yourself. You can't possibly take on both of them at once. Besides, they don't even know\n"
                                                     + "that you're here, " + username + ". You're perfectly safe! Suddently, you hear a loud beeping noise, and both the aliens turn to face you. They have a life-detection\n"
                                                     + "scanner. You might have spoken too soon. You can't do anything as one of them aims their plasma blaster at the door and pulls the trigger.");
-                                            System.out.println("\n    GAME OVER: YOU LOSE!");
+                                            System.out.println("\nGAME OVER: YOU LOSE!");
                                             System.out.println("------------------------------------------------------------------------------------------\n");
                                             return;
                                     }
