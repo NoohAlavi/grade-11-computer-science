@@ -26,7 +26,7 @@ public class NoohAlaviAssignment11 {
         boolean hasWeapon = false; // flag to be used later.
 
         // Get username
-        System.out.println("Welcome, User! Please enter your name to continue:");
+        System.out.print("Welcome, player!\n\n--USERNAME--\n");
         System.out.print(INPUT_PROMPT);
         
         username = keyedInput.nextLine().toLowerCase();
@@ -268,12 +268,12 @@ public class NoohAlaviAssignment11 {
                                                         case "b":
                                                             System.out.println("\n    You sneak into the mothership, and see three giant doors. They are all labelled, \n"
                                                                     + "but in symbols and shapes that are obviously alien. There are no icons or windows to help you out. You \n"
-                                                                    + "just need to pick a door.");
+                                                                    + "just need to pick a door.\n");
                                                             
                                                             // Decision 9
                                                             System.out.println("a) Far left door.");
                                                             System.out.println("b) Middle door.");
-                                                            System.out.println("b) Far right door.\n");
+                                                            System.out.println("c) Far right door.\n");
                                                             System.out.print(INPUT_PROMPT);
                                                             
                                                             switch (keyedInput.next().toLowerCase()) {
@@ -300,12 +300,95 @@ public class NoohAlaviAssignment11 {
                                                                     
                                                                     switch (keyedInput.next().toLowerCase()) {
                                                                         case "a":
-                                                                            break;
+                                                                            System.out.println("\n    You look at the engines surrounding you, and the blaster in your hand. You know what you have to do. All you can think \n"
+                                                                                    + "of is your family as you blow the enemy fleet to smithereens.");
+                                                                            System.out.println("\nGAME OVER: YOU WIN!\nGOOD ENDING #1\nSELF-SACRIFICE");
+                                                                            System.out.println("------------------------------------------------------------------------------------------\n");
+                                                                            return;
                                                                         case "b":
+                                                                            System.out.println("\n    You start to explore the engine room, and eventually find a door. You open it and walk through, and it suddenly closes \n"
+                                                                                    + "behind you. You see two doors in front of you, each one labelled with the extraterrestial symbols. Which door do you pick?\n");
+                                                                            
+                                                                            // Decision 11
+                                                                            System.out.println("a) Left door.");
+                                                                            System.out.println("b) Right door.\n");
+                                                                            System.out.print(INPUT_PROMPT);
+                                                                            
+                                                                            switch (keyedInput.next().toLowerCase()) {
+                                                                                case "a":
+                                                                                    System.out.println("\n   You click the button to open to left door and enter. The minute you step in, the door shuts close behind you and red lights \n"
+                                                                                            + "start to flash, accompanied by an unmistake alarm. You pull out your blaster, ready for the worst. The door suddenly opens, and four aliens \n"
+                                                                                            + "stand there, ready to take out the threat.");
+                                                                                    System.out.println("\nGAME OVER: YOU LOSE!");
+                                                                                    System.out.println("------------------------------------------------------------------------------------------\n");
+                                                                                    return;
+                                                                                case "b":
+                                                                                    System.out.println("\n   You open the right door and enter the room. You see two aliens drinking a blue, bubbly drink, \n"
+                                                                                            + "and instinctively pull out your blaster. So do they. What do you do?\n");
+                                                                                    
+                                                                                    // Decision 12
+                                                                                    System.out.println("a) Fight.");
+                                                                                    System.out.println("b) Negotiate.");
+                                                                                    System.out.println("c) Retreat.\n");
+                                                                                    System.out.print(INPUT_PROMPT);
+                                                                                    
+                                                                                    switch (keyedInput.next().toLowerCase()) {
+                                                                                        case "a":
+                                                                                            System.out.println("\n    You decide to defend yourself, but are outnumbered. You lose the gun fight.");
+                                                                                            System.out.println("\nGAME OVER: YOU LOSE!");
+                                                                                            System.out.println("------------------------------------------------------------------------------------------\n");
+                                                                                            return;
+                                                                                        case "b":
+                                                                                            System.out.println("\n    “Wait,” you tell the aliens, who enable their global translation apparatus (GTA). What do you tell them?\n");
+                                                                                            
+                                                                                            // Decision 13
+                                                                                            System.out.println("a) “Stop your attack.”");
+                                                                                            System.out.println("b) “Take me to your leader.”");
+                                                                                            System.out.println("c) “I want to join you.”\n");
+                                                                                            System.out.print(INPUT_PROMPT);
+                                                                                            
+                                                                                            switch (keyedInput.next().toLowerCase()) {
+                                                                                                case "a":
+                                                                                                    System.out.println("\n    “Stop your attack,” you tell them. They stare at you for a second, before letting out an unmistakable \n"
+                                                                                                            + "laugh. They point their blasters at you, and you know that you have failed your mission.");
+                                                                                                    System.out.println("\nGAME OVER: YOU LOSE!");
+                                                                                                    System.out.println("------------------------------------------------------------------------------------------\n");
+                                                                                                    return;
+                                                                                                case "b":
+                                                                                                    System.out.println("\n    “Take me to your leader,” you tell them. They look at each other, whisper something, and look back at you. Pulling out \n"
+                                                                                                            + "some handcuffs, they order you, “Put these on,” and you comply. They take you to their leader, a giant purple alien with a black metal brown. \n"
+                                                                                                            + "     They whisper something to him, and he says, “Thee, a filthy terran, came here to negotiate with us? Never.” He commands his cronies with \n"
+                                                                                                            + "words that you don't understand. They pull out their blasters, and then it hits you. He thought you came to negotiate and doesn't want to any \n"
+                                                                                                            + "of that, so he ordered his cronies to get rid of you.");
+                                                                                                    System.out.println("\nGAME OVER: YOU LOSE!");
+                                                                                                    System.out.println("------------------------------------------------------------------------------------------\n");
+                                                                                                    break;
+                                                                                                case "c":
+                                                                                                    break;
+                                                                                                default:
+                                                                                                    System.out.println("ERROR: INVALID INPUT @ DECISION 13");
+                                                                                                    return;
+                                                                                            }
+                                                                                            break;
+                                                                                        case "c":
+                                                                                            System.out.println("\n    You turn around, trying to run away, but realize, much to your horror, that the door has shut behind you. You\n"
+                                                                                                    + "hear the alien's blasters go off behind you.");
+                                                                                            System.out.println("\nGAME OVER: YOU LOSE!");
+                                                                                            System.out.println("------------------------------------------------------------------------------------------\n");
+                                                                                            return;
+                                                                                        default:
+                                                                                            System.out.println("ERROR: INVALID INPUT @ DECISION 12");
+                                                                                            return;
+                                                                                    }
+                                                                                    break;
+                                                                                default:
+                                                                                    System.out.println("ERROR: INVALID INPUT @ DECISION 11");
+                                                                                    return;
+                                                                            }
                                                                             break;
                                                                         default:
                                                                             System.out.println("\nERROR: INVALID INPUT @ DECISION 10");
-                                                                            break;
+                                                                            return;
                                                                     }
                                                                     break;
                                                                 default:
@@ -319,6 +402,12 @@ public class NoohAlaviAssignment11 {
                                             }  
                                             break;
                                         case "c":
+                                            if (hasWeapon) {
+                                                System.out.println("\n    You go back into the weapon room. You have already picked up the blaster and \n"
+                                                        + "the rest of the ewapons are under lock and key. You leave the room.");
+                                                break; // Return to decision 6
+                                            }
+                                            
                                             System.out.println("\n    You walk into the weapon room and find that all of the weapons are inside of locked \n"
                                                     + "storage containers, except a plasma blaster lying on the table. What do you do?\n");
                                             
@@ -330,17 +419,10 @@ public class NoohAlaviAssignment11 {
                                             
                                             switch (keyedInput.next().toLowerCase()) {
                                                 case "a":
-                                                    if (!hasWeapon) {
-                                                        System.out.println("\n    You pick up the blaster and feel the plasmic power pulsating within it. You leave \n"
+                                                    System.out.println("\n    You pick up the blaster and feel the plasmic power pulsating within it. You leave \n"
                                                                 + "the room, weapon in hand.");
-                                                        hasWeapon = true;
-                                                        break; // return to decision 7
-                                                    } else {
-                                                        // if user has weapon already
-                                                        System.out.println("\n    You have already picked up the blaster, and the rest of the weapons are locked. You \n"
-                                                                + "return to the hall.");
-                                                        break; //return to decision 7
-                                                    }
+                                                    hasWeapon = true;
+                                                    break; // return to decision 7
                                                 case "b":
                                                     System.out.println("You leave the room, returning to the hall.");
                                                     break; // return to decision 7
@@ -364,6 +446,7 @@ public class NoohAlaviAssignment11 {
                         }
                         break;
                     default:
+                        System.out.println("ERROR: INVALID INPUT @ DECISION 6");
                         break;
                 }
                 
