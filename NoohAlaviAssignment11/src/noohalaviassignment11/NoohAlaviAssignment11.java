@@ -20,14 +20,14 @@ public class NoohAlaviAssignment11 {
     public static void main(String[] args) {
         
         Scanner keyedInput = new Scanner(System.in);
-        final String INPUT_PROMPT = ">>> ";
+        final String INPUT_PROMPT = "(Enter letter) >>> ";
         
         String username;
         boolean hasWeapon = false; // flag to be used later.
 
         // Get username
-        System.out.print("Welcome, player!\n\n--USERNAME--\n");
-        System.out.print(INPUT_PROMPT);
+        System.out.print("Welcome, player!\n\n--PLEASE ENTER USERNAME--\n");
+        System.out.print(" >>> ");
         
         username = keyedInput.nextLine().toLowerCase();
         username = username.substring(0, 1).toUpperCase() + username.substring(1); //capitalize name
@@ -364,6 +364,46 @@ public class NoohAlaviAssignment11 {
                                                                                                     System.out.println("------------------------------------------------------------------------------------------\n");
                                                                                                     break;
                                                                                                 case "c":
+                                                                                                    System.out.println("\n    The aliens look at you, confused, before hurriedly whispering to each other. After a few minutes of discussion, one of them looks \n"
+                                                                                                            + "back at you and says, “Can you prove your loyalty, terran?”");
+                                                                                                    System.out.println("    You are about to give them your blaster, but then remember a picture that you have of your family. If you tear that up, they might accept \n"
+                                                                                                            + "that gesture as a proof of your allegiance. What do you do?\n");
+                                                                                                    
+                                                                                                    // Decision 14
+                                                                                                    System.out.println("a) Tear photo.");
+                                                                                                    System.out.println("b) Hand over blaster.\n");
+                                                                                                    System.out.print(INPUT_PROMPT);
+                                                                                                    
+                                                                                                    if (keyedInput.next().toLowerCase().equals("b")) {
+                                                                                                        hasWeapon = false;
+                                                                                                    }
+                                                                                                    
+                                                                                                    System.out.println("\n    The extraterrestials accept your gesture of loyalty, and take you through the ship to the throne room. When you step inside, you see the \n"
+                                                                                                            + "giant leader. He looks like the rest of the aliens, but is much bigger, has tentacles, and some kind of black ring-shaped device on his head. You \n"
+                                                                                                            + "immediately recognize it. It's a controller chip! This means that all of the aliens are part of a hive mind—if the leader's neural links are severed, \n"
+                                                                                                            + "then the entire army will fall. Earth will be saved.");
+                                                                                                    
+                                                                                                    // Decision 15
+                                                                                                    if (hasWeapon) {
+                                                                                                        System.out.println("    Fortunately, you chose not to give up your weapon to prove your allegiance. Do you want to try to assassinate the leader and end \n"
+                                                                                                                + "the invasion on Earth?\n");
+                                                                                                        
+                                                                                                        System.out.println("a) Yes.");
+                                                                                                        System.out.println("b) No.\n");
+                                                                                                        System.out.print(INPUT_PROMPT);
+                                                                                                        
+                                                                                                        switch (keyedInput.next().toLowerCase()) {
+                                                                                                            case "a":
+                                                                                                                System.out.println("\n    You pull out your blaster and fire a plasma shot straight at the leader. Before anybody can react or stop you, the leader falls off \n"
+                                                                                                                        + "his metal throne. The rest of the aliens stare at you blankly, before also crumpling to the floor.");
+                                                                                                                System.out.println("\nGAME OVER: YOU WIN!\nGOOD ENDING #2\nTHE ASSASSIN");
+                                                                                                                System.out.println("------------------------------------------------------------------------------------------\n");
+                                                                                                                return;
+                                                                                                            case "b":
+                                                                                                                break; //continue to next option
+                                                                                                        }
+                                                                                                    } 
+                                                                                                    
                                                                                                     break;
                                                                                                 default:
                                                                                                     System.out.println("ERROR: INVALID INPUT @ DECISION 13");
