@@ -402,7 +402,16 @@ public class NoohAlaviAssignment11 {
                                                                                                             case "b":
                                                                                                                 break; //continue to next option
                                                                                                         }
-                                                                                                    } 
+                                                                                                    } else {
+                                                                                                        System.out.println("\n    Sigh. You shouldn't have given up your blaster. Otherwise you might have been able to end this, once and for all.");
+                                                                                                    }
+                                                                                                    
+                                                                                                    System.out.println("\n    “Terran,” the leader asks, “do thee swear thine allegiance to the Solar Sovereign State?”");
+                                                                                                    
+                                                                                                    //Decision 16
+                                                                                                    System.out.println("a) Yes.");
+                                                                                                    System.out.println("b) No.\n");
+                                                                                                    System.out.print(INPUT_PROMPT);
                                                                                                     
                                                                                                     break;
                                                                                                 default:
