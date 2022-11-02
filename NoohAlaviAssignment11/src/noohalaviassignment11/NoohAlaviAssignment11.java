@@ -34,23 +34,23 @@ public class NoohAlaviAssignment11 {
         
         // Intro
         System.out.println("\n------------------------------------------------------------------------------------------");
-        System.out.println("    “" + username + "!“" + " You snap back to attention as you hear a voice call your name. “" + username + "!“");
-        System.out.println("    “Yes sir,” you reply, quickly fixing your posture and looking in the dark gray eyes of General Moss.");
-        System.out.println("    “Dozing off again?” He asks you, with his famous frown plastered on his face. “That’s the third time today.\n"
-                + "Are you worried ‘bout something, " + username + "? Do you think it is more important than the incoming invasion? Pay attention!”");
-        System.out.println("    “No sir, of course not sir,” you manage to cough, thoughts flying through your head as the general turns "
+        System.out.println("    ❝" + username + "!❝" + " You snap back to attention as you hear a voice call your name. ❝" + username + "!❝");
+        System.out.println("    ❝Yes sir,❞ you reply, quickly fixing your posture and looking in the dark gray eyes of General Moss.");
+        System.out.println("    ❝Dozing off again?❞ He asks you, with his famous frown plastered on his face. ❝That’s the third time today.\n"
+                + "Are you worried ‘bout something, " + username + "? Do you think it is more important than the incoming invasion? Pay attention!❞");
+        System.out.println("    ❝No sir, of course not sir,❞ you manage to cough, thoughts flying through your head as the general turns "
                     + "\naround. The invasion. You still remember the news forecast where NASA announced that a meteor storm was getting "
                     + "\ncloser to the Earth—and then they said it was actually a fleet of alien vessels. NASA tried communicating with them "
-                    + "\nin every language known to man, but they only got one reply—a series of dashes and dots spelling out, “D I E.”");
+                    + "\nin every language known to man, but they only got one reply—a series of dashes and dots spelling out, ❝D I E.❞");
         System.out.println("    All the world's countries formed a temporary alliance, and every adult male was drafted into the largest army"
                     + "\nthat the Earth had ever seen. Many others—women and children, had volunteered to go along and help the army. The "
                     + "\narmy nearly had three billion people.");
         System.out.println("    That was two weeks ago. Fifteen days, seven hours, and thirty three seconds, to be exact. You were now in one"
                     + "\nof the five hundred thousand ships speeding towards the invading fleet. Your wife wanted to come along, but you "
                     + "\nboth knew that she had to stay back to take care of your one year old kid. You need to save the Earth. Your family is on the line. ");
-        System.out.println("    Your computer suddenly beeps, as the map of the Milky Way on your screen starts to blink. “We’re in range, "
-                    + "\nsir,” you say, when General Moss faces you again. “We need to execute the plan.”");
-        System.out.println("    “All the ships are waiting for my command,” he tells you, “which direction is the safest?”\n");
+        System.out.println("    Your computer suddenly beeps, as the map of the Milky Way on your screen starts to blink. ❝We’re in range, "
+                    + "\nsir,❞ you say, when General Moss faces you again. ❝We need to execute the plan.❞");
+        System.out.println("    ❝All the ships are waiting for my command,❞ he tells you, ❝which direction is the safest?❞\n");
             
         // Decision 1
         System.out.println("a) Approach fleet from the front.");
@@ -59,28 +59,28 @@ public class NoohAlaviAssignment11 {
             
         switch (keyedInput.next().toLowerCase()) {
             case "a":
-                System.out.println("\n    You squint at the screen, and tell him, “We should approach the fleet head-on. They won’t expect it, and our\n "
-                        + "forces are extremely maneuverable.”");
-                System.out.println("    “You better not be wrong, " + username + ",” the general says, as he communicates the plan with the other ships, “the fate\n"
-                        + " of the human race depends on it.”");
+                System.out.println("\n    You squint at the screen, and tell him, ❝We should approach the fleet head-on. They won’t expect it, and our\n "
+                        + "forces are extremely maneuverable.❞");
+                System.out.println("    ❝You better not be wrong, " + username + ",❞ the general says, as he communicates the plan with the other ships, ❝the fate\n"
+                        + " of the human race depends on it.❞");
                 System.out.println("    You feel the ship suddenly speed up, and the enemy fleet seems to get bigger and bigger. You hear Rogers prepare the ship’s\n "
                         + "weaponry. Everyone buckles their seatbelts, when suddenly, Boom! You see the ship beside you become a ball of fire. Before you can understand\n "
                         + "what is happening, more explosions ring through the air, and you see blasts of pure, purple plasma coming from the direction of the extraterrestrial\n "
                         + "armada.  They had radar scanners, and managed to detect your sneak attack.");
-                System.out.println("“We’re under attack!” yells General Moss. The ship’s pilot, Patel, manages to steer through the rain of death and destruction, and your ship \n"
+                System.out.println("❝We’re under attack!❞ yells General Moss. The ship’s pilot, Patel, manages to steer through the rain of death and destruction, and your ship \n"
                         + "crash lands on Mars. When Moss sends out a communication, asking for the status of all ships, you learn that only one thousand remain. Most of humanity\n"
                         + " has been annihilated.\n");
                 break;
             case "b":
-                System.out.println("\n    You squint at the screen, and tell him, “We should sneak around the back of the fleet. They won’t be able to see us, and our\n"
-                        + " forces will completely overwhelm them.”");
-                System.out.println("    “You better not be wrong, " + username + ",” the general says, as he communicates the plan with the other ships, “the fate\n"
-                        + " of the human race depends on it.”");
+                System.out.println("\n    You squint at the screen, and tell him, ❝We should sneak around the back of the fleet. They won’t be able to see us, and our\n"
+                        + " forces will completely overwhelm them.❞");
+                System.out.println("    ❝You better not be wrong, " + username + ",❞ the general says, as he communicates the plan with the other ships, ❝the fate\n"
+                        + " of the human race depends on it.❞");
                 System.out.println("    You feel the ship suddenly speed up, and the enemy fleet seems to get bigger and bigger. You hear Rogers prepare the ship’s\n "
                         + "weaponry. Everyone buckles their seatbelts, when suddenly, Boom! You see the ship beside you become a ball of fire. Before you can understand\n "
                         + "what is happening, more explosions ring through the air, and you see blasts of pure, purple plasma coming from the direction of the extraterrestrial\n "
                         + "armada. ");
-                System.out.println("    “We’re under attack!” yells General Moss. The ship’s pilot, Patel, manages to steer through the rain of death and destruction, and your ship \n"
+                System.out.println("    ❝We’re under attack!❞ yells General Moss. The ship’s pilot, Patel, manages to steer through the rain of death and destruction, and your ship \n"
                         + "crash lands on Mars. When Moss sends out a communication, asking for the status of all ships, you learn that only one thousand remain. Most of humanity\n"
                         + " has been annihilated.\n");
                 break;
@@ -95,7 +95,7 @@ public class NoohAlaviAssignment11 {
         
         switch (keyedInput.next().toLowerCase()) {
             case "a":
-                System.out.println("\n    “I'm gonna head out and try to find resources,” you tell your team, walking out onto the red surface. You keep walking around until you\n"
+                System.out.println("\n    ❝I'm gonna head out and try to find resources,❞ you tell your team, walking out onto the red surface. You keep walking around until you\n"
                         + "stumble upon the strangest creature that you have ever seen. It looks like a dog, but it is huge, purple, has seven eyes, and has knives for teeth.\n"
                         + "What do you do?\n");
                 
@@ -169,10 +169,10 @@ public class NoohAlaviAssignment11 {
                         
                         break;
                     case "c":
-                        System.out.println("\n   “Nope,“ you say, turning around 360° and running back to the ship. “There are some weird \n"
-                                + "extraterrestial creatures around here, possibly hostile,“ you tell them.");
-                        System.out.println("    “Don't worry, we were just about to go find you. We got some parts from the ship's storage room and \n"
-                                + "managed to get it up and going,“ Patel tells you. “Hop in!“");
+                        System.out.println("\n   ❝Nope,❝ you say, turning around 360° and running back to the ship. ❝There are some weird \n"
+                                + "extraterrestial creatures around here, possibly hostile,❝ you tell them.");
+                        System.out.println("    ❝Don't worry, we were just about to go find you. We got some parts from the ship's storage room and \n"
+                                + "managed to get it up and going,❝ Patel tells you. ❝Hop in!❝");
                         System.out.println("    You get in the ship as the engines roar to life, and before you know it, you are once again zooming \n"
                                 + "through the solar system to find the alien fleet. You hope you are not too late. What if they reached Earth already? \n"
                                 + "What would they have done to the planet? To the people? TO YOUR FAMILY?");
@@ -188,8 +188,8 @@ public class NoohAlaviAssignment11 {
                         
                         switch (keyedInput.next().toLowerCase()) {
                             case "a":
-                                System.out.println("\n    “We don't know how powerful their blasters and shields are,” you tell Patel. “I will go \n"
-                                        + "in by myself.”");
+                                System.out.println("\n    ❝We don't know how powerful their blasters and shields are,❞ you tell Patel. ❝I will go \n"
+                                        + "in by myself.❞");
                                 System.out.println("    You manage to sneak into the ship without triggering the alarms or the radars. So far so \n"
                                         + "good. You find an intersection, and there are three doors, labeled in an alien tongue. One has the \n"
                                         + "universal bathroom symbol, the second has a window that shows that it leads to the cockpit, and the last \n"
@@ -339,25 +339,25 @@ public class NoohAlaviAssignment11 {
                                                                                             System.out.println("------------------------------------------------------------------------------------------\n");
                                                                                             return;
                                                                                         case "b":
-                                                                                            System.out.println("\n    “Wait,” you tell the aliens, who enable their global translation apparatus (GTA). What do you tell them?\n");
+                                                                                            System.out.println("\n    ❝Wait,❞ you tell the aliens, who enable their global translation apparatus (GTA). What do you tell them?\n");
                                                                                             
                                                                                             // Decision 13
-                                                                                            System.out.println("a) “Stop your attack.”");
-                                                                                            System.out.println("b) “Take me to your leader.”");
-                                                                                            System.out.println("c) “I want to join you.”\n");
+                                                                                            System.out.println("a) ❝Stop your attack.❞");
+                                                                                            System.out.println("b) ❝Take me to your leader.❞");
+                                                                                            System.out.println("c) ❝I want to join you.❞\n");
                                                                                             System.out.print(INPUT_PROMPT);
                                                                                             
                                                                                             switch (keyedInput.next().toLowerCase()) {
                                                                                                 case "a":
-                                                                                                    System.out.println("\n    “Stop your attack,” you tell them. They stare at you for a second, before letting out an unmistakable \n"
+                                                                                                    System.out.println("\n    ❝Stop your attack,❞ you tell them. They stare at you for a second, before letting out an unmistakable \n"
                                                                                                             + "laugh. They point their blasters at you, and you know that you have failed your mission.");
                                                                                                     System.out.println("\nGAME OVER: YOU LOSE!");
                                                                                                     System.out.println("------------------------------------------------------------------------------------------\n");
                                                                                                     return;
                                                                                                 case "b":
-                                                                                                    System.out.println("\n    “Take me to your leader,” you tell them. They look at each other, whisper something, and look back at you. Pulling out \n"
-                                                                                                            + "some handcuffs, they order you, “Put these on,” and you comply. They take you to their leader, a giant purple alien with a black metal brown. \n"
-                                                                                                            + "     They whisper something to him, and he says, “Thee, a filthy terran, came here to negotiate with us? Never.” He commands his cronies with \n"
+                                                                                                    System.out.println("\n    ❝Take me to your leader,❞ you tell them. They look at each other, whisper something, and look back at you. Pulling out \n"
+                                                                                                            + "some handcuffs, they order you, ❝Put these on,❞ and you comply. They take you to their leader, a giant purple alien with a black metal brown. \n"
+                                                                                                            + "     They whisper something to him, and he says, ❝Thee, a filthy terran, came here to negotiate with us? Never.❞ He commands his cronies with \n"
                                                                                                             + "words that you don't understand. They pull out their blasters, and then it hits you. He thought you came to negotiate and doesn't want to any \n"
                                                                                                             + "of that, so he ordered his cronies to get rid of you.");
                                                                                                     System.out.println("\nGAME OVER: YOU LOSE!");
@@ -365,7 +365,7 @@ public class NoohAlaviAssignment11 {
                                                                                                     break;
                                                                                                 case "c":
                                                                                                     System.out.println("\n    The aliens look at you, confused, before hurriedly whispering to each other. After a few minutes of discussion, one of them looks \n"
-                                                                                                            + "back at you and says, “Can you prove your loyalty, terran?”");
+                                                                                                            + "back at you and says, ❝Can you prove your loyalty, terran?❞");
                                                                                                     System.out.println("    You are about to give them your blaster, but then remember a picture that you have of your family. If you tear that up, they might accept \n"
                                                                                                             + "that gesture as a proof of your allegiance. What do you do?\n");
                                                                                                     
@@ -401,18 +401,85 @@ public class NoohAlaviAssignment11 {
                                                                                                                 return;
                                                                                                             case "b":
                                                                                                                 break; //continue to next option
+                                                                                                            
+                                                                                                            default:
+                                                                                                                System.out.println("ERROR: INVALID INPUT @ DECISION 15");
+                                                                                                                return;
                                                                                                         }
                                                                                                     } else {
                                                                                                         System.out.println("\n    Sigh. You shouldn't have given up your blaster. Otherwise you might have been able to end this, once and for all.");
                                                                                                     }
                                                                                                     
-                                                                                                    System.out.println("\n    “Terran,” the leader asks, “do thee swear thine allegiance to the Solar Sovereign State?”");
+                                                                                                    System.out.println("\n    ❝Terran,❞ the leader asks, ❝do thee swear thine allegiance to the Solar Sovereign State?❞");
                                                                                                     
                                                                                                     //Decision 16
                                                                                                     System.out.println("a) Yes.");
-                                                                                                    System.out.println("b) No.\n");
+                                                                                                    System.out.println("b) Never!\n");
                                                                                                     System.out.print(INPUT_PROMPT);
                                                                                                     
+                                                                                                    switch (keyedInput.next().toLowerCase()) {
+                                                                                                        case "a":
+                                                                                                            System.out.println("\n    ❝Of course I do, sir,❞ you tell him. ❝What do you want me to do?❞");
+                                                                                                            System.out.println("    ❝Here are the coordinates to a known terran base,❞ he tells you, as one of his cronies brings you a holographic device displaying \n"
+                                                                                                                    + "a bunch of numbers. ❝Thy mission is to find these terrans and utterly destroy them. Do thee accept?\n❞");
+                                                                                                            
+                                                                                                            // Decision 17
+                                                                                                            System.out.println("a) Yes.");
+                                                                                                            System.out.println("b) No.\n");
+                                                                                                            System.out.print(INPUT_PROMPT);
+                                                                                                            
+                                                                                                            switch (keyedInput.next().toLowerCase()) {
+                                                                                                                case "a":
+                                                                                                                    System.out.println("\n    ❝Of course I do, sir,❞ you tell the leader.");
+                                                                                                                    System.out.println("    You go to the target coordinates along with a small team of six other aliens. When you reach the planet, you see what appears to \n"
+                                                                                                                            + "be a crashed human ship. What do you do?");
+                                                                                                                    break;
+                                                                                                                case "b":
+                                                                                                                    System.out.println("\n    ❝How dare thee refuse my order,❞ the leader asks you, ❝what is they problem?\n❞");
+                                                                                                                    
+                                                                                                                    // Decision 18
+                                                                                                                    System.out.println("a) I cannot harm other humans!");
+                                                                                                                    System.out.println("b) I actually came here to end the invasion!\n");
+                                                                                                                    System.out.print(INPUT_PROMPT);
+                                                                                                                    
+                                                                                                                    switch (keyedInput.next().toLowerCase()) {
+                                                                                                                        case "a":
+                                                                                                                            System.out.println("\n    ❝I'm sorry sir, but I cannot harm other fellow hum—I mean, terrans. Is there any other mission \n"
+                                                                                                                                    + "that you can give me?❞");
+                                                                                                                            System.out.println("    ❝I am very disappointed in thee,❞ the leader tells you, ❝Guards! Get rid of this creature!❞");
+                                                                                                                            break;
+                                                                                                                        case "b":
+                                                                                                                            System.out.println("\n    ❝To be honest 'sir,' I just came here to get rid of you and end this invasion. Say goodbye.❞");
+                                                                                                                            System.out.println("    The leader stares for a second, before he bursts into laughter and says, ❝Guards, deal with this foolish being.❞");
+                                                                                                                            break;
+                                                                                                                        default:
+                                                                                                                            System.out.println("ERROR: INVALID INPUT @ DECISION 18");
+                                                                                                                            return;                                                                                                                    
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                    // No matter what they say in decision 18, they lose the game.
+                                                                                                                    System.out.println("    The guards step towards you with their weapons in their hands. You can only watch as they slowly power up and shoot out a blast \n"
+                                                                                                                            + "of plasma.");
+                                                                                                                    
+                                                                                                                    System.out.println("\nGAME OVER: YOU LOSE!");
+                                                                                                                    System.out.println("------------------------------------------------------------------------------------------\n");
+                                                                                                                    return;
+                                                                                                                default:
+                                                                                                                    System.out.println("ERROR: INVALID INPUT @ DECISION 17");
+                                                                                                                    return;
+                                                                                                            }
+                                                                                                            break;                                                                                                            
+                                                                                                        case "b":
+                                                                                                            System.out.println("\n    ❝Never,❞ you tell him in defiance.");
+                                                                                                            System.out.println("    ❝Then what are thee doing here, filthy terran,❞ the leader replies in defiance. Turning to his cronies, he tells \n"
+                                                                                                                    + "them, ❝Get rid of this disgusting creature. Hurl it off the ship.❞");
+                                                                                                            System.out.println("\nGAME OVER: YOU LOSE!");
+                                                                                                            System.out.println("------------------------------------------------------------------------------------------\n");
+                                                                                                            return;
+                                                                                                        default:
+                                                                                                            System.out.println("ERROR: INVALID INPUT @ DECISION 16");
+                                                                                                            return;
+                                                                                                    }
                                                                                                     break;
                                                                                                 default:
                                                                                                     System.out.println("ERROR: INVALID INPUT @ DECISION 13");
@@ -484,8 +551,8 @@ public class NoohAlaviAssignment11 {
                                     }
                                 }
                             case "b":
-                                System.out.println("\n    “Go for it, Patel,” you tell him.");
-                                System.out.println("    “Will do, " + username + ",”  you tell him. He clicks the button, and a blast of plasma \n"
+                                System.out.println("\n    ❝Go for it, Patel,❞ you tell him.");
+                                System.out.println("    ❝Will do, " + username + ",❞  you tell him. He clicks the button, and a blast of plasma \n"
                                         + "fires from the ship's cannon, flies towards the enemy shuttle, and goes right through. It is a decoy. \n"
                                         + "Your ship's radar suddenly beeps, and you all realize that the real ship is behind you. It charges \n"
                                         + "its blaster and fires.");
@@ -547,16 +614,16 @@ public class NoohAlaviAssignment11 {
                             
                             switch (keyedInput.next().toLowerCase()) {
                                 case "a":
-                                    System.out.println("\n    You run to the control room, yelling, “Aliens! They're here! We need to fire the weapons!”");
-                                    System.out.println("    “You heard him,” General Moss says to the weapon crew, “we get them before they get us.”");
+                                    System.out.println("\n    You run to the control room, yelling, ❝Aliens! They're here! We need to fire the weapons!❞");
+                                    System.out.println("    ❝You heard him,❞ General Moss says to the weapon crew, ❝we get them before they get us.❞");
                                     System.out.println("    You see the weapon crew charge up their blaster cannons, and a bright light and a loud sound confirms that the alien ship is no more. However, before\n"
                                             + "you can celebrate, a group of alien canine-like creatures surrounds the ship. There are too many to fight off, and the space dogs are happy to have found their lunch.");
                                     System.out.println("\nGAME OVER: YOU LOSE!");
                                     System.out.println("------------------------------------------------------------------------------------------\n");
                                     return;
                                 case "b":
-                                    System.out.println("\n    You run to the control room, yelling, “Aliens! They're here! We need to hide in the ship!”");
-                                    System.out.println("    “You heard him,” General Moss says to the crew, “power off the ship and hide before they board.”");
+                                    System.out.println("\n    You run to the control room, yelling, ❝Aliens! They're here! We need to hide in the ship!❞");
+                                    System.out.println("    ❝You heard him,❞ General Moss says to the crew, ❝power off the ship and hide before they board.❞");
                                     System.out.println("    You run around, drastically trying to find a place to hide, and you stumble upon a closet, which is large enough for you to crawl into. As you shut the\n"
                                             + "doors behind you, you see two aliens with high-grade blasters walking through the hall. You feel your own blaster in your pocket, and put your hand on it.\n");
                                    
