@@ -432,7 +432,7 @@ public class NoohAlaviAssignment11 {
                                                                                                                 case "a":
                                                                                                                     System.out.println("\n    ❝Of course I do, sir,❞ you tell the leader.");
                                                                                                                     System.out.println("    You go to the target coordinates along with a small team of six other aliens. When you reach the planet, you see what appears to \n"
-                                                                                                                            + "be a crashed human ship. What do you do?");
+                                                                                                                            + "be a crashed human ship. What do you do?\n");
                                                                                                                     break;
                                                                                                                 case "b":
                                                                                                                     System.out.println("\n    ❝How dare thee refuse my order,❞ the leader asks you, ❝what is they problem?\n❞");
