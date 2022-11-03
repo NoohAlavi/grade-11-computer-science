@@ -11,6 +11,7 @@ import java.util.Scanner;
  *
  * @author s201119359
  * ** FLOWCHART LINK: https://drive.google.com/file/d/1zJXyGjKRsj2fxQ3_jOSEyG25LfFUscPS/view?usp=sharing **
+ * DECISIONS ARE NAMED IN COMMENTS, NAME IS NUMBER BASED ON PARENT DECISION.
  */
 public class NoohAlaviAssignment11 {
 
@@ -52,7 +53,7 @@ public class NoohAlaviAssignment11 {
                     + "\nsir,❞ you say, when General Moss faces you again. ❝We need to execute the plan.❞");
         System.out.println("    ❝All the ships are waiting for my command,❞ he tells you, ❝which direction is the safest?❞\n");
             
-        // Decision 1
+        // Decision 0
         System.out.println("a) Approach fleet from the front.");
         System.out.println("b) Sneak around the fleet from the back.\n");
         System.out.print(INPUT_PROMPT);
@@ -88,7 +89,7 @@ public class NoohAlaviAssignment11 {
                 break;
         }
         
-        //Decision 2
+        //Decision 0.1
         System.out.println("a) Search the planet for resources.");
         System.out.println("b) Search the ship for resources.\n");
         System.out.print(INPUT_PROMPT);
@@ -99,7 +100,7 @@ public class NoohAlaviAssignment11 {
                         + "stumble upon the strangest creature that you have ever seen. It looks like a dog, but it is huge, purple, has seven eyes, and has knives for teeth.\n"
                         + "What do you do?\n");
                 
-                //Decision 3
+                //Decision 0.1.1
                 System.out.println("a) Fight.");
                 System.out.println("b) Talk.");
                 System.out.println("c) Retreat.\n");
@@ -113,7 +114,7 @@ public class NoohAlaviAssignment11 {
                         System.out.println("\n    The creature's call summons many others of its kind, undoubtedly members of its now-grieving family. They stare at \n"
                                 + "you, a murderer, in anger, baring their teeth and desiring vengeance.\n");
                         
-                        // Decision 4
+                        // Decision 0.1.1.1
                         System.out.println("    Should you run or hold your ground?\n");
                         System.out.println("a) Fight.");
                         System.out.println("b) Run away.\n");
@@ -145,7 +146,7 @@ public class NoohAlaviAssignment11 {
                                 + "not very friendly and bites off your leg.");
                         System.out.println("\n    You fall on the floor, and the evil creature bares its teeth, ready for the finishing blow. What do you do?\n");
                         
-                        // Decision 4
+                        // Decision 0.1.1.2
                         System.out.println("a) Fight.");
                         System.out.println("b) Run.\n");
                         System.out.print(INPUT_PROMPT);
@@ -181,7 +182,7 @@ public class NoohAlaviAssignment11 {
                                 + "weapon controller, already has his hand on the trigger. The general looks at you inquisitively, clearly wanting \n"
                                 + "your expert opinion.\n");
                         
-                        // Decision 5
+                        // Decision 0.1.1.3
                         System.out.println("a) Sneak in the ship.");
                         System.out.println("b) Attack.\n");
                         System.out.print(INPUT_PROMPT);
@@ -665,7 +666,7 @@ public class NoohAlaviAssignment11 {
                 System.out.println("\n    You do not know whether the extraterrestial enemies have already taken control of Mars, so you decide to explore the ship instead, trying\n"
                         + "to find resources to fix your ship. You walk around the ship until you reach an intersection.\n");
                 
-                // Decision 3
+                // Decision 0.1.2
                 while (true) {
                     System.out.println("    Which room would you like to go to?\n");
                     System.out.println("a) Communication room.");
@@ -677,7 +678,7 @@ public class NoohAlaviAssignment11 {
                             System.out.println("\n    You walk into the ship's communication room and find a large device which you immediately recognize as being the Intergalactic\n"
                                     + "communicator. Do you want to try to send a message to other surviving ships, so you can team up to defeat the aliens?\n");
                             
-                            // Decision 4
+                            // Decision 0.1.2.1
                             System.out.println("a) Try to communicate.");
                             System.out.println("b) Leave room.\n");
                             System.out.print(INPUT_PROMPT);
@@ -692,7 +693,7 @@ public class NoohAlaviAssignment11 {
                                     System.out.println("------------------------------------------------------------------------------------------\n");
                                     return;
                                 case "b":
-                                    break; //return to decision 4
+                                    break; //return to decision 0.1.2
                                 default:
                                     break;
                             }
@@ -701,7 +702,7 @@ public class NoohAlaviAssignment11 {
                             System.out.println("\n    You enter the storage room and sigh in relief, as you find a bunch of materials and resources needed to fix the ship. As you and your crewmates start the \n"
                                     + "repairs, you hear a sound outside. When you peer out the air-tight window, you realize that it is an alien ship that is looking for survivors. What do you do?\n");
                             
-                            //Decision 4
+                            //Decision 0.1.2.2
                             System.out.println("a) Fire at the ship.");
                             System.out.println("b) Hide in the ship.\n");
                             System.out.print(INPUT_PROMPT);
@@ -721,7 +722,7 @@ public class NoohAlaviAssignment11 {
                                     System.out.println("    You run around, drastically trying to find a place to hide, and you stumble upon a closet, which is large enough for you to crawl into. As you shut the\n"
                                             + "doors behind you, you see two aliens with high-grade blasters walking through the hall. You feel your own blaster in your pocket, and put your hand on it.\n");
                                    
-                                    // Decision 5
+                                    // Decision Decision 0.1.2.2.1
                                     System.out.println("a) Jump out of the closet and shoot the intruders.");
                                     System.out.println("b) Stay hidden.\n");
                                     System.out.print(INPUT_PROMPT);
@@ -732,7 +733,7 @@ public class NoohAlaviAssignment11 {
                                                     + "blaster, which both hit their mark. The loud noise, howevever, attracts the rest of the aliens to your location, just like a magnet. You look down at your blaster, \n"
                                                     + "and then at the closet that you just came out of. What do you do?\n");
                                            
-                                            // Decision 6
+                                            // Decision 0.1.2.2.1.1
                                             System.out.println("a) Hide back in the closet.");
                                             System.out.println("b) Fight the aliens.");
                                             System.out.println("c) Stay still, and hope that the aliens are blind.\n");
@@ -761,7 +762,7 @@ public class NoohAlaviAssignment11 {
                                             break;
                                         case "b":
                                             System.out.println("\n    You let go of the gun. What were you thinking, you ask yourself. You can't possibly take on both of them at once. Besides, they don't even know\n"
-                                                    + "that you're here, " + username + ". You're perfectly safe! Suddently, you hear a loud beeping noise, and both the aliens turn to face you. They have a life-detection\n"
+                                                    + "that you're here, " + username + ". You're perfectly safe! Suddenly, you hear a loud beeping noise, and both the aliens turn to face you. They have a life-detection\n"
                                                     + "scanner. You might have spoken too soon. You can't do anything as one of them aims their plasma blaster at the door and pulls the trigger.");
                                             System.out.println("\nGAME OVER: YOU LOSE!");
                                             System.out.println("------------------------------------------------------------------------------------------\n");
