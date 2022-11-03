@@ -495,9 +495,23 @@ public class NoohAlaviAssignment11 {
                                                                                                                                             System.out.print(INPUT_PROMPT);
                                                                                                                                             
                                                                                                                                             switch (keyedInput.next().toLowerCase()) {
-                                                                                                                                                
-                                                                                                                                            }
-                                                                                                                                            break;
+                                                                                                                                                case "a":
+                                                                                                                                                    System.out.println("\n    You stand there and watch as the aliens attack. China, America, and India fall. Other big countries fall soon after. Within mere minutes, \n"
+                                                                                                                                                            + "the entire planet is left to ruins. You hear the report over the PA systems, ❝No survivors.❞ Oh no. Your family. What have you done.");
+                                                                                                                                                    System.out.println("\nGAME OVER: YOU LOSE!");
+                                                                                                                                                    System.out.println("------------------------------------------------------------------------------------------\n");
+                                                                                                                                                    return;
+                                                                                                                                                case "b":
+                                                                                                                                                    System.out.println("\n    ❝NOOOOOO,❞ you scream, firing at the aliens. Many big ships fall, crash landing on Earth. You don't stop, and the fleet slowly diminishes.");
+                                                                                                                                                    System.out.println("\n    ❝The terran has turned,❞ you suddenly hear over the PA system, ❝destroy the terran!❞ You try to get out, but you realize that your ship has been locked. \n"
+                                                                                                                                                            + "You see the mothership come closer and closer to you, and know the leader is going to get his revenge. You see the ship's largest cannon power up, and then you see nothing at all.");
+                                                                                                                                                    System.out.println("\nGAME OVER: YOU LOSE!");
+                                                                                                                                                    System.out.println("------------------------------------------------------------------------------------------\n");
+                                                                                                                                                    return;
+                                                                                                                                                default:
+                                                                                                                                                    System.out.println("ERROR: INVALID INPUT @ DECISION 21");
+                                                                                                                                                    return;
+                                                                                                                                            }                                                                                                                                            
                                                                                                                                         case "b":
                                                                                                                                             System.out.println("\n    ❝Actually 'sir',❞ you say, picking up the blaster, ❝there's been a slight change of plans.❞ You point it at the leader, and with a swish of your \n"
                                                                                                                                                     + "finger, he falls off his throne. The rest of the aliens stare at you blankly, before also crumpling to the floor.");
@@ -508,17 +522,14 @@ public class NoohAlaviAssignment11 {
                                                                                                                                             System.out.println("ERROR: INVALID INPUT @ DECISION 20");
                                                                                                                                             return;
                                                                                                                                     }
-                                                                                                                                    break;
                                                                                                                                 default:
                                                                                                                                     System.out.println("ERROR: INVALID INPUT @ DECISION 19");
                                                                                                                                     return;
                                                                                                                             }
-                                                                                                                            break;
                                                                                                                         default:
                                                                                                                             System.out.println("ERROR: INVALID INPUT @ DECISION 18");
                                                                                                                             return;
                                                                                                                     }
-                                                                                                                    break;
                                                                                                                 case "b":
                                                                                                                     System.out.println("\n    ❝How dare thou refuse my order,❞ the leader asks you, ❝what is thy problem?\n❞");
                                                                                                                     
@@ -552,8 +563,7 @@ public class NoohAlaviAssignment11 {
                                                                                                                 default:
                                                                                                                     System.out.println("ERROR: INVALID INPUT @ DECISION 17");
                                                                                                                     return;
-                                                                                                            }
-                                                                                                            break;                                                                                                            
+                                                                                                            }                                                                                                           
                                                                                                         case "b":
                                                                                                             System.out.println("\n    ❝Never,❞ you tell him in defiance.");
                                                                                                             System.out.println("    ❝Then what are thou doing here, filthy terran,❞ the leader replies in defiance. Turning to his cronies, he tells \n"
@@ -565,7 +575,6 @@ public class NoohAlaviAssignment11 {
                                                                                                             System.out.println("ERROR: INVALID INPUT @ DECISION 16");
                                                                                                             return;
                                                                                                     }
-                                                                                                    break;
                                                                                                 default:
                                                                                                     System.out.println("ERROR: INVALID INPUT @ DECISION 13");
                                                                                                     return;
