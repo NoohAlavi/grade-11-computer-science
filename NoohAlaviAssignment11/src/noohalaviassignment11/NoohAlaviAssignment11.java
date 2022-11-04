@@ -33,7 +33,7 @@ public class NoohAlaviAssignment11 {
         username = keyedInput.nextLine().toLowerCase();
         username = username.substring(0, 1).toUpperCase() + username.substring(1); //capitalize name
         
-        // Intro
+        // Display intro
         System.out.println("\n------------------------------------------------------------------------------------------");
         System.out.println("    ❝" + username + "!❝" + " You snap back to attention as you hear a voice call your name. ❝" + username + "!❝");
         System.out.println("    ❝Yes sir,❞ you reply, quickly fixing your posture and looking in the dark gray eyes of General Moss.");
@@ -196,7 +196,7 @@ public class NoohAlaviAssignment11 {
                                         + "universal bathroom symbol, the second has a window that shows that it leads to the cockpit, and the last \n"
                                         + "door has a distinct blaster shape encarved onto the metal.");
                                 
-                                // Decision 6
+                                // Decision 0.1.1.3.1
                                 while (true){
                                     System.out.println("    Which door do you choose?\n");
                                                                 
@@ -230,7 +230,7 @@ public class NoohAlaviAssignment11 {
                                                     + "vessel. This is now YOUR ship. Do you want to blend in with the enemy fleet, or try to locate \n"
                                                     + "the alien mothership?\n");
                                             
-                                            // Decision 7
+                                            // Decision 0.1.1.3.1.2
                                             System.out.println("a) Blend in with enemy fleet.");
                                             System.out.println("b) Try to locate alien mothership.\n");
                                             System.out.print(INPUT_PROMPT);
@@ -253,7 +253,7 @@ public class NoohAlaviAssignment11 {
                                                     System.out.println("\n    You need to do something. Destroy it maybe. Or get in and find the \n"
                                                             + "aliens' plans.\n");
                                                     
-                                                    // Decision 8
+                                                    // Decision 0.1.1.3.1.2.1
                                                     System.out.println("a) Fire at the ship's weak spot and destroy it.");
                                                     System.out.println("b) Sneak into the ship.\n");
                                                     System.out.print(INPUT_PROMPT);
@@ -271,7 +271,7 @@ public class NoohAlaviAssignment11 {
                                                                     + "but in symbols and shapes that are obviously alien. There are no icons or windows to help you out. You \n"
                                                                     + "just need to pick a door.\n");
                                                             
-                                                            // Decision 9
+                                                            // Decision 0.1.1.3.1.2.1.1
                                                             System.out.println("a) Far left door.");
                                                             System.out.println("b) Middle door.");
                                                             System.out.println("c) Far right door.\n");
@@ -294,7 +294,7 @@ public class NoohAlaviAssignment11 {
                                                                             + "You can stop the alien invasion by destroying these engines. The resulting blast would disintegrate all of the \n"
                                                                             + "nearby enemy ships. But if you do it, you will never be able to see your family again. What do you do?\n");
                                                                     
-                                                                    // Decision 10
+                                                                    // Decision 0.1.1.3.1.2.1.1.1
                                                                     System.out.println("a) Destroy the engines.");
                                                                     System.out.println("b) Explore a bit more.\n");
                                                                     System.out.print(INPUT_PROMPT);
@@ -310,7 +310,7 @@ public class NoohAlaviAssignment11 {
                                                                             System.out.println("\n    You start to explore the engine room, and eventually find a door. You open it and walk through, and it suddenly closes \n"
                                                                                     + "behind you. You see two doors in front of you, each one labelled with the extraterrestial symbols. Which door do you pick?\n");
                                                                             
-                                                                            // Decision 11
+                                                                            // Decision 0.1.1.3.1.2.1.1.1.1
                                                                             System.out.println("a) Left door.");
                                                                             System.out.println("b) Right door.\n");
                                                                             System.out.print(INPUT_PROMPT);
@@ -327,7 +327,7 @@ public class NoohAlaviAssignment11 {
                                                                                     System.out.println("\n   You open the right door and enter the room. You see two aliens drinking a blue, bubbly drink, \n"
                                                                                             + "and instinctively pull out your blaster. So do they. What do you do?\n");
                                                                                     
-                                                                                    // Decision 12
+                                                                                    // Decision 0.1.1.3.1.2.1.1.1.1.1
                                                                                     System.out.println("a) Fight.");
                                                                                     System.out.println("b) Negotiate.");
                                                                                     System.out.println("c) Retreat.\n");
@@ -342,7 +342,7 @@ public class NoohAlaviAssignment11 {
                                                                                         case "b":
                                                                                             System.out.println("\n    ❝Wait,❞ you tell the aliens, who enable their global translation apparatus (GTA). What do you tell them?\n");
                                                                                             
-                                                                                            // Decision 13
+                                                                                            // Decision 0.1.1.3.1.2.1.1.1.1.1.1
                                                                                             System.out.println("a) ❝Stop your attack.❞");
                                                                                             System.out.println("b) ❝Take me to your leader.❞");
                                                                                             System.out.println("c) ❝I want to join you.❞\n");
@@ -370,7 +370,7 @@ public class NoohAlaviAssignment11 {
                                                                                                     System.out.println("    You are about to give them your blaster, but then remember a picture that you have of your family. If you tear that up, they might accept \n"
                                                                                                             + "that gesture as a proof of your allegiance. What do you do?\n");
                                                                                                     
-                                                                                                    // Decision 14
+                                                                                                    // Decision 0.1.1.3.1.2.1.1.1.1.1.1.1
                                                                                                     System.out.println("a) Tear photo.");
                                                                                                     System.out.println("b) Hand over blaster.\n");
                                                                                                     System.out.print(INPUT_PROMPT);
@@ -384,7 +384,7 @@ public class NoohAlaviAssignment11 {
                                                                                                             + "immediately recognize it. It's a controller chip! This means that all of the aliens are part of a hive mind—if the leader's neural links are severed, \n"
                                                                                                             + "then the entire army will fall. Earth will be saved.");
                                                                                                     
-                                                                                                    // Decision 15
+                                                                                                    // Decision 0.1.1.3.1.2.1.1.1.1.1.1.1.1
                                                                                                     if (hasWeapon) {
                                                                                                         System.out.println("    Fortunately, you chose not to give up your weapon to prove your allegiance. Do you want to try to assassinate the leader and end \n"
                                                                                                                 + "the invasion on Earth?\n");
@@ -413,7 +413,7 @@ public class NoohAlaviAssignment11 {
                                                                                                     
                                                                                                     System.out.println("\n    ❝Terran,❞ the leader asks, ❝does thou swear thine allegiance to the Solar Sovereign State?❞");
                                                                                                     
-                                                                                                    //Decision 16
+                                                                                                    // Decision 0.1.1.3.1.2.1.1.1.1.1.1.1.2
                                                                                                     System.out.println("a) Yes.");
                                                                                                     System.out.println("b) Never!\n");
                                                                                                     System.out.print(INPUT_PROMPT);
@@ -424,7 +424,7 @@ public class NoohAlaviAssignment11 {
                                                                                                             System.out.println("    ❝Here are the coordinates to a known terran base,❞ he tells you, as one of his cronies brings you a holographic device displaying \n"
                                                                                                                     + "a bunch of numbers. ❝Thy mission is to find these terrans and utterly destroy them. Does thou accept?\n❞");
                                                                                                             
-                                                                                                            // Decision 17
+                                                                                                            // Decision 0.1.1.3.1.2.1.1.1.1.1.1.1.2.1
                                                                                                             System.out.println("a) Yes.");
                                                                                                             System.out.println("b) No.\n");
                                                                                                             System.out.print(INPUT_PROMPT);
@@ -435,7 +435,7 @@ public class NoohAlaviAssignment11 {
                                                                                                                     System.out.println("    You go to the target coordinates along with a small team of six other aliens. When you reach the planet, you see what appears to \n"
                                                                                                                             + "be a crashed human ship. What do you do?\n");
                                                                                                                     
-                                                                                                                    // Decision 18
+                                                                                                                    // Decision 0.1.1.3.1.2.1.1.1.1.1.1.1.2.1.2
                                                                                                                     System.out.println("a) Explore the ship.");
                                                                                                                     System.out.println("b) Attack the ship.");
                                                                                                                     System.out.println("c) Go back.\n");
@@ -465,7 +465,7 @@ public class NoohAlaviAssignment11 {
                                                                                                                             System.out.println("    Having agreed to the plan, you leave the planet and return to the leader. However, the minute you see him, perched high on his throne, surrounded by guards, \n"
                                                                                                                                     + "you start to think lying is a bad idea. It's way to risky. But at the same time, you have already promised the others that you would do it... What are you going to do?\n");
                                                                                                                             
-                                                                                                                            // Decision 19
+                                                                                                                            // Decision 0.1.1.3.1.2.1.1.1.1.1.1.1.2.1.2.1
                                                                                                                             System.out.println("a) Tell the truth.");
                                                                                                                             System.out.println("b) Lie");
                                                                                                                             
@@ -481,7 +481,7 @@ public class NoohAlaviAssignment11 {
                                                                                                                                     System.out.println("    ❝Well done, terran.❞ he tells you. ❝I must say, thou has surprised me. I do have another mission for thee. Take thou this blaster of mine, a brand new model, \n"
                                                                                                                                             + "and use it to destroy the terran rebellion on Europa, one of the moons of Jupiter. Do thou accept?❞\n");
                                                                                                                                     
-                                                                                                                                    // Decision 20
+                                                                                                                                    // Decision 0.1.1.3.1.2.1.1.1.1.1.1.1.2.1.2.1.1
                                                                                                                                     System.out.println("a) Accept the mission.");
                                                                                                                                     System.out.println("b) Betray the leader.\n");
                                                                                                                                     System.out.print(INPUT_PROMPT);
@@ -490,7 +490,7 @@ public class NoohAlaviAssignment11 {
                                                                                                                                         case "a":
                                                                                                                                             System.out.println("\n    As you are flying to Europa to carry out your job, you see an alien fleeting heading to Earth. You know that they're going to destroy it. What do you do?\n");
                                                                                                                                             
-                                                                                                                                            // Decision 21
+                                                                                                                                            // Decision 0.1.1.3.1.2.1.1.1.1.1.1.1.2.1.2.1.1.1
                                                                                                                                             System.out.println("a) Stand there and do nothing.");
                                                                                                                                             System.out.println("b) Attack the enemy ships.\n");
                                                                                                                                             System.out.print(INPUT_PROMPT);
@@ -510,7 +510,7 @@ public class NoohAlaviAssignment11 {
                                                                                                                                                     System.out.println("------------------------------------------------------------------------------------------\n");
                                                                                                                                                     return;
                                                                                                                                                 default:
-                                                                                                                                                    System.out.println("ERROR: INVALID INPUT @ DECISION 21");
+                                                                                                                                                    System.out.println("ERROR: INVALID INPUT @ DECISION 0.1.1.3.1.2.1.1.1.1.1.1.1.2.1.2.1.1.1");
                                                                                                                                                     return;
                                                                                                                                             }                                                                                                                                            
                                                                                                                                         case "b":
@@ -534,7 +534,7 @@ public class NoohAlaviAssignment11 {
                                                                                                                 case "b":
                                                                                                                     System.out.println("\n    ❝How dare thou refuse my order,❞ the leader asks you, ❝what is thy problem?\n❞");
                                                                                                                     
-                                                                                                                    // Decision 18
+                                                                                                                    // Decision 0.1.1.3.1.2.1.1.1.1.1.1.1.2.1.1
                                                                                                                     System.out.println("a) I cannot harm other humans!");
                                                                                                                     System.out.println("b) I actually came here to end the invasion!\n");
                                                                                                                     System.out.print(INPUT_PROMPT);
@@ -622,7 +622,7 @@ public class NoohAlaviAssignment11 {
                                             System.out.println("\n    You walk into the weapon room and find that all of the weapons are inside of locked \n"
                                                     + "storage containers, except a plasma blaster lying on the table. What do you do?\n");
                                             
-                                            // Decision 7
+                                            // Decision 0.1.1.3.1.1
                                             
                                             System.out.println("a) Take it.");
                                             System.out.println("b) Leave room.\n");
@@ -633,10 +633,10 @@ public class NoohAlaviAssignment11 {
                                                     System.out.println("\n    You pick up the blaster and feel the plasmic power pulsating within it. You leave \n"
                                                                 + "the room, weapon in hand.");
                                                     hasWeapon = true;
-                                                    break; // return to decision 7
+                                                    break; // return to decision 0.1.1.3.1
                                                 case "b":
                                                     System.out.println("You leave the room, returning to the hall.");
-                                                    break; // return to decision 7
+                                                    break; // return to decision 0.1.1.3.1
                                                 default:
                                                     break;
                                             }
