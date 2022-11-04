@@ -31,7 +31,7 @@ public class NoohAlaviAssignment11 {
         System.out.print(" >>> ");
         
         username = keyedInput.nextLine().toLowerCase();
-        username = username.substring(0, 1).toUpperCase() + username.substring(1); //capitalize name
+        username = username.substring(0, 1).toUpperCase() + username.substring(1); //capitalize first letter in name
         
         // Display intro
         System.out.println("\n------------------------------------------------------------------------------------------");
@@ -86,7 +86,8 @@ public class NoohAlaviAssignment11 {
                         + " has been annihilated.\n");
                 break;
             default:
-                break;
+                System.out.println("ERROR: INVALID INPUT @ DECISION 0");
+                return;
         }
         
         //Decision 0.1
@@ -138,9 +139,9 @@ public class NoohAlaviAssignment11 {
                                 System.out.println("------------------------------------------------------------------------------------------\n");
                                 return;
                             default:
-                                break;
+                                System.out.println("ERROR: INVALID INPUT @ DECISION 0.1.1.1");
+                                return;
                         }
-                        break;
                     case "b":
                         System.out.println("\n    You signal that you come in peace, and slowly approach the dog with a smile on your face. It, however, is \n"
                                 + "not very friendly and bites off your leg.");
@@ -165,10 +166,9 @@ public class NoohAlaviAssignment11 {
                                 System.out.println("------------------------------------------------------------------------------------------\n");
                                 return;
                             default:
-                                break;
+                                System.out.println("ERROR: INVALID INPUT @ DECISION 0.1.1.2");
+                                return;
                         }
-                        
-                        break;
                     case "c":
                         System.out.println("\n   ❝Nope,❝ you say, turning around 360° and running back to the ship. ❝There are some weird \n"
                                 + "extraterrestial creatures around here, possibly hostile,❝ you tell them.");
@@ -422,7 +422,7 @@ public class NoohAlaviAssignment11 {
                                                                                                         case "a":
                                                                                                             System.out.println("\n    ❝Of course I do, sir,❞ you tell him. ❝What do you want me to do?❞");
                                                                                                             System.out.println("    ❝Here are the coordinates to a known terran base,❞ he tells you, as one of his cronies brings you a holographic device displaying \n"
-                                                                                                                    + "a bunch of numbers. ❝Thy mission is to find these terrans and utterly destroy them. Does thou accept?\n❞");
+                                                                                                                    + "a bunch of numbers. ❝Thy mission is to find these terrans and utterly destroy them. Does thou accept?❞\n");
                                                                                                             
                                                                                                             // Decision 0.1.1.3.1.2.1.1.1.1.1.1.1.2.1
                                                                                                             System.out.println("a) Yes.");
@@ -520,15 +520,15 @@ public class NoohAlaviAssignment11 {
                                                                                                                                             System.out.println("------------------------------------------------------------------------------------------\n");
                                                                                                                                             return;
                                                                                                                                         default:
-                                                                                                                                            System.out.println("ERROR: INVALID INPUT @ DECISION 20");
+                                                                                                                                            System.out.println("ERROR: INVALID INPUT @ DECISION 0.1.1.3.1.2.1.1.1.1.1.1.1.2.1.2.1.1");
                                                                                                                                             return;
                                                                                                                                     }
                                                                                                                                 default:
-                                                                                                                                    System.out.println("ERROR: INVALID INPUT @ DECISION 19");
+                                                                                                                                    System.out.println("ERROR: INVALID INPUT @ DECISION 0.1.1.3.1.2.1.1.1.1.1.1.1.2.1.2.1");
                                                                                                                                     return;
                                                                                                                             }
                                                                                                                         default:
-                                                                                                                            System.out.println("ERROR: INVALID INPUT @ DECISION 18");
+                                                                                                                            System.out.println("ERROR: INVALID INPUT @ DECISION 0.1.1.3.1.2.1.1.1.1.1.1.1.2.1.2");
                                                                                                                             return;
                                                                                                                     }
                                                                                                                 case "b":
@@ -550,7 +550,7 @@ public class NoohAlaviAssignment11 {
                                                                                                                             System.out.println("    The leader stares for a second, before he bursts into laughter and says, ❝Guards, deal with this foolish being.❞");
                                                                                                                             break;
                                                                                                                         default:
-                                                                                                                            System.out.println("ERROR: INVALID INPUT @ DECISION 18");
+                                                                                                                            System.out.println("ERROR: INVALID INPUT @ DECISION 0.1.1.3.1.2.1.1.1.1.1.1.1.2.1.1");
                                                                                                                             return;                                                                                                                    
                                                                                                                     }
                                                                                                                     
@@ -562,7 +562,7 @@ public class NoohAlaviAssignment11 {
                                                                                                                     System.out.println("------------------------------------------------------------------------------------------\n");
                                                                                                                     return;
                                                                                                                 default:
-                                                                                                                    System.out.println("ERROR: INVALID INPUT @ DECISION 17");
+                                                                                                                    System.out.println("ERROR: INVALID INPUT @ DECISION 0.1.1.3.1.2.1.1.1.1.1.1.1.2.1");
                                                                                                                     return;
                                                                                                             }                                                                                                           
                                                                                                         case "b":
@@ -573,11 +573,11 @@ public class NoohAlaviAssignment11 {
                                                                                                             System.out.println("------------------------------------------------------------------------------------------\n");
                                                                                                             return;
                                                                                                         default:
-                                                                                                            System.out.println("ERROR: INVALID INPUT @ DECISION 16");
+                                                                                                            System.out.println("ERROR: INVALID INPUT @ DECISION 0.1.1.3.1.2.1.1.1.1.1.1.1.2");
                                                                                                             return;
                                                                                                     }
                                                                                                 default:
-                                                                                                    System.out.println("ERROR: INVALID INPUT @ DECISION 13");
+                                                                                                    System.out.println("ERROR: INVALID INPUT @ DECISION 0.1.1.3.1.2.1.1.1.1.1.1");
                                                                                                     return;
                                                                                             }
                                                                                             break;
@@ -588,25 +588,27 @@ public class NoohAlaviAssignment11 {
                                                                                             System.out.println("------------------------------------------------------------------------------------------\n");
                                                                                             return;
                                                                                         default:
-                                                                                            System.out.println("ERROR: INVALID INPUT @ DECISION 12");
+                                                                                            System.out.println("ERROR: INVALID INPUT @ DECISION 0.1.1.3.1.2.1.1.1.1.1");
                                                                                             return;
                                                                                     }
                                                                                     break;
                                                                                 default:
-                                                                                    System.out.println("ERROR: INVALID INPUT @ DECISION 11");
+                                                                                    System.out.println("ERROR: INVALID INPUT @ DECISION 0.1.1.3.1.2.1.1.1.1");
                                                                                     return;
                                                                             }
                                                                             break;
                                                                         default:
-                                                                            System.out.println("\nERROR: INVALID INPUT @ DECISION 10");
+                                                                            System.out.println("\nERROR: INVALID INPUT @ DECISION 0.1.1.3.1.2.1.1.1");
                                                                             return;
                                                                     }
                                                                     break;
                                                                 default:
-                                                                    break;
+                                                                    System.out.println("ERROR: INVALID INPUT @ DECISION 0.1.1.3.1.2.1.1");
+                                                                    return;
                                                             }
                                                             break;
                                                         default:
+                                                            System.out.println("ERROR: INVALID INPUT @ DECISION 0.1.1.3.1.2.1");
                                                             break;
                                                     }
                                                     break;
@@ -616,7 +618,7 @@ public class NoohAlaviAssignment11 {
                                             if (hasWeapon) {
                                                 System.out.println("\n    You go back into the weapon room. You have already picked up the blaster and \n"
                                                         + "the rest of the ewapons are under lock and key. You leave the room.");
-                                                break; // Return to decision 6
+                                                break; // Return to decision 0.1.1.3.1
                                             }
                                             
                                             System.out.println("\n    You walk into the weapon room and find that all of the weapons are inside of locked \n"
@@ -638,11 +640,13 @@ public class NoohAlaviAssignment11 {
                                                     System.out.println("You leave the room, returning to the hall.");
                                                     break; // return to decision 0.1.1.3.1
                                                 default:
-                                                    break;
+                                                    System.out.println("ERROR: INVALID INPUT @ DECISION 0.1.1.3.1.1");
+                                                    return;
                                             }
                                             break;
                                         default:
-                                            break;
+                                            System.out.println("ERROR: INVALID INPUT @ DECISION 0.1.1.3.1");
+                                            return;
                                     }
                                 }
                             case "b":
@@ -654,10 +658,12 @@ public class NoohAlaviAssignment11 {
                                 System.out.println("\nGAME OVER: YOU LOSE!");
                                 System.out.println("------------------------------------------------------------------------------------------\n");
                                 return;
+                            default:
+                                System.out.println("ERROR: INVALID INPUT @ DECISION 0.1.1.3");
+                                return;
                         }
-                        break;
                     default:
-                        System.out.println("ERROR: INVALID INPUT @ DECISION 6");
+                        System.out.println("ERROR: INVALID INPUT @ DECISION 0.1.1");
                         break;
                 }
                 
@@ -758,8 +764,10 @@ public class NoohAlaviAssignment11 {
                                                     System.out.println("\nGAME OVER: YOU LOSE!");
                                                     System.out.println("------------------------------------------------------------------------------------------\n");
                                                     return;
+                                                default:
+                                                    System.out.println("ERROR: INVALID INPUT @ DECISION 0.1.2.2.1.1");
+                                                    return;
                                             }
-                                            break;
                                         case "b":
                                             System.out.println("\n    You let go of the gun. What were you thinking, you ask yourself. You can't possibly take on both of them at once. Besides, they don't even know\n"
                                                     + "that you're here, " + username + ". You're perfectly safe! Suddenly, you hear a loud beeping noise, and both the aliens turn to face you. They have a life-detection\n"
@@ -767,15 +775,21 @@ public class NoohAlaviAssignment11 {
                                             System.out.println("\nGAME OVER: YOU LOSE!");
                                             System.out.println("------------------------------------------------------------------------------------------\n");
                                             return;
+                                        default:
+                                            System.out.println("ERROR: INVALID INPUT @ DECISION 0.1.2.2.1");
+                                            return;
                                     }
-                                    break;
+                                default:
+                                    System.out.println("ERROR: INVALID INPUT @ DECISION 0.1.2.2");
+                                    return;
                             }
                         default:
-                            break;
+                            System.out.println("ERROR: INVALID INPUT @ DECISION 0.1.2");
+                            return;
                     }
                 }
             default:
-                break;
+                System.out.println("ERROR: INVALID INPUT @ DECISION 0.1");
         }
     }
 }
