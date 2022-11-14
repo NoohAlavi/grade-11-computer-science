@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.List;
+import java.io.BufferedReader;
+import java.io.FileReader;
 
 /**
  *
@@ -16,10 +18,8 @@ import java.util.List;
  */
 public class NoohAlaviAssignment16 {
 
-    /**
-     * @param args the command line arguments
-     */
-    
+    final String fileUrl = "users.txt";
+
     private static class User {
         String firstName;
         String lastName;
@@ -33,6 +33,23 @@ public class NoohAlaviAssignment16 {
             email = _email;
             password = _password;
         }
+    }
+    
+    private static String getUsers() {
+        StringBuilder contentBuilder = new StringBuilder();
+        
+        try (BufferedReader br = new BufferedReader(new FileReader("users.txt"))) {
+            String currentLine;
+            while ((currentLine = br.readLine()) != null) {
+                contentBuilder.append(currentLine).append("\n");
+            }
+        } 
+        catch (Exception e) 
+        {
+            e.printStackTrace();
+        }
+
+        return contentBuilder.toString();
     }
     
     public static void main(String[] args) {
@@ -52,13 +69,8 @@ public class NoohAlaviAssignment16 {
         String lastName;
         
         ArrayList<User> users = new ArrayList<> ();
-        
-        users.add(new User("John", "Doe", "johndoe@alavimail.com", "abc123"));
-        users.add(new User("Brandan", "Higgins", "brandanhiggins@alavimail.com", "train412"));
-        users.add(new User("Kester", "McGill", "kestermcgill@alavimail.com", "Qwerty123"));
-        users.add(new User("Courtney", "Lynch", "courtneylynch@alavimail.com", "iloveyou"));
-        users.add(new User("Travis", "Mosley", "travism@alavimail.com", "1q2w3e"));
-        users.add(new User("Abdulrahman", "Ahmad", "ahmadabdulrahman@alavimail.com", "q1w2e3r4"));
+        //users = getUsers();
+        System.out.println(getUsers());
         
         while (true) {
             System.out.println("--------------------");
