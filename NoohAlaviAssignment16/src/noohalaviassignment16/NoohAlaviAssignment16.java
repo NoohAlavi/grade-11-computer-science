@@ -19,7 +19,7 @@ public class NoohAlaviAssignment16 {
         private final String EMAIL;
         private final String PASSWORD;
         
-        ArrayList<String> posts;
+        private ArrayList<String> posts;
 
         public User(String _firstName, String _lastName, String _email, String _password) {
             FIRST_NAME = _firstName;
@@ -49,10 +49,14 @@ public class NoohAlaviAssignment16 {
         public ArrayList<String> getPosts() {
             return this.posts;
         }
+        
+        public void newPost(String newPost) {
+            this.posts.add(newPost);
+        }
 
-        public void print() {
+        public String getPrintable() {
             // Prints out data related to this user
-            System.out.println(this.FIRST_NAME+ " " + this.LAST_NAME + " (" + this.EMAIL + ")");
+            return (this.FIRST_NAME+ " " + this.LAST_NAME + " (" + this.EMAIL + ")");
         }
 
         @Override
@@ -76,10 +80,9 @@ public class NoohAlaviAssignment16 {
                 users.add(newUser);
             }
             reader.close();
+            System.out.println("Finished loading data from '" + FILE_URL + "'!");
         } catch(Exception e) {
         }
-
-        System.out.println("Finished loading data from '" + FILE_URL + "'!");
     }
 
     private static void saveToFile(String text) {
@@ -122,6 +125,8 @@ public class NoohAlaviAssignment16 {
 
             switch (choice) {
                 case "a":
+                    User currentUser = null;
+                    
                     // Sign into existing account
                     System.out.println("Enter your email: ");
                     System.out.print(INPUT_PROMPT);
@@ -138,15 +143,45 @@ public class NoohAlaviAssignment16 {
                             if (user.getPassword().equals(password)) {
                                 System.out.println("You have successfully signed in.");
                                 System.out.println("Welcome, " + user.getFirstName() + "!");
+                                
                                 isSignedIn = true;
+                                currentUser = user;
                             }
                             break;
                         }
                     }
                     if (!isSignedIn) {
                         System.out.println("Email or password incorrect! Please try again or make a new account.");
+                        break;
                     }
-                    break;
+                    while (true) {
+                        System.out.println("\nDo you want to:");
+                        System.out.println("a) Make new post.");
+                        System.out.println("b) See your posts.");
+                        System.out.println("c) Log out.");
+                        
+                        System.out.print(INPUT_PROMPT);
+                        choice = keyedInput.next();
+                        
+                        switch (choice) {
+                            case "a":
+                                // Make new post
+                                System.out.println("Enter content of post:");
+                                System.out.print(INPUT_PROMPT);
+                                
+                                currentUser.newPost(keyedInput.next());
+                                break;
+                            case "b":
+                                for (String post : currentUser.getPosts()) {
+                                    System.out.println("\n" + post);
+                                }
+                                break;
+                            case "c":
+                                break;
+                            default:
+                                break;
+                        }
+                    }
                 case "b":
                     // Make new account
                     System.out.println("Enter your email: ");
@@ -184,12 +219,13 @@ public class NoohAlaviAssignment16 {
 
                     // Make new user
                     User newUser = new User(firstName, lastName, email, newPassword1);
-
+                    newUser.newPost("Hello World: I just made my new account!");
+                    
                     // Add user to array and save to file
                     users.add(newUser);
                     saveToFile(newUser.toString());
 
-                    System.out.println("User '" + firstName + " " + lastName + " (" + email + ")' successfully created!");
+                    System.out.println("User '" + newUser.getPrintable() + "' successfully created!");
                     break;
                 case "c":
                     // Show list of all users in format
@@ -197,7 +233,7 @@ public class NoohAlaviAssignment16 {
                     // For example:
                     // John Doe (johndoe@alavimail.com)
                     users.forEach((user) -> {
-                        user.print();
+                        System.out.println(user.getPrintable());
                     });
                     break;
                 default:
