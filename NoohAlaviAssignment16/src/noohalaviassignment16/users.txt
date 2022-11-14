@@ -6,3 +6,6 @@ Travis,Mosley,travism@alavimail.com,1q2w3e
 Abdulrahman,Ahmad,ahmadabdulrahman@alavimail.com,q1w2e3r4
 Owen,Briggs,owenissmart@alavimail.com,seahawksrule1
 Hafiz,Ibrahim,hzibrahim@alavimail.com,passwordpassword
+Arnaud,Géroux,arnaudgeroux@alavimail.com,baguette12
+Pénélope,Bureau,penelopebureau@alavimail.com,LaFleur9$
+John,Watson,drjhwatson@alavimail.com,Mary221b
