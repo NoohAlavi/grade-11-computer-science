@@ -1,3 +1,5 @@
+package noohalaviassignment16;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.BufferedReader;
@@ -7,31 +9,56 @@ import java.io.FileWriter;
 
 public class NoohAlaviAssignment16 {
 
-    static final String FILE_URL = "users.txt";
+    static final String FILE_URL = "src/noohalaviassignment16/users.txt";
     static ArrayList<User> users = new ArrayList<>();
 
     private static class User {
-        String firstName;
-        String lastName;
+        private final String FIRST_NAME;
+        private final String LAST_NAME;
 
-        String email;
-        String password;
+        private final String EMAIL;
+        private final String PASSWORD;
+        
+        ArrayList<String> posts;
 
         public User(String _firstName, String _lastName, String _email, String _password) {
-            firstName = _firstName;
-            lastName = _lastName;
-            email = _email;
-            password = _password;
+            FIRST_NAME = _firstName;
+            LAST_NAME = _lastName;
+            EMAIL = _email;
+            PASSWORD = _password;
+            
+            posts = new ArrayList<>();
+        }
+        
+        public String getFirstName() {
+            return this.FIRST_NAME;
+        }
+        
+        public String getLastName() {
+            return this.LAST_NAME;
+        }
+        
+        public String getEmail() {
+            return this.EMAIL;
+        }
+        
+        public String getPassword() {
+            return this.PASSWORD;
+        }
+        
+        public ArrayList<String> getPosts() {
+            return this.posts;
         }
 
         public void print() {
             // Prints out data related to this user
-            System.out.println(this.firstName + " " + this.lastName + " (" + this.email + ")");
+            System.out.println(this.FIRST_NAME+ " " + this.LAST_NAME + " (" + this.EMAIL + ")");
         }
 
+        @Override
         public String toString() {
             // Convert user data to saveable string
-            return this.firstName + "," + this.lastName + "," + this.email + "," + this.password;
+            return this.FIRST_NAME + "," + this.LAST_NAME + "," + this.EMAIL + "," + this.PASSWORD;
         }
     }
 
@@ -50,7 +77,6 @@ public class NoohAlaviAssignment16 {
             }
             reader.close();
         } catch(Exception e) {
-            e.printStackTrace();
         }
 
         System.out.println("Finished loading data from '" + FILE_URL + "'!");
@@ -61,7 +87,6 @@ public class NoohAlaviAssignment16 {
             writer.write("\n" + text);
             writer.close();
         } catch(Exception e) {
-            e.printStackTrace();
         }
     }
 
@@ -102,22 +127,25 @@ public class NoohAlaviAssignment16 {
                     System.out.print(INPUT_PROMPT);
                     email = keyedInput.next();
 
+                    // Check if user exists
+                    Boolean isSignedIn = false;
                     for (User user : users) {
-                        if (user.email.equals(email)) {
+                        if (user.getEmail().equals(email)) {
                             System.out.println("Enter your password: ");
                             System.out.print(INPUT_PROMPT);
                             password = keyedInput.next();
 
-                            if (user.password.equals(password)) {
+                            if (user.getPassword().equals(password)) {
                                 System.out.println("You have successfully signed in.");
-                                System.out.println("Welcome, " + user.firstName + "!");
+                                System.out.println("Welcome, " + user.getFirstName() + "!");
+                                isSignedIn = true;
                             }
                             break;
                         }
                     }
-
-                    System.out.println("Account with email address '" + email
-                            + "' not found! Double check the spelling or make a new account.");
+                    if (!isSignedIn) {
+                        System.out.println("Email or password incorrect! Please try again or make a new account.");
+                    }
                     break;
                 case "b":
                     // Make new account
@@ -126,7 +154,7 @@ public class NoohAlaviAssignment16 {
                     email = keyedInput.next();
 
                     for (User user : users) {
-                        if (user.email.equals(email)) {
+                        if (user.getEmail().equals(email)) {
                             System.out.println("Email '" + email + "' is already being used by another account!");
                             break;
                         }
@@ -168,9 +196,9 @@ public class NoohAlaviAssignment16 {
                     // First Last (email)
                     // For example:
                     // John Doe (johndoe@alavimail.com)
-                    for (User user : users) {
+                    users.forEach((user) -> {
                         user.print();
-                    }
+                    });
                     break;
                 default:
                     break;
