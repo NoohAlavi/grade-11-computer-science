@@ -8,8 +8,12 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 
 public class NoohAlaviAssignment16 {
-
-    static final String FILE_URL = "src/noohalaviassignment16/users.txt";
+    static final String PARENT_FOLDER = "src/noohalaviassignment16";
+    static final String FILE_TYPE = ".txt";
+    
+    static final String USERS_FILE_URL = PARENT_FOLDER + "/users" + FILE_TYPE;
+    static final String POSTS_FOLDER = PARENT_FOLDER + "/posts";
+    
     static ArrayList<User> users = new ArrayList<>();
 
     private static class User {
@@ -50,8 +54,37 @@ public class NoohAlaviAssignment16 {
             return this.posts;
         }
         
+        public void loadPosts() {
+            // Get file name
+            String fileUrl = POSTS_FOLDER + "/" + this.EMAIL + FILE_TYPE;
+            
+            // Get file
+            try (BufferedReader reader = new BufferedReader(new FileReader(fileUrl))) {
+                String currentLine;
+                while ((currentLine = reader.readLine()) != null) {
+                    this.posts.add(currentLine);
+                }
+                reader.close();
+                System.out.println("Finished loading data from '" + fileUrl + "'!");
+            } catch(Exception e) {
+            }
+        }
+        
         public void newPost(String newPost) {
             this.posts.add(newPost);
+            
+            // Generate or get file
+            String fileUrl = POSTS_FOLDER + "/" + this.EMAIL + FILE_TYPE;
+            System.out.println("Saving to " + fileUrl);
+            
+            // Save to file
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileUrl))) {
+                for (String post : this.posts) {
+                    writer.write(post + "\n");
+                }
+                writer.close();
+            } catch(Exception e) {
+            }
         }
 
         public String getPrintable() {
@@ -67,7 +100,7 @@ public class NoohAlaviAssignment16 {
     }
 
     private static void loadData() {
-        try (BufferedReader reader = new BufferedReader(new FileReader(FILE_URL))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(USERS_FILE_URL))) {
             String currentLine;
             while ((currentLine = reader.readLine()) != null) {
                 String[] newUserData = currentLine.split(",");
@@ -80,13 +113,13 @@ public class NoohAlaviAssignment16 {
                 users.add(newUser);
             }
             reader.close();
-            System.out.println("Finished loading data from '" + FILE_URL + "'!");
+            System.out.println("Finished loading data from '" + USERS_FILE_URL + "'!");
         } catch(Exception e) {
         }
     }
 
     private static void saveToFile(String text) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_URL, true))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(USERS_FILE_URL, true))) {
             writer.write("\n" + text);
             writer.close();
         } catch(Exception e) {
@@ -146,6 +179,9 @@ public class NoohAlaviAssignment16 {
                                 
                                 isSignedIn = true;
                                 currentUser = user;
+                            
+                                // Get saved user posts
+                                currentUser.loadPosts();
                             }
                             break;
                         }
@@ -155,6 +191,7 @@ public class NoohAlaviAssignment16 {
                         break;
                     }
                     while (true) {
+                        // User is now logged in
                         System.out.println("\nDo you want to:");
                         System.out.println("a) Make new post.");
                         System.out.println("b) See your posts.");
@@ -169,7 +206,10 @@ public class NoohAlaviAssignment16 {
                                 System.out.println("Enter content of post:");
                                 System.out.print(INPUT_PROMPT);
                                 
-                                currentUser.newPost(keyedInput.next());
+                                keyedInput.nextLine(); //consume unused '\n'
+                                String newPost = keyedInput.nextLine();
+                                
+                                currentUser.newPost(newPost);
                                 break;
                             case "b":
                                 for (String post : currentUser.getPosts()) {
@@ -179,6 +219,7 @@ public class NoohAlaviAssignment16 {
                             case "c":
                                 break;
                             default:
+                                System.out.println("Please choose a valid option!");
                                 break;
                         }
                     }
