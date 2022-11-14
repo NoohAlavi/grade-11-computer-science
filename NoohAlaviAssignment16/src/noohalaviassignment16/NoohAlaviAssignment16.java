@@ -2,8 +2,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 
-public class Main {
+public class NoohAlaviAssignment16 {
 
     static final String FILE_URL = "users.txt";
     static ArrayList<User> users = new ArrayList<>();
@@ -21,12 +23,22 @@ public class Main {
             email = _email;
             password = _password;
         }
+
+        public void print() {
+            // Prints out data related to this user
+            System.out.println(this.firstName + " " + this.lastName + " (" + this.email + ")");
+        }
+
+        public String toString() {
+            // Convert user data to saveable string
+            return this.firstName + "," + this.lastName + "," + this.email + "," + this.password;
+        }
     }
 
     private static void loadData() {
-        try (BufferedReader br = new BufferedReader(new FileReader(FILE_URL))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(FILE_URL))) {
             String currentLine;
-            while ((currentLine = br.readLine()) != null) {
+            while ((currentLine = reader.readLine()) != null) {
                 String[] newUserData = currentLine.split(",");
                 User newUser = new User(
                     newUserData[0],
@@ -36,11 +48,21 @@ public class Main {
 
                 users.add(newUser);
             }
+            reader.close();
         } catch(Exception e) {
             e.printStackTrace();
         }
 
         System.out.println("Finished loading data from '" + FILE_URL + "'!");
+    }
+
+    private static void saveToFile(String text) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_URL, true))) {
+            writer.write("\n" + text);
+            writer.close();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public static void main(String[] args) {
@@ -135,20 +157,19 @@ public class Main {
                     // Make new user
                     User newUser = new User(firstName, lastName, email, newPassword1);
 
-                    // Add user to array
+                    // Add user to array and save to file
                     users.add(newUser);
+                    saveToFile(newUser.toString());
 
-                    System.out
-                            .println("User '" + firstName + " " + lastName + " (" + email + ")' successfully created!");
+                    System.out.println("User '" + firstName + " " + lastName + " (" + email + ")' successfully created!");
                     break;
                 case "c":
                     // Show list of all users in format
                     // First Last (email)
                     // For example:
                     // John Doe (johndoe@alavimail.com)
-                    for (User currentUser : users) {
-                        System.out.println(
-                                currentUser.firstName + " " + currentUser.lastName + " (" + currentUser.email + ")");
+                    for (User user : users) {
+                        user.print();
                     }
                     break;
                 default:
