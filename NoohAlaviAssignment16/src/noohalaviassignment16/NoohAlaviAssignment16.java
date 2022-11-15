@@ -254,13 +254,19 @@ public class NoohAlaviAssignment16 {
                     System.out.print(INPUT_PROMPT);
                     email = keyedInput.next().toLowerCase();
 
+                    Boolean emailAvlbl = true;
+                    
                     for (User user : users) {
                         if (user.getEmail().equals(email)) {
                             System.out.println("Email '" + email + "' is already being used by another account!");
-                            break;
+                            emailAvlbl = false;
                         }
                     }
 
+                    if (!emailAvlbl) {
+                        continue;
+                    }
+                    
                     System.out.println("Enter your password: ");
                     System.out.print(INPUT_PROMPT);
                     newPassword1 = keyedInput.next();
