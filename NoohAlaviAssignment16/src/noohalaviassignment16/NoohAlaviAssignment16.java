@@ -14,8 +14,10 @@ public class NoohAlaviAssignment16 {
     static final String USERS_FILE_URL = PARENT_FOLDER + "/users" + FILE_TYPE;
     static final String POSTS_FOLDER = PARENT_FOLDER + "/posts";
     
+    // Array list with every user; will be loaded from file
     static ArrayList<User> users = new ArrayList<>();
 
+    // User class
     private static class User {
         private final String FIRST_NAME;
         private final String LAST_NAME;
@@ -25,6 +27,7 @@ public class NoohAlaviAssignment16 {
         
         private ArrayList<String> posts;
 
+        // Constructor
         public User(String _firstName, String _lastName, String _email, String _password) {
             FIRST_NAME = _firstName;
             LAST_NAME = _lastName;
@@ -106,6 +109,7 @@ public class NoohAlaviAssignment16 {
         try (BufferedReader reader = new BufferedReader(new FileReader(USERS_FILE_URL))) {
             String currentLine;
             while ((currentLine = reader.readLine()) != null) {
+                // Read the data and convert it to a User object
                 String[] newUserData = currentLine.split(",");
                 User newUser = new User(
                     newUserData[0],
@@ -122,6 +126,7 @@ public class NoohAlaviAssignment16 {
     }
 
     private static void saveToFile(String text) {
+        // save text to users.txt file
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(USERS_FILE_URL, true))) {
             writer.write("\n" + text);
             writer.close();
@@ -130,7 +135,7 @@ public class NoohAlaviAssignment16 {
     }
 
     public static void main(String[] args) {
-
+        // Define and initialize variables
         final String INPUT_PROMPT = ">>> ";
 
         Scanner keyedInput = new Scanner(System.in);
@@ -145,6 +150,7 @@ public class NoohAlaviAssignment16 {
         String firstName;
         String lastName;
 
+        // Load users from saved files
         loadData();
 
         while (true) {
@@ -191,7 +197,7 @@ public class NoohAlaviAssignment16 {
                             break;
                         }
                     }
-                    if (!isSignedIn) {
+                    if (!isSignedIn) { //If user is not found
                         System.out.println("Email or password incorrect! Please try again or make a new account.");
                         break;
                     }
