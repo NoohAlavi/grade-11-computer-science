@@ -55,6 +55,9 @@ public class NoohAlaviAssignment16 {
         }
         
         public void loadPosts() {
+            // clear posts
+            this.posts = new ArrayList<>();
+            
             // Get file name
             String fileUrl = POSTS_FOLDER + "/" + this.EMAIL + FILE_TYPE;
             
@@ -224,6 +227,7 @@ public class NoohAlaviAssignment16 {
                                 break;
                             case "c":
                                 isSignedIn = false; //Log out
+                                currentUser = null;
                                 break;
                             default:
                                 System.out.println("Please choose a valid option!");
