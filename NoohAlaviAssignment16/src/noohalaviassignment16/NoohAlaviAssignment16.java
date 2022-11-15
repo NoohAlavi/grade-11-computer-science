@@ -158,7 +158,7 @@ public class NoohAlaviAssignment16 {
 
             System.out.print(INPUT_PROMPT);
 
-            choice = keyedInput.next();
+            choice = keyedInput.next().toLowerCase();
 
             switch (choice) {
                 case "a":
@@ -207,7 +207,7 @@ public class NoohAlaviAssignment16 {
                         System.out.println("c) Log out.");
                         
                         System.out.print(INPUT_PROMPT);
-                        choice = keyedInput.next();
+                        choice = keyedInput.next().toLowerCase();
                         
                         switch (choice) {
                             case "a":
@@ -222,6 +222,12 @@ public class NoohAlaviAssignment16 {
                                 break;
                             case "b":
                                 ArrayList<String> posts = currentUser.getPosts();
+                                
+                                if (posts.isEmpty()) {
+                                    System.out.println("This user has no posts!");
+                                    break;
+                                }
+                                
                                 for (int i = 0; i < posts.size(); i++) {
                                     System.out.println((i + 1) + ") '" + posts.get(i) + "'");
                                 }
@@ -240,7 +246,7 @@ public class NoohAlaviAssignment16 {
                     // Make new account
                     System.out.println("Enter your email: ");
                     System.out.print(INPUT_PROMPT);
-                    email = keyedInput.next();
+                    email = keyedInput.next().toLowerCase();
 
                     for (User user : users) {
                         if (user.getEmail().equals(email)) {
@@ -293,6 +299,11 @@ public class NoohAlaviAssignment16 {
                             
                             user.loadPosts();
                             ArrayList<String> posts = user.getPosts();
+                            
+                            if (posts.isEmpty()) {
+                                System.out.println("This user has no posts!");
+                                break;
+                            }
                             
                             for (int i = 0; i < posts.size(); i++) {
                                 System.out.println((i + 1) + ") '" + posts.get(i) + "'");
