@@ -174,11 +174,12 @@ public class NoohAlaviAssignment16 {
                             password = keyedInput.next();
 
                             if (user.getPassword().equals(password)) {
-                                System.out.println("You have successfully signed in.");
-                                System.out.println("Welcome, " + user.getFirstName() + "!");
-                                
                                 isSignedIn = true;
                                 currentUser = user;
+                                
+                                // Print info
+                                System.out.println("You have successfully signed in.");
+                                System.out.println("Welcome, " + user.getFirstName() + "!");
                             
                                 // Get saved user posts
                                 currentUser.loadPosts();
@@ -192,6 +193,10 @@ public class NoohAlaviAssignment16 {
                     }
                     while (true) {
                         // User is now logged in
+                        if (!isSignedIn) {
+                            break;
+                        }
+                        
                         System.out.println("\nDo you want to:");
                         System.out.println("a) Make new post.");
                         System.out.println("b) See your posts.");
@@ -212,17 +217,20 @@ public class NoohAlaviAssignment16 {
                                 currentUser.newPost(newPost);
                                 break;
                             case "b":
-                                for (String post : currentUser.getPosts()) {
-                                    System.out.println("\n" + post);
+                                ArrayList<String> posts = currentUser.getPosts();
+                                for (int i = 0; i < posts.size(); i++) {
+                                    System.out.println((i + 1) + ") '" + posts.get(i) + "'");
                                 }
                                 break;
                             case "c":
+                                isSignedIn = false; //Log out
                                 break;
                             default:
                                 System.out.println("Please choose a valid option!");
                                 break;
                         }
                     }
+                    break;
                 case "b":
                     // Make new account
                     System.out.println("Enter your email: ");
@@ -260,7 +268,6 @@ public class NoohAlaviAssignment16 {
 
                     // Make new user
                     User newUser = new User(firstName, lastName, email, newPassword1);
-                    newUser.newPost("Hello World: I just made my new account!");
                     
                     // Add user to array and save to file
                     users.add(newUser);
@@ -278,6 +285,7 @@ public class NoohAlaviAssignment16 {
                     });
                     break;
                 default:
+                    System.out.println("Please choose a valid option!");
                     break;
             }
         }
