@@ -153,7 +153,8 @@ public class NoohAlaviAssignment16 {
             System.out.println("Welcome!");
             System.out.println("a) Log in.");
             System.out.println("b) Sign up.");
-            System.out.println("c) List all users.");
+            System.out.println("c) See a user's posts.");
+            System.out.println("d) List all users.");
 
             System.out.print(INPUT_PROMPT);
 
@@ -280,6 +281,8 @@ public class NoohAlaviAssignment16 {
                     System.out.println("User '" + newUser.getPrintable() + "' successfully created!");
                     break;
                 case "c":
+                    break;
+                case "d":
                     // Show list of all users in format
                     // First Last (email)
                     // For example:
