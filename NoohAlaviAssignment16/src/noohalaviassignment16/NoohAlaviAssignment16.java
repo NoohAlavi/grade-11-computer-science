@@ -281,6 +281,28 @@ public class NoohAlaviAssignment16 {
                     System.out.println("User '" + newUser.getPrintable() + "' successfully created!");
                     break;
                 case "c":
+                    System.out.println("Enter email address of user: ");
+                    System.out.print(INPUT_PROMPT);
+                    
+                    email = keyedInput.next();
+                    Boolean userExists = false;
+                    
+                    for (User user : users) {
+                        if (user.getEmail().equals(email)) {
+                            userExists = true;
+                            
+                            user.loadPosts();
+                            ArrayList<String> posts = user.getPosts();
+                            
+                            for (int i = 0; i < posts.size(); i++) {
+                                System.out.println((i + 1) + ") '" + posts.get(i) + "'");
+                            }
+                        }
+                    }
+                    
+                    if (!userExists) {
+                        System.out.println("User '" + email + "' does not exist!");
+                    }
                     break;
                 case "d":
                     // Show list of all users in format
