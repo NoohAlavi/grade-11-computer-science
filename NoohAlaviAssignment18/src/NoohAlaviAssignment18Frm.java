@@ -11,12 +11,12 @@ import java.text.DecimalFormat;
  *
  * @author s201119359
  */
-public class NoohAlaviAssignment17Frm extends javax.swing.JFrame {
+public class NoohAlaviAssignment18Frm extends javax.swing.JFrame {
 
     /**
      * Creates new form NoohAlaviAssignment17Frm
      */
-    public NoohAlaviAssignment17Frm() {
+    public NoohAlaviAssignment18Frm() {
         initComponents();
     }
 
@@ -62,10 +62,10 @@ public class NoohAlaviAssignment17Frm extends javax.swing.JFrame {
         lblTitle.setForeground(new java.awt.Color(174, 78, 95));
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img.png"))); // NOI18N
-        lblTitle.setText("Magical Math Methods");
+        lblTitle.setText("Super String Software");
 
         lblAnswersTitle.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        lblAnswersTitle.setText("Answers");
+        lblAnswersTitle.setText("Results");
 
         txtCubeRoot.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         txtCubeRoot.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -156,7 +156,7 @@ public class NoohAlaviAssignment17Frm extends javax.swing.JFrame {
 
         btnCalculate.setBackground(new java.awt.Color(17, 178, 95));
         btnCalculate.setFont(new java.awt.Font("MS Gothic", 1, 24)); // NOI18N
-        btnCalculate.setText("CALCULATE!");
+        btnCalculate.setText("RUN...");
         btnCalculate.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnCalculate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -172,28 +172,20 @@ public class NoohAlaviAssignment17Frm extends javax.swing.JFrame {
                 .addGroup(pnlPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblTitle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(pnlPageLayout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(pnlPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnlPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(pnlPageLayout.createSequentialGroup()
-                                    .addContainerGap()
-                                    .addComponent(txtCubeRoot))
-                                .addGroup(pnlPageLayout.createSequentialGroup()
-                                    .addContainerGap()
-                                    .addComponent(txtDegrees))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPageLayout.createSequentialGroup()
-                                    .addContainerGap()
-                                    .addGroup(pnlPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(txtPower1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 665, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txtPower2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 665, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txtAbs, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 665, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(pnlPageLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(pnlPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtHyp1, javax.swing.GroupLayout.DEFAULT_SIZE, 665, Short.MAX_VALUE)
-                                    .addComponent(txtSqrt)
-                                    .addComponent(txtHyp2)
-                                    .addComponent(txtRadians)
-                                    .addComponent(txtLog))))
+                                .addComponent(txtCubeRoot)
+                                .addComponent(txtDegrees)
+                                .addComponent(txtPower1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 665, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtPower2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 665, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtAbs, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 665, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnlPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtHyp1, javax.swing.GroupLayout.DEFAULT_SIZE, 665, Short.MAX_VALUE)
+                                .addComponent(txtSqrt)
+                                .addComponent(txtHyp2)
+                                .addComponent(txtRadians)
+                                .addComponent(txtLog)))
                         .addGap(40, 40, 40)
                         .addGroup(pnlPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblCubeRootAnswer, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
@@ -355,20 +347,21 @@ public class NoohAlaviAssignment17Frm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NoohAlaviAssignment17Frm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NoohAlaviAssignment18Frm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NoohAlaviAssignment17Frm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NoohAlaviAssignment18Frm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NoohAlaviAssignment17Frm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NoohAlaviAssignment18Frm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NoohAlaviAssignment17Frm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NoohAlaviAssignment18Frm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new NoohAlaviAssignment17Frm().setVisible(true);
+                new NoohAlaviAssignment18Frm().setVisible(true);
             }
         });
     }

@@ -52,34 +52,21 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="lblTitle" alignment="1" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="txtCubeRoot" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="txtDegrees" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="txtPower1" alignment="1" min="-2" pref="665" max="-2" attributes="0"/>
-                                          <Component id="txtPower2" alignment="1" min="-2" pref="665" max="-2" attributes="0"/>
-                                          <Component id="txtAbs" alignment="1" min="-2" pref="665" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                                  <Component id="txtCubeRoot" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtDegrees" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtPower1" alignment="1" min="-2" pref="665" max="-2" attributes="0"/>
+                                  <Component id="txtPower2" alignment="1" min="-2" pref="665" max="-2" attributes="0"/>
+                                  <Component id="txtAbs" alignment="1" min="-2" pref="665" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="txtHyp1" pref="665" max="32767" attributes="0"/>
-                                      <Component id="txtSqrt" max="32767" attributes="0"/>
-                                      <Component id="txtHyp2" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="txtRadians" max="32767" attributes="0"/>
-                                      <Component id="txtLog" alignment="0" max="32767" attributes="0"/>
-                                  </Group>
+                              <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="txtHyp1" pref="665" max="32767" attributes="0"/>
+                                  <Component id="txtSqrt" max="32767" attributes="0"/>
+                                  <Component id="txtHyp2" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtRadians" max="32767" attributes="0"/>
+                                  <Component id="txtLog" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
@@ -186,7 +173,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/img.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Magical Math Methods"/>
+            <Property name="text" type="java.lang.String" value="Super String Software"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblAnswersTitle">
@@ -194,7 +181,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Dialog" size="12" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Answers"/>
+            <Property name="text" type="java.lang.String" value="Results"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtCubeRoot">
@@ -420,7 +407,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="MS Gothic" size="24" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="CALCULATE!"/>
+            <Property name="text" type="java.lang.String" value="RUN..."/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
                 <BevelBorder/>
