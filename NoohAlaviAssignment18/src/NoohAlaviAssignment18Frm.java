@@ -14,7 +14,7 @@ import java.text.DecimalFormat;
 public class NoohAlaviAssignment18Frm extends javax.swing.JFrame {
 
     /**
-     * Creates new form NoohAlaviAssignment17Frm
+     * Creates new form NoohAlaviAssignment18Frm
      */
     public NoohAlaviAssignment18Frm() {
         initComponents();
@@ -32,25 +32,23 @@ public class NoohAlaviAssignment18Frm extends javax.swing.JFrame {
         pnlPage = new javax.swing.JPanel();
         lblTitle = new javax.swing.JLabel();
         lblAnswersTitle = new javax.swing.JLabel();
-        txtCubeRoot = new javax.swing.JTextField();
-        lblCubeRootAnswer = new javax.swing.JLabel();
-        txtDegrees = new javax.swing.JTextField();
-        lblDegreesAnswer = new javax.swing.JLabel();
-        txtPower1 = new javax.swing.JTextField();
-        txtPower2 = new javax.swing.JTextField();
-        lblPowerAnswer = new javax.swing.JLabel();
-        txtAbs = new javax.swing.JTextField();
-        lblAbsAnswer = new javax.swing.JLabel();
-        txtHyp1 = new javax.swing.JTextField();
-        txtHyp2 = new javax.swing.JTextField();
-        lblHypAnswer = new javax.swing.JLabel();
-        txtSqrt = new javax.swing.JTextField();
-        lblSqrtAnswer = new javax.swing.JLabel();
-        txtRadians = new javax.swing.JTextField();
-        lblRadiansAnswer = new javax.swing.JLabel();
-        txtLog = new javax.swing.JTextField();
-        lblLogAnswer = new javax.swing.JLabel();
-        btnCalculate = new javax.swing.JButton();
+        txtNumOfChars = new javax.swing.JTextField();
+        lblNumOfChars = new javax.swing.JLabel();
+        txtToUppercase = new javax.swing.JTextField();
+        lblToUppercase = new javax.swing.JLabel();
+        txtFourth = new javax.swing.JTextField();
+        lblFourth = new javax.swing.JLabel();
+        txtIdentical1 = new javax.swing.JTextField();
+        txtIdentical2 = new javax.swing.JTextField();
+        lblIdentical = new javax.swing.JLabel();
+        txtCheckString = new javax.swing.JTextField();
+        txtCheckLetter = new javax.swing.JTextField();
+        lblStringLetter = new javax.swing.JLabel();
+        txtFourToSix = new javax.swing.JTextField();
+        lblFourToSix = new javax.swing.JLabel();
+        txtReplaceWithX = new javax.swing.JTextField();
+        lblReplaceWithX = new javax.swing.JLabel();
+        btnRun = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,7 +56,7 @@ public class NoohAlaviAssignment18Frm extends javax.swing.JFrame {
         pnlPage.setBorder(new javax.swing.border.MatteBorder(null));
 
         lblTitle.setBackground(new java.awt.Color(174, 78, 95));
-        lblTitle.setFont(new java.awt.Font("Viner Hand ITC", 1, 36)); // NOI18N
+        lblTitle.setFont(new java.awt.Font("Andalus", 1, 48)); // NOI18N
         lblTitle.setForeground(new java.awt.Color(174, 78, 95));
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img.png"))); // NOI18N
@@ -67,100 +65,77 @@ public class NoohAlaviAssignment18Frm extends javax.swing.JFrame {
         lblAnswersTitle.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         lblAnswersTitle.setText("Results");
 
-        txtCubeRoot.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        txtCubeRoot.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtCubeRoot.setText("0");
-        txtCubeRoot.setBorder(javax.swing.BorderFactory.createTitledBorder("Enter an integer. The program will display the CUBE ROOT of the integer."));
+        txtNumOfChars.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNumOfChars.setText("Example Text");
+        txtNumOfChars.setBorder(javax.swing.BorderFactory.createTitledBorder("Enter a String. The program will output the number of characters in the String."));
 
-        lblCubeRootAnswer.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
-        lblCubeRootAnswer.setText("0");
-        lblCubeRootAnswer.setToolTipText("");
+        lblNumOfChars.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        lblNumOfChars.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblNumOfChars.setBorder(new javax.swing.border.MatteBorder(null));
 
-        txtDegrees.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        txtDegrees.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtDegrees.setText("0");
-        txtDegrees.setBorder(javax.swing.BorderFactory.createTitledBorder("Enter an angle in radians. The program will display the angle in DEGREES."));
+        txtToUppercase.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtToUppercase.setText("example text");
+        txtToUppercase.setBorder(javax.swing.BorderFactory.createTitledBorder("Enter a String in lowercase letters. The program will output the String in all uppercase letters."));
 
-        lblDegreesAnswer.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
-        lblDegreesAnswer.setText("0");
-        lblDegreesAnswer.setToolTipText("");
+        lblToUppercase.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        lblToUppercase.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblToUppercase.setBorder(new javax.swing.border.MatteBorder(null));
 
-        txtPower1.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        txtPower1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtPower1.setText("0");
-        txtPower1.setBorder(javax.swing.BorderFactory.createTitledBorder("Enter two numbers. The program will display the first number to the power of the second number."));
+        txtFourth.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtFourth.setText("Example Text");
+        txtFourth.setBorder(javax.swing.BorderFactory.createTitledBorder("Enter a String. The program will output the character at the fourth spot."));
 
-        txtPower2.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        txtPower2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtPower2.setText("0");
-        txtPower2.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        lblFourth.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        lblFourth.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblFourth.setBorder(new javax.swing.border.MatteBorder(null));
 
-        lblPowerAnswer.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
-        lblPowerAnswer.setText("0");
-        lblPowerAnswer.setToolTipText("");
+        txtIdentical1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtIdentical1.setText("Example Text");
+        txtIdentical1.setBorder(javax.swing.BorderFactory.createTitledBorder("Enter two Strings. The program will output whether or not they are identical."));
 
-        txtAbs.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        txtAbs.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtAbs.setText("0");
-        txtAbs.setBorder(javax.swing.BorderFactory.createTitledBorder("Enter a number. The program will display the ABSOLUTE VALUE of the number."));
+        txtIdentical2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtIdentical2.setText("Different Example Text");
+        txtIdentical2.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
-        lblAbsAnswer.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
-        lblAbsAnswer.setText("0");
-        lblAbsAnswer.setToolTipText("");
+        lblIdentical.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        lblIdentical.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblIdentical.setBorder(new javax.swing.border.MatteBorder(null));
 
-        txtHyp1.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        txtHyp1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtHyp1.setText("0");
-        txtHyp1.setBorder(javax.swing.BorderFactory.createTitledBorder("Enter the length of two sides of a right angle triangle. The program will display the HYPOTENUSE of the triangle."));
-        txtHyp1.addActionListener(new java.awt.event.ActionListener() {
+        txtCheckString.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtCheckString.setText("Example Text");
+        txtCheckString.setBorder(javax.swing.BorderFactory.createTitledBorder("Enter a String and a letter. The program will output whether or not the letter is in the String."));
+
+        txtCheckLetter.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtCheckLetter.setText("a");
+        txtCheckLetter.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+
+        lblStringLetter.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        lblStringLetter.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblStringLetter.setBorder(new javax.swing.border.MatteBorder(null));
+
+        txtFourToSix.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtFourToSix.setText("Example Text");
+        txtFourToSix.setBorder(javax.swing.BorderFactory.createTitledBorder("Enter a String that is at least 8 characters long. The program will output characters 4-6."));
+
+        lblFourToSix.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        lblFourToSix.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblFourToSix.setBorder(new javax.swing.border.MatteBorder(null));
+
+        txtReplaceWithX.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtReplaceWithX.setText("Example Text");
+        txtReplaceWithX.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Enter a String that contains at least one \"a.\" The program will replace all occurences of the letter \"a\" with \"X.\"", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 10))); // NOI18N
+
+        lblReplaceWithX.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        lblReplaceWithX.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblReplaceWithX.setBorder(new javax.swing.border.MatteBorder(null));
+
+        btnRun.setBackground(new java.awt.Color(17, 178, 95));
+        btnRun.setFont(new java.awt.Font("MS Gothic", 1, 24)); // NOI18N
+        btnRun.setText("RUN...");
+        btnRun.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnRun.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtHyp1ActionPerformed(evt);
-            }
-        });
-
-        txtHyp2.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        txtHyp2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtHyp2.setText("0");
-        txtHyp2.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-
-        lblHypAnswer.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
-        lblHypAnswer.setText("0");
-        lblHypAnswer.setToolTipText("");
-
-        txtSqrt.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        txtSqrt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtSqrt.setText("0");
-        txtSqrt.setBorder(javax.swing.BorderFactory.createTitledBorder("Enter a positive integer. The program will display the SQUARE ROOT of the integer."));
-
-        lblSqrtAnswer.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
-        lblSqrtAnswer.setText("0");
-        lblSqrtAnswer.setToolTipText("");
-
-        txtRadians.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        txtRadians.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtRadians.setText("0");
-        txtRadians.setBorder(javax.swing.BorderFactory.createTitledBorder("Enter an angle in degrees. The program will display the angle in RADIANS."));
-
-        lblRadiansAnswer.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
-        lblRadiansAnswer.setText("0");
-        lblRadiansAnswer.setToolTipText("");
-
-        txtLog.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        txtLog.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtLog.setText("0");
-        txtLog.setBorder(javax.swing.BorderFactory.createTitledBorder("Enter a positive number. The program will display the NATURAL LOGARITHM of the number."));
-
-        lblLogAnswer.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
-        lblLogAnswer.setText("0");
-        lblLogAnswer.setToolTipText("");
-
-        btnCalculate.setBackground(new java.awt.Color(17, 178, 95));
-        btnCalculate.setFont(new java.awt.Font("MS Gothic", 1, 24)); // NOI18N
-        btnCalculate.setText("RUN...");
-        btnCalculate.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnCalculate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCalculateActionPerformed(evt);
+                btnRunActionPerformed(evt);
             }
         });
 
@@ -169,43 +144,41 @@ public class NoohAlaviAssignment18Frm extends javax.swing.JFrame {
         pnlPageLayout.setHorizontalGroup(
             pnlPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlPageLayout.createSequentialGroup()
-                .addGroup(pnlPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblTitle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(pnlPageLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(pnlPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtCubeRoot)
-                                .addComponent(txtDegrees)
-                                .addComponent(txtPower1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 665, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtPower2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 665, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtAbs, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 665, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(pnlPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtHyp1, javax.swing.GroupLayout.DEFAULT_SIZE, 665, Short.MAX_VALUE)
-                                .addComponent(txtSqrt)
-                                .addComponent(txtHyp2)
-                                .addComponent(txtRadians)
-                                .addComponent(txtLog)))
-                        .addGap(40, 40, 40)
-                        .addGroup(pnlPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblCubeRootAnswer, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
-                            .addGroup(pnlPageLayout.createSequentialGroup()
-                                .addGroup(pnlPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblLogAnswer)
-                                    .addComponent(lblDegreesAnswer)
-                                    .addComponent(lblPowerAnswer)
-                                    .addComponent(lblAbsAnswer)
-                                    .addComponent(lblHypAnswer)
-                                    .addComponent(lblSqrtAnswer)
-                                    .addComponent(lblRadiansAnswer))
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(pnlPageLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addGroup(pnlPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtReplaceWithX, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtFourToSix, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCheckLetter, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCheckString, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtIdentical2, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtIdentical1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtFourth, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNumOfChars, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtToUppercase, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(pnlPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlPageLayout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addGroup(pnlPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lblFourToSix, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
+                            .addComponent(lblReplaceWithX, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(pnlPageLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(pnlPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblStringLetter, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(lblFourth, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+                                .addComponent(lblToUppercase, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblNumOfChars, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblIdentical, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addContainerGap(55, Short.MAX_VALUE))
+            .addComponent(btnRun, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPageLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(pnlPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCalculate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 701, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblAnswersTitle, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(34, 34, 34))
+                .addComponent(lblAnswersTitle)
+                .addGap(170, 170, 170))
         );
         pnlPageLayout.setVerticalGroup(
             pnlPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -215,44 +188,46 @@ public class NoohAlaviAssignment18Frm extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(lblAnswersTitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtCubeRoot, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblCubeRootAnswer))
+                .addGroup(pnlPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtNumOfChars, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblNumOfChars, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 21, Short.MAX_VALUE)
+                .addGroup(pnlPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtToUppercase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblToUppercase, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(pnlPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtDegrees, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblDegreesAnswer))
+                .addGroup(pnlPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtFourth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblFourth, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(pnlPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlPageLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(txtIdentical1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                        .addComponent(txtIdentical2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlPageLayout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addComponent(lblIdentical, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addGroup(pnlPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtPower1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblPowerAnswer))
+                .addGroup(pnlPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlPageLayout.createSequentialGroup()
+                        .addComponent(txtCheckString, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtCheckLetter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPageLayout.createSequentialGroup()
+                        .addComponent(lblStringLetter, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)))
+                .addGroup(pnlPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtFourToSix, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblFourToSix, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtPower2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(pnlPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtAbs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblAbsAnswer))
-                .addGap(18, 18, 18)
-                .addGroup(pnlPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtHyp1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblHypAnswer))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtHyp2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(pnlPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtSqrt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblSqrtAnswer))
-                .addGap(18, 18, 18)
-                .addGroup(pnlPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtRadians, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblRadiansAnswer))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnlPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtLog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblLogAnswer))
-                .addGap(18, 18, 18)
-                .addComponent(btnCalculate)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(pnlPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtReplaceWithX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblReplaceWithX, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addComponent(btnRun)
+                .addContainerGap(61, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -269,66 +244,53 @@ public class NoohAlaviAssignment18Frm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCalculateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateActionPerformed
-        // Define variables
-        DecimalFormat df = new DecimalFormat("0.00");
-        double num1, num2, answer;
-
-        // Cube root
-        num1 = Integer.parseInt(txtCubeRoot.getText());
-        answer = Math.cbrt(num1);
+    private void btnRunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRunActionPerformed
+        // Length of String
+        lblNumOfChars.setText(
+                Integer.toString(
+                        txtNumOfChars.getText().length()
+                )
+        );
         
-        lblCubeRootAnswer.setText(df.format(answer));
+        // Convert to uppercase letters
+        lblToUppercase.setText(txtToUppercase.getText().toUpperCase());
         
-        // Radians to degrees
-        num1 = Double.parseDouble(txtDegrees.getText());
-        answer = Math.toDegrees(num1);
+        // Character at 4th spot
+        lblFourth.setText(
+                Character.toString(
+                    txtFourth.getText().charAt(3) // The character at the 4th spot would have index 3
+                )
+        );
         
-        lblDegreesAnswer.setText(df.format(answer));
+        // Are two strings identical
+        if (txtIdentical1.getText().equals(txtIdentical2.getText())) {
+            lblIdentical.setText("The two Strings are identical.");
+        } else {
+            lblIdentical.setText("The two Strings are NOT identical.");
+        }
         
-        // First number to the power of the second number
-        num1 = Double.parseDouble(txtPower1.getText());
-        num2 = Double.parseDouble(txtPower2.getText());
-        answer = Math.pow(num1, num2);
+        // Check if letter is in String
+        String checkLetter = Character.toString(
+                txtCheckLetter.getText().charAt(0) // Only get first letter, in case of sequence
+        ).toLowerCase(); 
         
-        lblPowerAnswer.setText(df.format(answer));
+        if (txtCheckString.getText().toLowerCase().contains(checkLetter)) {
+            lblStringLetter.setText("The String contains '" + checkLetter + "'.");
+        } else {
+            lblStringLetter.setText("The String does not contain '" + checkLetter + "'.");
+        }
+            
+        // Find char 4 - 6 in String
+        lblFourToSix.setText(
+                "'" + txtFourToSix.getText().substring(3, 6) + "'"
+        );
         
-        // Absolute value
-        num1 = Double.parseDouble(txtAbs.getText());
-        answer = Math.abs(num1);
+        // Replace 'a' with 'X'
+        String txt = txtReplaceWithX.getText().replace("a", "x");
+        txt = txt.replace("A", "X");
         
-        lblAbsAnswer.setText(df.format(answer));
-        
-        // Hypotenuse triangle
-        num1 = Double.parseDouble(txtHyp1.getText());
-        num2 = Double.parseDouble(txtHyp2.getText());
-        
-        answer = Math.sqrt(Math.pow(num1, 2) + Math.pow(num2, 2));
-        
-        lblHypAnswer.setText(df.format(answer));
-        
-        // Square root
-        num1 = Integer.parseInt(txtSqrt.getText());
-        answer = Math.sqrt(num1);
-        
-        lblSqrtAnswer.setText(df.format(answer));
-        
-        // Degrees to radians
-        num1 = Double.parseDouble(txtRadians.getText());
-        answer = Math.toRadians(num1);
-        
-        lblRadiansAnswer.setText(df.format(answer));
-        
-        // Natural logarithm
-        num1 = Double.parseDouble(txtLog.getText());
-        answer = Math.log(num1);
-        
-        lblLogAnswer.setText(df.format(answer));
-    }//GEN-LAST:event_btnCalculateActionPerformed
-
-    private void txtHyp1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHyp1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtHyp1ActionPerformed
+        lblReplaceWithX.setText(txt);
+    }//GEN-LAST:event_btnRunActionPerformed
 
     /**
      * @param args the command line arguments
@@ -357,7 +319,7 @@ public class NoohAlaviAssignment18Frm extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -367,27 +329,25 @@ public class NoohAlaviAssignment18Frm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCalculate;
-    private javax.swing.JLabel lblAbsAnswer;
+    private javax.swing.JButton btnRun;
     private javax.swing.JLabel lblAnswersTitle;
-    private javax.swing.JLabel lblCubeRootAnswer;
-    private javax.swing.JLabel lblDegreesAnswer;
-    private javax.swing.JLabel lblHypAnswer;
-    private javax.swing.JLabel lblLogAnswer;
-    private javax.swing.JLabel lblPowerAnswer;
-    private javax.swing.JLabel lblRadiansAnswer;
-    private javax.swing.JLabel lblSqrtAnswer;
+    private javax.swing.JLabel lblFourToSix;
+    private javax.swing.JLabel lblFourth;
+    private javax.swing.JLabel lblIdentical;
+    private javax.swing.JLabel lblNumOfChars;
+    private javax.swing.JLabel lblReplaceWithX;
+    private javax.swing.JLabel lblStringLetter;
     private javax.swing.JLabel lblTitle;
+    private javax.swing.JLabel lblToUppercase;
     private javax.swing.JPanel pnlPage;
-    private javax.swing.JTextField txtAbs;
-    private javax.swing.JTextField txtCubeRoot;
-    private javax.swing.JTextField txtDegrees;
-    private javax.swing.JTextField txtHyp1;
-    private javax.swing.JTextField txtHyp2;
-    private javax.swing.JTextField txtLog;
-    private javax.swing.JTextField txtPower1;
-    private javax.swing.JTextField txtPower2;
-    private javax.swing.JTextField txtRadians;
-    private javax.swing.JTextField txtSqrt;
+    private javax.swing.JTextField txtCheckLetter;
+    private javax.swing.JTextField txtCheckString;
+    private javax.swing.JTextField txtFourToSix;
+    private javax.swing.JTextField txtFourth;
+    private javax.swing.JTextField txtIdentical1;
+    private javax.swing.JTextField txtIdentical2;
+    private javax.swing.JTextField txtNumOfChars;
+    private javax.swing.JTextField txtReplaceWithX;
+    private javax.swing.JTextField txtToUppercase;
     // End of variables declaration//GEN-END:variables
 }
