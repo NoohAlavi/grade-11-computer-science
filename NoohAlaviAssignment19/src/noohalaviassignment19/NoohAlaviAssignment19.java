@@ -13,7 +13,7 @@ import java.text.DecimalFormat;
  * @author nooha
  */
 public class NoohAlaviAssignment19 {
-    private static final DecimalFormat DF = new DecimalFormat("#.##");
+    private static final DecimalFormat DF = new DecimalFormat("#.##"); // Do not display more than 2 decimal places.
     
     private static String getRectPrismVolume() {
         Scanner keyedInput = new Scanner(System.in);
@@ -69,7 +69,9 @@ public class NoohAlaviAssignment19 {
         System.out.print("Enter the second point's y-coordinate: ");
         double y2 = keyedInput.nextDouble();
                     
-        return DF.format(y2 - y1) + " / " + DF.format(x2 - x1);
+        return DF.format(
+            (y2 - y1) / (x2 - x1)
+        );
     }
     
     private static String getFactorial(Scanner keyedInput) {
@@ -91,6 +93,7 @@ public class NoohAlaviAssignment19 {
     public static void main(String[] args) {
         Scanner keyedInput = new Scanner(System.in);
         while (true) {
+            // Display menu to user
             System.out.println("-------------------------------------------------");
             System.out.println("Select a mathematical operation:");
             System.out.println("a) Calculate the volume of a rectangular prism.");
@@ -102,7 +105,8 @@ public class NoohAlaviAssignment19 {
             System.out.println("\n** TYPE ANYTHING ELSE TO EXIT THE PROGRAM **");
             System.out.print("\n$ ");
             
-            switch(keyedInput.next().toLowerCase()) {
+            // Get user's calculation
+            switch(keyedInput.next().toLowerCase()) { // ignore case
                 case "a":
                     System.out.println("\nYour rectangular prism has a volume of " + getRectPrismVolume() + " cubed units.");
                     break;
@@ -121,7 +125,7 @@ public class NoohAlaviAssignment19 {
                 case "f":
                     System.out.println("\nYour number's factorial is " + getFactorial(keyedInput) + ".");
                     break;
-                default:
+                default: // anything that is not a-f
                     System.out.println("\nThanks for using the program!");
                     return; // Exit the loop
             }
