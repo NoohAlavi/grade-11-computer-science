@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package noohalaviassignment19;
+package noohalaviassignment20;
 
 import java.util.Scanner;
 import java.text.DecimalFormat;
@@ -12,7 +12,7 @@ import java.text.DecimalFormat;
  *
  * @author nooha
  */
-public class NoohAlaviAssignment19 {
+public class NoohAlaviAssignment20 {
     private static final DecimalFormat DF = new DecimalFormat("#.##"); // Do not display more than 2 decimal places.
     
     /*
@@ -45,9 +45,9 @@ public class NoohAlaviAssignment19 {
     
         Parameters: Scanner
     
-        Returns: void
+        Returns: String
     */
-    private static void getRectPrismVolume(Scanner keyedInput) {
+    private static String getRectPrismVolume(Scanner keyedInput) {
         System.out.print("\nEnter the rectangular prism's width: ");
         double width = keyedInput.nextDouble();
         System.out.print("Enter the rectangular prism's length: ");
@@ -55,7 +55,7 @@ public class NoohAlaviAssignment19 {
         System.out.print("Enter the rectangular prism's height: ");
         double height = keyedInput.nextDouble();
                     
-        System.out.println("\nThe volume of your rectangular prism is " + DF.format(width * length * height) + " cubed units.");
+        return DF.format(width * length * height);
     }
     
     /*
@@ -66,9 +66,9 @@ public class NoohAlaviAssignment19 {
     
         Parameters: Scanner
     
-        Returns: void
+        Returns: String
     */
-    private static void getRectPrismSurfaceArea(Scanner keyedInput) {
+    private static String getRectPrismSurfaceArea(Scanner keyedInput) {
         System.out.print("\nEnter the rectangular prism's width: ");
         double width = keyedInput.nextDouble();
         System.out.print("Enter the rectangular prism's length: ");
@@ -76,7 +76,7 @@ public class NoohAlaviAssignment19 {
         System.out.print("Enter the rectangular prism's height: ");
         double height = keyedInput.nextDouble();
         
-        System.out.println("\nThe surface area of your rectangular prism is " + DF.format(2 * ((width * length) + (height * length) + (height * width))) + " units squared.");
+        return DF.format(2 * ((width * length) + (height * length) + (height * width)));
     }
     
     /*
@@ -87,15 +87,13 @@ public class NoohAlaviAssignment19 {
     
         Parameters: Scanner
     
-        Returns: void
+        Returns: String
     */
-    private static void getSphereVolume(Scanner keyedInput) {
+    private static String getSphereVolume(Scanner keyedInput) {
         System.out.print("\nEnter the spheres's radius: ");
         double radius = keyedInput.nextDouble();
                     
-        System.out.println("\nThe volume of your sphere is " + DF.format(
-                (4 * Math.PI * Math.pow(radius, 3)) / 3
-        ) + " cubed units.");
+        return DF.format((4 * Math.PI * Math.pow(radius, 3)) / 3);
     }
     
     /*
@@ -106,15 +104,13 @@ public class NoohAlaviAssignment19 {
     
         Parameters: Scanner
     
-        Returns: void
+        Returns: String
     */
-    private static void getSphereSurfaceArea(Scanner keyedInput) {
+    private static String getSphereSurfaceArea(Scanner keyedInput) {
         System.out.print("\nEnter the spheres's surface area: ");
         double radius = keyedInput.nextDouble();
                     
-        System.out.println("\nThe surface area of your sphere is " + DF.format(
-                4 * Math.PI * Math.pow(radius, 2)
-        ) + " squared units");
+        return DF.format(4 * Math.PI * Math.pow(radius, 2));
     }
     
     /*
@@ -125,9 +121,9 @@ public class NoohAlaviAssignment19 {
     
         Parameters: Scanner
     
-        Returns: void
+        Returns: String
     */
-    private static void getSlope(Scanner keyedInput) {
+    private static String getSlope(Scanner keyedInput) {
         System.out.print("\nEnter the first point's x-coordinate: ");
         double x1 = keyedInput.nextDouble();
         System.out.print("Enter the first point's y-coordinate: ");
@@ -137,9 +133,9 @@ public class NoohAlaviAssignment19 {
         System.out.print("Enter the second point's y-coordinate: ");
         double y2 = keyedInput.nextDouble();
                     
-        System.out.println("\nYour line has a slope of " + DF.format(
+        return DF.format(
             (y2 - y1) / (x2 - x1)
-        ) + ".");
+        );
     }
     
     public static void main(String[] args) {
@@ -151,19 +147,19 @@ public class NoohAlaviAssignment19 {
             // Get user's calculation
             switch(keyedInput.next().toLowerCase()) { // Ignore case
                 case "a":
-                    getRectPrismVolume(keyedInput);
+                    System.out.println("\nThe volume of your rectangular prism is " + getRectPrismVolume(keyedInput) + " cubed units.");
                     break;
                 case "b":
-                    getRectPrismSurfaceArea(keyedInput);
+                    System.out.println("\nThe surface area of your rectangular prism is " + getRectPrismSurfaceArea(keyedInput) + " squared units.");
                     break;
                 case "c":
-                    getSphereVolume(keyedInput);
+                    System.out.println("\nThe volume of your sphere is " + getSphereVolume(keyedInput) + " cubed units.");
                     break;
                 case "d":
-                    getSphereSurfaceArea(keyedInput);
+                    System.out.println("\nThe surface area of your sphere is " + getSphereSurfaceArea(keyedInput) + " squared units.");
                     break;
                 case "e":
-                    getSlope(keyedInput);
+                    System.out.println("\nThe slope of your line is " + getSlope(keyedInput) + ".");
                     break;
                 default: // Anything that is not a - e
                     System.out.println("\nThanks for using the program!");
