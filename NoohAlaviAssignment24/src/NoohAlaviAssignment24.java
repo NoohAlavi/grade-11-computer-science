@@ -43,10 +43,16 @@ public class NoohAlaviAssignment24 extends javax.swing.JFrame {
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("--- NUMBERS ---");
 
+        txtFactorial.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtFactorial.setText("0");
         txtFactorial.setBorder(javax.swing.BorderFactory.createTitledBorder("Enter a number and click the button to find the factorial"));
 
+        txtPrime.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtPrime.setText("0");
         txtPrime.setBorder(javax.swing.BorderFactory.createTitledBorder("Enter a number and click the button to determine if it is prime"));
 
+        txtFibonacci.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtFibonacci.setText("0");
         txtFibonacci.setBorder(javax.swing.BorderFactory.createTitledBorder("Enter a number and click the button to see the corresponding Fibonacci"));
 
         btnFactorial.setText("Find Factorial");
@@ -64,6 +70,11 @@ public class NoohAlaviAssignment24 extends javax.swing.JFrame {
         });
 
         btnFibonacci.setText("Find Fibonacci");
+        btnFibonacci.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFibonacciActionPerformed(evt);
+            }
+        });
 
         lblFactorial.setText(" ");
 
@@ -124,27 +135,89 @@ public class NoohAlaviAssignment24 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPrimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrimeActionPerformed
-        checkifPrime(Integer.parseInt(txtPrime.getText()));
+        checkIfPrime();
     }//GEN-LAST:event_btnPrimeActionPerformed
 
     private void btnFactorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFactorialActionPerformed
-        System.out.println("hi");
+        doFactorial();
     }//GEN-LAST:event_btnFactorialActionPerformed
 
-    void checkifPrime(int num) {
-        Boolean isPrime = true;
+    private void btnFibonacciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFibonacciActionPerformed
+        doFibonacci();
+    }//GEN-LAST:event_btnFibonacciActionPerformed
+
+    void doFactorial() {
+        // Data validation
+        int num;
         
-        for (int i = 2; i < num/2; i++) {
+        try {
+            num = Integer.parseInt(txtFactorial.getText());
+        } catch (NumberFormatException e) {
+            System.out.println("[ERROR] Please enter a valid number!");
+            return;
+        }
+        
+        // Perform factorial calculations
+        for (int i = num-1; i >= 1; i--) {
+            System.out.println(num + " x " + i + " = " + (num * i));
+            num *= i;
+        }
+        
+        // Output
+        lblFactorial.setText(Integer.toString(num));
+    }
+    
+    void checkIfPrime() {
+        // Data validation
+        int num;
+        
+        try {
+            num = Integer.parseInt(txtPrime.getText());
+        } catch (NumberFormatException e) {
+            System.out.println("[ERROR] Please enter a valid number!");
+            return;
+        }
+        
+        // Check if number is prime
+        Boolean isPrime = true;
+        for (int i = 2; i <= num/2; i++) {
             if (num % i == 0) {
                 isPrime = false;
             }
         }
         
+        // Output
         if (isPrime) {
             lblPrime.setText("Yes");
         } else {
             lblPrime.setText("No");
         }
+    }
+    
+    void doFibonacci() {
+        // Data validation
+        int num;
+        
+        try {
+            num = Integer.parseInt(txtFibonacci.getText());
+        } catch (NumberFormatException e) {
+            System.out.println("[ERROR] Please enter a valid number!");
+            return;
+        }
+        
+        // Calculate fibonacci; xn = (xn-1) + (xn-2)
+        int n = 1;
+        int lastN = 0;
+        
+        for (int i = 1; i <= num; i++) {
+            int newN = n + lastN;
+            lastN = n;
+            n = newN;
+            
+            System.out.println(i + ". " + newN);
+        }
+        // Output
+        lblFibonacci.setText(Integer.toString(n));
     }
     
     /**
