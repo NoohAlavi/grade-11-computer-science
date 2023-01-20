@@ -135,14 +135,17 @@ public class NoohAlaviAssignment24 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPrimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrimeActionPerformed
+        lblPrime.setText("");
         checkIfPrime();
     }//GEN-LAST:event_btnPrimeActionPerformed
 
     private void btnFactorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFactorialActionPerformed
+        lblFactorial.setText("");
         doFactorial();
     }//GEN-LAST:event_btnFactorialActionPerformed
 
     private void btnFibonacciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFibonacciActionPerformed
+        lblFibonacci.setText("");
         doFibonacci();
     }//GEN-LAST:event_btnFibonacciActionPerformed
 
@@ -152,6 +155,11 @@ public class NoohAlaviAssignment24 extends javax.swing.JFrame {
         
         try {
             num = Integer.parseInt(txtFactorial.getText());
+            
+            // Make sure it is not a negative number
+            if (num <= 0) {
+                return;
+            }
         } catch (NumberFormatException e) {
             System.out.println("[ERROR] Please enter a valid number!");
             return;
@@ -206,8 +214,8 @@ public class NoohAlaviAssignment24 extends javax.swing.JFrame {
         }
         
         // Calculate fibonacci; xn = (xn-1) + (xn-2)
-        int n = 1;
-        int lastN = 0;
+        int n = 0;
+        int lastN = 1;
         
         for (int i = 1; i <= num; i++) {
             int newN = n + lastN;
