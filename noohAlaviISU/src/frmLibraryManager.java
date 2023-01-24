@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
+import java.io.IOException;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -17,12 +18,15 @@ import java.io.FileWriter;
  */
 
 public class frmLibraryManager extends javax.swing.JFrame {
-
+    final String USERS_DB_SAVE_FILE = "src/usersDB.csv";
+    ArrayList<User> users = new ArrayList<>();
+    
     /**
      * Creates new form frmLibraryManager
      */
     public frmLibraryManager() {
         initComponents();
+        loadData();
     }
 
     /**
@@ -288,14 +292,29 @@ public class frmLibraryManager extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private class User {        
-        String[] borrowedBooks = {};
+        ArrayList<String> borrowedBooks = new ArrayList<>();
+        
+        private String saveFilePath;
+        
+        private String email;
+        private String fullName;
+        private String password;
+        
+        public User(String name, String email, String password) {
+            this.email = email;
+            this.fullName = name;
+            this.password = password;
+            
+            System.out.println("Creation of new user " + name + "(" + email + ") successful.");
+            this.saveFilePath = "src/Users/" + email + ".txt";
+        }
         
         void loadData() {
             
         }
         
-        public User(String name, String email, String password) {
-            System.out.println("Creation of new user " + name + "(" + email + ") successful.");
+        void saveData() {
+            
         }
     }
     
@@ -352,6 +371,28 @@ public class frmLibraryManager extends javax.swing.JFrame {
         changePage("signup", "menu");
     }//GEN-LAST:event_btnBackSignUpActionPerformed
 
+    void loadData() {
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(USERS_DB_SAVE_FILE));
+            String line;
+            
+            while ((line = reader.readLine()) != null) {
+                String[] userData = line.split(",");
+                users.add(new User(
+                        userData[1],
+                        userData[0],
+                        userData[2]
+                ));
+            }
+            
+            System.out.println(users);
+            
+            reader.close();
+        } catch (Exception e) {
+            
+        }
+    }
+    
     void changePage(String currentPage, String targetPage) {
         switch (currentPage.toLowerCase()) {
             case "menu":
@@ -399,10 +440,38 @@ public class frmLibraryManager extends javax.swing.JFrame {
     }
     
     void createAccount(String fullName, String email, String password) {
-        // TODO check if email exists in db
+        // check if email exists in db
+        for (User user : users) {
+            if (email.equals(user.email)) {
+                System.out.println("Please use a unique email!");
+                return;
+            }
+        }
+        
         User newUser = new User(fullName, email, password);
-        System.out.println(newUser);
-        // TODO save account to db
+        
+        // save account to db
+        try {
+            String file = "";
+            
+            BufferedReader reader = new BufferedReader(new FileReader(USERS_DB_SAVE_FILE));
+            String line;
+            
+            while((line = reader.readLine()) != null) {
+                file += line + "\n";
+            }
+            file += newUser.email + "," + newUser.fullName + "," + newUser.password;
+            
+            BufferedWriter writer = new BufferedWriter(new FileWriter(USERS_DB_SAVE_FILE));
+            writer.write(file);
+            
+            reader.close();
+            writer.close();
+            
+            System.out.println("Account saved successfully!");
+        } catch (IOException e) {
+            System.out.println("[ERROR] " + e);
+        }
     }
     
     void signInAccount() {
