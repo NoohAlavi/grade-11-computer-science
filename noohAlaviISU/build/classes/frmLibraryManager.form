@@ -86,7 +86,7 @@
                       <Component id="btnSignUp" max="32767" attributes="0"/>
                       <Component id="btnLogin" alignment="1" max="32767" attributes="0"/>
                       <Component id="btnExit" alignment="1" max="32767" attributes="0"/>
-                      <Component id="lblInfo" alignment="1" pref="788" max="32767" attributes="0"/>
+                      <Component id="lblInfo" alignment="1" max="32767" attributes="0"/>
                       <Component id="lblTitle" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -159,7 +159,7 @@
               <Font name="Andalus" size="14" style="0"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="4"/>
-            <Property name="text" type="java.lang.String" value="Made by Nooh Alavi (s201119359@ddsbstudent.ca, noohalavidev@gmail.com), 2023. Version 1.0.0. Last updated 22/01/2023."/>
+            <Property name="text" type="java.lang.String" value="Made by Nooh Alavi (s201119359@ddsbstudent.ca, noohalavidev@gmail.com), 2023. Version 1.0.0. Last updated 24/01/2023."/>
           </Properties>
         </Component>
       </SubComponents>
@@ -172,15 +172,104 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="788" max="32767" attributes="0"/>
+              <Component id="lblLoginTitle1" alignment="1" max="32767" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jButton1" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="btnBackLogIn" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="692" max="32767" attributes="0"/>
+                      </Group>
+                      <Component id="txtEmailSignUp1" alignment="0" max="32767" attributes="0"/>
+                      <Component id="pwdPassword1SignUp1" alignment="0" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="588" max="32767" attributes="0"/>
+              <Group type="102" alignment="1" attributes="0">
+                  <Component id="lblLoginTitle1" min="-2" pref="100" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="txtEmailSignUp1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="pwdPassword1SignUp1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="285" max="32767" attributes="0"/>
+                  <Component id="btnBackLogIn" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
           </Group>
         </DimensionLayout>
       </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JButton" name="btnBackLogIn">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial Black" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="&lt;- Back"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBackLogInActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblLoginTitle1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial Black" size="24" style="1"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="LOG INTO EXISTING ACCOUNT"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtEmailSignUp1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Andalus" size="18" style="0"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                <TitledBorder title="Please enter your email address, then click enter."/>
+              </Border>
+            </Property>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEmailSignUp1ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JPasswordField" name="pwdPassword1SignUp1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Andalus" size="18" style="0"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                <TitledBorder title="Please enter your password, then click enter."/>
+              </Border>
+            </Property>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pwdPassword1SignUp1ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial Black" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="LOG IN"/>
+          </Properties>
+        </Component>
+      </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="pnlSignUpPage">
       <AuxValues>
@@ -195,7 +284,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="pwdPassword1SignUp" max="32767" attributes="0"/>
                       <Component id="txtFullNameSignUp" max="32767" attributes="0"/>
-                      <Component id="lblLoginTitle" pref="776" max="32767" attributes="0"/>
+                      <Component id="lblLoginTitle" pref="781" max="32767" attributes="0"/>
                       <Component id="txtEmailSignUp" alignment="0" max="32767" attributes="0"/>
                       <Component id="pwdPassword2SignUp" alignment="0" max="32767" attributes="0"/>
                       <Component id="btnMakeAccount" alignment="1" max="32767" attributes="0"/>
@@ -248,7 +337,7 @@
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                <TitledBorder title="Please enter your full name:"/>
+                <TitledBorder title="Please enter your full name, then click enter."/>
               </Border>
             </Property>
             <Property name="enabled" type="boolean" value="false"/>
@@ -265,7 +354,7 @@
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                <TitledBorder title="Please enter your email address::"/>
+                <TitledBorder title="Please enter your email address, then click enter."/>
               </Border>
             </Property>
             <Property name="enabled" type="boolean" value="false"/>
@@ -283,7 +372,7 @@
             <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                <TitledBorder title="Please enter your password:"/>
+                <TitledBorder title="Please enter your password, then click enter."/>
               </Border>
             </Property>
             <Property name="enabled" type="boolean" value="false"/>
@@ -301,7 +390,7 @@
             <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                <TitledBorder title="Please confirm your password:"/>
+                <TitledBorder title="Please confirm your password, then click enter."/>
               </Border>
             </Property>
             <Property name="enabled" type="boolean" value="false"/>
@@ -343,15 +432,30 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="788" max="32767" attributes="0"/>
+              <Component id="jLabel1" alignment="0" pref="801" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="588" max="32767" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="542" max="32767" attributes="0"/>
+              </Group>
           </Group>
         </DimensionLayout>
       </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial Black" size="24" style="1"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Library Home Page"/>
+          </Properties>
+        </Component>
+      </SubComponents>
     </Container>
   </SubComponents>
 </Form>

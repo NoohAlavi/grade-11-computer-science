@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Random;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -19,7 +20,20 @@ import java.io.IOException;
 
 public class frmLibraryManager extends javax.swing.JFrame {
     final String USERS_DB_SAVE_FILE = "src/usersDB.csv";
+    
+    // Constants for password encryption/decryption
+    final String CHAR_1 = "a";
+    final String CHAR_1_ALT = "e";
+    final String CHAR_2 = "u";
+    final String CHAR_2_ALT = "i";
+    final String CHAR_3 = "\\.";
+    final String CHAR_3_ALT = ",";
+    final String TEMP_CHAR = "⠀";
+    
+    final String CHARACTER_LIST = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890`~!@#$%^&*()[]{}";
+    
     ArrayList<User> users = new ArrayList<>();
+    User currentUser;
     
     /**
      * Creates new form frmLibraryManager
@@ -45,6 +59,11 @@ public class frmLibraryManager extends javax.swing.JFrame {
         btnExit = new javax.swing.JButton();
         lblInfo = new javax.swing.JLabel();
         pnlLoginPage = new javax.swing.JPanel();
+        btnBackLogIn = new javax.swing.JButton();
+        lblLoginTitle1 = new javax.swing.JLabel();
+        txtEmailSignUp1 = new javax.swing.JTextField();
+        pwdPassword1SignUp1 = new javax.swing.JPasswordField();
+        jButton1 = new javax.swing.JButton();
         pnlSignUpPage = new javax.swing.JPanel();
         lblLoginTitle = new javax.swing.JLabel();
         txtFullNameSignUp = new javax.swing.JTextField();
@@ -54,6 +73,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
         btnMakeAccount = new javax.swing.JButton();
         btnBackSignUp = new javax.swing.JButton();
         pnlHomePage = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -87,7 +107,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
 
         lblInfo.setFont(new java.awt.Font("Andalus", 0, 14)); // NOI18N
         lblInfo.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblInfo.setText("Made by Nooh Alavi (s201119359@ddsbstudent.ca, noohalavidev@gmail.com), 2023. Version 1.0.0. Last updated 22/01/2023.");
+        lblInfo.setText("Made by Nooh Alavi (s201119359@ddsbstudent.ca, noohalavidev@gmail.com), 2023. Version 1.0.0. Last updated 24/01/2023.");
 
         javax.swing.GroupLayout pnlMenuPageLayout = new javax.swing.GroupLayout(pnlMenuPage);
         pnlMenuPage.setLayout(pnlMenuPageLayout);
@@ -99,7 +119,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
                     .addComponent(btnSignUp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnLogin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnExit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblInfo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 788, Short.MAX_VALUE)
+                    .addComponent(lblInfo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -120,15 +140,71 @@ public class frmLibraryManager extends javax.swing.JFrame {
 
         pnlLoginPage.setVisible(false);
 
+        btnBackLogIn.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        btnBackLogIn.setText("<- Back");
+        btnBackLogIn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackLogInActionPerformed(evt);
+            }
+        });
+
+        lblLoginTitle1.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
+        lblLoginTitle1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblLoginTitle1.setText("LOG INTO EXISTING ACCOUNT");
+
+        txtEmailSignUp1.setFont(new java.awt.Font("Andalus", 0, 18)); // NOI18N
+        txtEmailSignUp1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtEmailSignUp1.setBorder(javax.swing.BorderFactory.createTitledBorder("Please enter your email address, then click enter."));
+        txtEmailSignUp1.setEnabled(false);
+        txtEmailSignUp1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEmailSignUp1ActionPerformed(evt);
+            }
+        });
+
+        pwdPassword1SignUp1.setFont(new java.awt.Font("Andalus", 0, 18)); // NOI18N
+        pwdPassword1SignUp1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        pwdPassword1SignUp1.setToolTipText("");
+        pwdPassword1SignUp1.setBorder(javax.swing.BorderFactory.createTitledBorder("Please enter your password, then click enter."));
+        pwdPassword1SignUp1.setEnabled(false);
+        pwdPassword1SignUp1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pwdPassword1SignUp1ActionPerformed(evt);
+            }
+        });
+
+        jButton1.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        jButton1.setText("LOG IN");
+
         javax.swing.GroupLayout pnlLoginPageLayout = new javax.swing.GroupLayout(pnlLoginPage);
         pnlLoginPage.setLayout(pnlLoginPageLayout);
         pnlLoginPageLayout.setHorizontalGroup(
             pnlLoginPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 788, Short.MAX_VALUE)
+            .addComponent(lblLoginTitle1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(pnlLoginPageLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlLoginPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(pnlLoginPageLayout.createSequentialGroup()
+                        .addComponent(btnBackLogIn)
+                        .addGap(0, 692, Short.MAX_VALUE))
+                    .addComponent(txtEmailSignUp1)
+                    .addComponent(pwdPassword1SignUp1))
+                .addContainerGap())
         );
         pnlLoginPageLayout.setVerticalGroup(
             pnlLoginPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 588, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlLoginPageLayout.createSequentialGroup()
+                .addComponent(lblLoginTitle1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(txtEmailSignUp1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pwdPassword1SignUp1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 285, Short.MAX_VALUE)
+                .addComponent(btnBackLogIn)
+                .addContainerGap())
         );
 
         pnlSignUpPage.setVisible(false);
@@ -139,7 +215,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
 
         txtFullNameSignUp.setFont(new java.awt.Font("Andalus", 0, 18)); // NOI18N
         txtFullNameSignUp.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtFullNameSignUp.setBorder(javax.swing.BorderFactory.createTitledBorder("Please enter your full name:"));
+        txtFullNameSignUp.setBorder(javax.swing.BorderFactory.createTitledBorder("Please enter your full name, then click enter."));
         txtFullNameSignUp.setEnabled(false);
         txtFullNameSignUp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -149,7 +225,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
 
         txtEmailSignUp.setFont(new java.awt.Font("Andalus", 0, 18)); // NOI18N
         txtEmailSignUp.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtEmailSignUp.setBorder(javax.swing.BorderFactory.createTitledBorder("Please enter your email address::"));
+        txtEmailSignUp.setBorder(javax.swing.BorderFactory.createTitledBorder("Please enter your email address, then click enter."));
         txtEmailSignUp.setEnabled(false);
         txtEmailSignUp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -160,7 +236,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
         pwdPassword1SignUp.setFont(new java.awt.Font("Andalus", 0, 18)); // NOI18N
         pwdPassword1SignUp.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         pwdPassword1SignUp.setToolTipText("");
-        pwdPassword1SignUp.setBorder(javax.swing.BorderFactory.createTitledBorder("Please enter your password:"));
+        pwdPassword1SignUp.setBorder(javax.swing.BorderFactory.createTitledBorder("Please enter your password, then click enter."));
         pwdPassword1SignUp.setEnabled(false);
         pwdPassword1SignUp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -171,7 +247,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
         pwdPassword2SignUp.setFont(new java.awt.Font("Andalus", 0, 18)); // NOI18N
         pwdPassword2SignUp.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         pwdPassword2SignUp.setToolTipText("");
-        pwdPassword2SignUp.setBorder(javax.swing.BorderFactory.createTitledBorder("Please confirm your password:"));
+        pwdPassword2SignUp.setBorder(javax.swing.BorderFactory.createTitledBorder("Please confirm your password, then click enter."));
         pwdPassword2SignUp.setEnabled(false);
         pwdPassword2SignUp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -205,7 +281,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
                 .addGroup(pnlSignUpPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pwdPassword1SignUp)
                     .addComponent(txtFullNameSignUp)
-                    .addComponent(lblLoginTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 776, Short.MAX_VALUE)
+                    .addComponent(lblLoginTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 781, Short.MAX_VALUE)
                     .addComponent(txtEmailSignUp)
                     .addComponent(pwdPassword2SignUp)
                     .addComponent(btnMakeAccount, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -236,15 +312,22 @@ public class frmLibraryManager extends javax.swing.JFrame {
 
         pnlHomePage.setVisible(false);
 
+        jLabel1.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Library Home Page");
+
         javax.swing.GroupLayout pnlHomePageLayout = new javax.swing.GroupLayout(pnlHomePage);
         pnlHomePage.setLayout(pnlHomePageLayout);
         pnlHomePageLayout.setHorizontalGroup(
             pnlHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 788, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 801, Short.MAX_VALUE)
         );
         pnlHomePageLayout.setVerticalGroup(
             pnlHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 588, Short.MAX_VALUE)
+            .addGroup(pnlHomePageLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addContainerGap(542, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -308,14 +391,6 @@ public class frmLibraryManager extends javax.swing.JFrame {
             System.out.println("Creation of new user " + name + "(" + email + ") successful.");
             this.saveFilePath = "src/Users/" + email + ".txt";
         }
-        
-        void loadData() {
-            
-        }
-        
-        void saveData() {
-            
-        }
     }
     
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
@@ -331,11 +406,6 @@ public class frmLibraryManager extends javax.swing.JFrame {
         // Change to sign up page
         changePage("menu", "signup");
     }//GEN-LAST:event_btnSignUpActionPerformed
-
-    private void txtFullNameSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFullNameSignUpActionPerformed
-        if (txtFullNameSignUp.getText().length() > 0)
-            txtEmailSignUp.setEnabled(true);
-    }//GEN-LAST:event_txtFullNameSignUpActionPerformed
 
     private void txtEmailSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailSignUpActionPerformed
         if (txtEmailSignUp.getText().length() > 0)
@@ -363,7 +433,9 @@ public class frmLibraryManager extends javax.swing.JFrame {
             return;
         }
         
-        createAccount(fullName, email, password);
+        if (createAccount(fullName, email, password)) {
+            changePage("signup", "home");
+        };
     }//GEN-LAST:event_btnMakeAccountActionPerformed
 
     private void btnBackSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackSignUpActionPerformed
@@ -371,7 +443,23 @@ public class frmLibraryManager extends javax.swing.JFrame {
         changePage("signup", "menu");
     }//GEN-LAST:event_btnBackSignUpActionPerformed
 
-    void loadData() {
+    private void txtFullNameSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFullNameSignUpActionPerformed
+        txtEmailSignUp.setEnabled(true);
+    }//GEN-LAST:event_txtFullNameSignUpActionPerformed
+
+    private void btnBackLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackLogInActionPerformed
+        changePage("login", "menu");
+    }//GEN-LAST:event_btnBackLogInActionPerformed
+
+    private void txtEmailSignUp1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailSignUp1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmailSignUp1ActionPerformed
+
+    private void pwdPassword1SignUp1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pwdPassword1SignUp1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pwdPassword1SignUp1ActionPerformed
+
+    private void loadData() {
         try {
             BufferedReader reader = new BufferedReader(new FileReader(USERS_DB_SAVE_FILE));
             String line;
@@ -379,16 +467,16 @@ public class frmLibraryManager extends javax.swing.JFrame {
             while ((line = reader.readLine()) != null) {
                 String[] userData = line.split(",");
                 users.add(new User(
-                        userData[1],
-                        userData[0],
-                        userData[2]
+                        userData[1], // Name
+                        userData[0], // Email
+                        userData[2] // Password
                 ));
             }
             
             System.out.println(users);
             
             reader.close();
-        } catch (Exception e) {
+        } catch (IOException e) {
             
         }
     }
@@ -439,14 +527,94 @@ public class frmLibraryManager extends javax.swing.JFrame {
         }
     }
     
-    void createAccount(String fullName, String email, String password) {
+    private String getEncrypted(String originalMsg) {
+        String encryptedMsg = "";
+        
+        // Encryption stage 1: reverse string
+        for (int i = originalMsg.length(); i > 0; i--) {
+            String newLetter = Character.toString(originalMsg.charAt(i - 1));
+            encryptedMsg = encryptedMsg.concat(newLetter);
+        }
+        
+        // Encryption stage 2: flip some letters
+        // a -> e and vice versa
+        // u -> i and vice versa
+        // . -> , and vice versa
+        encryptedMsg = encryptedMsg.trim()
+                .replaceAll(CHAR_1, TEMP_CHAR)
+                .replaceAll(CHAR_1_ALT, CHAR_1)
+                .replaceAll(TEMP_CHAR, CHAR_1_ALT)
+                
+                .replaceAll(CHAR_2, TEMP_CHAR)
+                .replaceAll(CHAR_2_ALT, CHAR_2)
+                .replaceAll(TEMP_CHAR, CHAR_2_ALT)
+                
+                .replaceAll(CHAR_3, TEMP_CHAR)
+                .replaceAll(CHAR_3_ALT, CHAR_3)
+                .replaceAll(TEMP_CHAR, CHAR_3_ALT);
+        
+        // Encryption stage 3: add random characters
+        for (int i = 0; i < encryptedMsg.length(); i++) {
+            if (i % 2 == 0) {
+                char randomChar = CHARACTER_LIST.charAt(new Random().nextInt(CHARACTER_LIST.length()));
+                encryptedMsg = new StringBuilder(encryptedMsg).insert(i, randomChar).toString();
+            }
+        }
+        
+        return encryptedMsg;
+    }
+    
+    private String getDecrypted(String encryptedMsg) {
+        String decryptedMsg = "";
+        
+        // Encryption stage 1: reverse string
+        for (int i = encryptedMsg.length(); i > 0; i--) {
+            String newLetter = Character.toString(encryptedMsg.charAt(i - 1));
+            decryptedMsg = decryptedMsg.concat(newLetter);
+        }
+        
+        // Encryption stage 2: unflip the letters
+        // a -> e and vice versa
+        // u -> i and vice versa
+        // . -> , and vice versa
+        decryptedMsg = decryptedMsg.trim()
+                .replaceAll(CHAR_1_ALT, TEMP_CHAR)
+                .replaceAll(CHAR_1, CHAR_1_ALT)
+                .replaceAll(TEMP_CHAR, CHAR_1)
+                
+                .replaceAll(CHAR_2_ALT, TEMP_CHAR)
+                .replaceAll(CHAR_2, CHAR_2_ALT)
+                .replaceAll(TEMP_CHAR, CHAR_2)
+                
+                .replaceAll(CHAR_3_ALT, TEMP_CHAR)
+                .replaceAll(CHAR_3, CHAR_3_ALT)
+                .replaceAll(TEMP_CHAR, CHAR_3);
+        
+        // Encryption stage 3: remove random characters
+        String finalDecryptedMsg = "";
+        
+        for (int i = 0; i < decryptedMsg.length(); i++) {
+            if (i % 2 == 0) {
+                finalDecryptedMsg = finalDecryptedMsg.concat(Character.toString(
+                        decryptedMsg.charAt(i))
+                );
+            }
+        }
+        
+        return decryptedMsg;
+    }
+    
+    private Boolean createAccount(String fullName, String email, String password) {
         // check if email exists in db
         for (User user : users) {
             if (email.equals(user.email)) {
                 System.out.println("Please use a unique email!");
-                return;
+                return false;
             }
         }
+        
+        // encrypt password
+        password = getEncrypted(password);
         
         User newUser = new User(fullName, email, password);
         
@@ -469,9 +637,11 @@ public class frmLibraryManager extends javax.swing.JFrame {
             writer.close();
             
             System.out.println("Account saved successfully!");
+            return true;
         } catch (IOException e) {
             System.out.println("[ERROR] " + e);
         }
+        return false;
     }
     
     void signInAccount() {
@@ -523,21 +693,27 @@ public class frmLibraryManager extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBackLogIn;
     private javax.swing.JButton btnBackSignUp;
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnMakeAccount;
     private javax.swing.JButton btnSignUp;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblInfo;
     private javax.swing.JLabel lblLoginTitle;
+    private javax.swing.JLabel lblLoginTitle1;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JPanel pnlHomePage;
     private javax.swing.JPanel pnlLoginPage;
     private javax.swing.JPanel pnlMenuPage;
     private javax.swing.JPanel pnlSignUpPage;
     private javax.swing.JPasswordField pwdPassword1SignUp;
+    private javax.swing.JPasswordField pwdPassword1SignUp1;
     private javax.swing.JPasswordField pwdPassword2SignUp;
     private javax.swing.JTextField txtEmailSignUp;
+    private javax.swing.JTextField txtEmailSignUp1;
     private javax.swing.JTextField txtFullNameSignUp;
     // End of variables declaration//GEN-END:variables
 }
