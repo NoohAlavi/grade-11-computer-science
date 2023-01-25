@@ -59,13 +59,13 @@ public class frmLibraryManager extends javax.swing.JFrame {
         btnExit = new javax.swing.JButton();
         lblInfo = new javax.swing.JLabel();
         pnlLoginPage = new javax.swing.JPanel();
-        btnBackLogIn = new javax.swing.JButton();
-        lblLoginTitle1 = new javax.swing.JLabel();
-        txtEmailSignUp1 = new javax.swing.JTextField();
-        pwdPassword1SignUp1 = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
-        pnlSignUpPage = new javax.swing.JPanel();
         lblLoginTitle = new javax.swing.JLabel();
+        btnBackLogin = new javax.swing.JButton();
+        txtEmailLogin = new javax.swing.JTextField();
+        pwdPasswordLogin = new javax.swing.JPasswordField();
+        btnLoginAccount = new javax.swing.JButton();
+        pnlSignUpPage = new javax.swing.JPanel();
+        lblSignUpTitle = new javax.swing.JLabel();
         txtFullNameSignUp = new javax.swing.JTextField();
         txtEmailSignUp = new javax.swing.JTextField();
         pwdPassword1SignUp = new javax.swing.JPasswordField();
@@ -73,7 +73,9 @@ public class frmLibraryManager extends javax.swing.JFrame {
         btnMakeAccount = new javax.swing.JButton();
         btnBackSignUp = new javax.swing.JButton();
         pnlHomePage = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        lblHomeTitle = new javax.swing.JLabel();
+        btnBorrow = new javax.swing.JButton();
+        btnReturn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -107,7 +109,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
 
         lblInfo.setFont(new java.awt.Font("Andalus", 0, 14)); // NOI18N
         lblInfo.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblInfo.setText("Made by Nooh Alavi (s201119359@ddsbstudent.ca, noohalavidev@gmail.com), 2023. Version 1.0.0. Last updated 24/01/2023.");
+        lblInfo.setText("Made by Nooh Alavi (s201119359@ddsbstudent.ca, noohalavidev@gmail.com), 2023. Version 1.0.0. Last updated 25/01/2023.");
 
         javax.swing.GroupLayout pnlMenuPageLayout = new javax.swing.GroupLayout(pnlMenuPage);
         pnlMenuPage.setLayout(pnlMenuPageLayout);
@@ -140,78 +142,84 @@ public class frmLibraryManager extends javax.swing.JFrame {
 
         pnlLoginPage.setVisible(false);
 
-        btnBackLogIn.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
-        btnBackLogIn.setText("<- Back");
-        btnBackLogIn.addActionListener(new java.awt.event.ActionListener() {
+        lblLoginTitle.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
+        lblLoginTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblLoginTitle.setText("LOG INTO EXISTING ACCOUNT");
+
+        btnBackLogin.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        btnBackLogin.setText("<- Back");
+        btnBackLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackLogInActionPerformed(evt);
+                btnBackLoginActionPerformed(evt);
             }
         });
 
-        lblLoginTitle1.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
-        lblLoginTitle1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblLoginTitle1.setText("LOG INTO EXISTING ACCOUNT");
-
-        txtEmailSignUp1.setFont(new java.awt.Font("Andalus", 0, 18)); // NOI18N
-        txtEmailSignUp1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtEmailSignUp1.setBorder(javax.swing.BorderFactory.createTitledBorder("Please enter your email address, then click enter."));
-        txtEmailSignUp1.setEnabled(false);
-        txtEmailSignUp1.addActionListener(new java.awt.event.ActionListener() {
+        txtEmailLogin.setFont(new java.awt.Font("Andalus", 0, 18)); // NOI18N
+        txtEmailLogin.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtEmailLogin.setBorder(javax.swing.BorderFactory.createTitledBorder("Please enter your email address, then click enter."));
+        txtEmailLogin.setEnabled(false);
+        txtEmailLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEmailSignUp1ActionPerformed(evt);
+                txtEmailLoginActionPerformed(evt);
             }
         });
 
-        pwdPassword1SignUp1.setFont(new java.awt.Font("Andalus", 0, 18)); // NOI18N
-        pwdPassword1SignUp1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        pwdPassword1SignUp1.setToolTipText("");
-        pwdPassword1SignUp1.setBorder(javax.swing.BorderFactory.createTitledBorder("Please enter your password, then click enter."));
-        pwdPassword1SignUp1.setEnabled(false);
-        pwdPassword1SignUp1.addActionListener(new java.awt.event.ActionListener() {
+        pwdPasswordLogin.setFont(new java.awt.Font("Andalus", 0, 18)); // NOI18N
+        pwdPasswordLogin.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        pwdPasswordLogin.setToolTipText("");
+        pwdPasswordLogin.setBorder(javax.swing.BorderFactory.createTitledBorder("Please enter your password, then click enter."));
+        pwdPasswordLogin.setEnabled(false);
+        pwdPasswordLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pwdPassword1SignUp1ActionPerformed(evt);
+                pwdPasswordLoginActionPerformed(evt);
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        jButton1.setText("LOG IN");
+        btnLoginAccount.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        btnLoginAccount.setText("LOG IN");
+        btnLoginAccount.setEnabled(false);
+        btnLoginAccount.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginAccountActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlLoginPageLayout = new javax.swing.GroupLayout(pnlLoginPage);
         pnlLoginPage.setLayout(pnlLoginPageLayout);
         pnlLoginPageLayout.setHorizontalGroup(
             pnlLoginPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblLoginTitle1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lblLoginTitle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(pnlLoginPageLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlLoginPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnLoginAccount, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(pnlLoginPageLayout.createSequentialGroup()
-                        .addComponent(btnBackLogIn)
+                        .addComponent(btnBackLogin)
                         .addGap(0, 692, Short.MAX_VALUE))
-                    .addComponent(txtEmailSignUp1)
-                    .addComponent(pwdPassword1SignUp1))
+                    .addComponent(txtEmailLogin)
+                    .addComponent(pwdPasswordLogin))
                 .addContainerGap())
         );
         pnlLoginPageLayout.setVerticalGroup(
             pnlLoginPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlLoginPageLayout.createSequentialGroup()
-                .addComponent(lblLoginTitle1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblLoginTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(txtEmailSignUp1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtEmailLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pwdPassword1SignUp1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pwdPasswordLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(btnLoginAccount)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 285, Short.MAX_VALUE)
-                .addComponent(btnBackLogIn)
+                .addComponent(btnBackLogin)
                 .addContainerGap())
         );
 
         pnlSignUpPage.setVisible(false);
 
-        lblLoginTitle.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
-        lblLoginTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblLoginTitle.setText("MAKE NEW ACCOUNT");
+        lblSignUpTitle.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
+        lblSignUpTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSignUpTitle.setText("MAKE NEW ACCOUNT");
 
         txtFullNameSignUp.setFont(new java.awt.Font("Andalus", 0, 18)); // NOI18N
         txtFullNameSignUp.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -281,7 +289,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
                 .addGroup(pnlSignUpPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pwdPassword1SignUp)
                     .addComponent(txtFullNameSignUp)
-                    .addComponent(lblLoginTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 781, Short.MAX_VALUE)
+                    .addComponent(lblSignUpTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 781, Short.MAX_VALUE)
                     .addComponent(txtEmailSignUp)
                     .addComponent(pwdPassword2SignUp)
                     .addComponent(btnMakeAccount, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -294,7 +302,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
             pnlSignUpPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlSignUpPageLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblLoginTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblSignUpTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtFullNameSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -312,22 +320,34 @@ public class frmLibraryManager extends javax.swing.JFrame {
 
         pnlHomePage.setVisible(false);
 
-        jLabel1.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Library Home Page");
+        lblHomeTitle.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
+        lblHomeTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblHomeTitle.setText("Library Home Page");
+
+        btnBorrow.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        btnBorrow.setText("Borrow Book");
+
+        btnReturn.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        btnReturn.setText("Return Book");
 
         javax.swing.GroupLayout pnlHomePageLayout = new javax.swing.GroupLayout(pnlHomePage);
         pnlHomePage.setLayout(pnlHomePageLayout);
         pnlHomePageLayout.setHorizontalGroup(
             pnlHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 801, Short.MAX_VALUE)
+            .addComponent(lblHomeTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 801, Short.MAX_VALUE)
+            .addComponent(btnBorrow, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnReturn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         pnlHomePageLayout.setVerticalGroup(
             pnlHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlHomePageLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(542, Short.MAX_VALUE))
+                .addComponent(lblHomeTitle)
+                .addGap(229, 229, 229)
+                .addComponent(btnBorrow)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnReturn)
+                .addContainerGap(237, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -447,17 +467,26 @@ public class frmLibraryManager extends javax.swing.JFrame {
         txtEmailSignUp.setEnabled(true);
     }//GEN-LAST:event_txtFullNameSignUpActionPerformed
 
-    private void btnBackLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackLogInActionPerformed
+    private void btnBackLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackLoginActionPerformed
         changePage("login", "menu");
-    }//GEN-LAST:event_btnBackLogInActionPerformed
+    }//GEN-LAST:event_btnBackLoginActionPerformed
 
-    private void txtEmailSignUp1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailSignUp1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtEmailSignUp1ActionPerformed
+    private void txtEmailLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailLoginActionPerformed
+        pwdPasswordLogin.setEnabled(true);
+    }//GEN-LAST:event_txtEmailLoginActionPerformed
 
-    private void pwdPassword1SignUp1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pwdPassword1SignUp1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_pwdPassword1SignUp1ActionPerformed
+    private void pwdPasswordLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pwdPasswordLoginActionPerformed
+        btnLoginAccount.setEnabled(true);
+    }//GEN-LAST:event_pwdPasswordLoginActionPerformed
+
+    private void btnLoginAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginAccountActionPerformed
+        String email = txtEmailLogin.getText();
+        String password = pwdPasswordLogin.getText();
+        
+        if (loginAccount(email, password)) {
+            changePage("login", "home");
+        }
+    }//GEN-LAST:event_btnLoginAccountActionPerformed
 
     private void loadData() {
         try {
@@ -472,8 +501,6 @@ public class frmLibraryManager extends javax.swing.JFrame {
                         userData[2] // Password
                 ));
             }
-            
-            System.out.println(users);
             
             reader.close();
         } catch (IOException e) {
@@ -491,6 +518,9 @@ public class frmLibraryManager extends javax.swing.JFrame {
                 pnlMenuPage.setVisible(false);
                 break;
             case "login":
+                txtEmailLogin.setEnabled(false);
+                pwdPasswordLogin.setEnabled(false);
+                
                 pnlLoginPage.setVisible(false);
                 break;
             case "signup":
@@ -514,6 +544,8 @@ public class frmLibraryManager extends javax.swing.JFrame {
                 pnlMenuPage.setVisible(true);
                 break;
             case "login":
+                txtEmailLogin.setEnabled(true);
+                
                 pnlLoginPage.setVisible(true);
                 break;
             case "signup":
@@ -601,7 +633,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
             }
         }
         
-        return decryptedMsg;
+        return finalDecryptedMsg;
     }
     
     private Boolean createAccount(String fullName, String email, String password) {
@@ -644,8 +676,17 @@ public class frmLibraryManager extends javax.swing.JFrame {
         return false;
     }
     
-    void signInAccount() {
-        
+    Boolean loginAccount(String email, String password) {
+        // check if email exists
+        for (User user : users) {
+            if (email.equals(user.email)) {
+                if (password.equals(getDecrypted(user.password))) {
+                    System.out.println("Successfully logged into " + user.fullName);
+                    return true;
+                }
+            }
+        }
+        return false;
     }
     
     String borrowBook() {
@@ -693,27 +734,29 @@ public class frmLibraryManager extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBackLogIn;
+    private javax.swing.JButton btnBackLogin;
     private javax.swing.JButton btnBackSignUp;
+    private javax.swing.JButton btnBorrow;
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnLogin;
+    private javax.swing.JButton btnLoginAccount;
     private javax.swing.JButton btnMakeAccount;
+    private javax.swing.JButton btnReturn;
     private javax.swing.JButton btnSignUp;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblHomeTitle;
     private javax.swing.JLabel lblInfo;
     private javax.swing.JLabel lblLoginTitle;
-    private javax.swing.JLabel lblLoginTitle1;
+    private javax.swing.JLabel lblSignUpTitle;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JPanel pnlHomePage;
     private javax.swing.JPanel pnlLoginPage;
     private javax.swing.JPanel pnlMenuPage;
     private javax.swing.JPanel pnlSignUpPage;
     private javax.swing.JPasswordField pwdPassword1SignUp;
-    private javax.swing.JPasswordField pwdPassword1SignUp1;
     private javax.swing.JPasswordField pwdPassword2SignUp;
+    private javax.swing.JPasswordField pwdPasswordLogin;
+    private javax.swing.JTextField txtEmailLogin;
     private javax.swing.JTextField txtEmailSignUp;
-    private javax.swing.JTextField txtEmailSignUp1;
     private javax.swing.JTextField txtFullNameSignUp;
     // End of variables declaration//GEN-END:variables
 }
