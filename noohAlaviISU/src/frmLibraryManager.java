@@ -5,7 +5,13 @@ import java.io.FileReader;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Reader;
 import java.util.Random;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -15,11 +21,12 @@ import java.util.Random;
 
 /**
  *
- * @author s201119359
+ * @author s201119359 - Nooh Alavi
  */
 
 public class frmLibraryManager extends javax.swing.JFrame {
     final String USERS_DB_SAVE_FILE = "src/usersDB.csv";
+    final String BOOKS_FILE_SAVE_FILE = "src/bookList.json";
     
     // Constants for password encryption/decryption
     final String CHAR_1 = "a";
@@ -32,7 +39,9 @@ public class frmLibraryManager extends javax.swing.JFrame {
     
     final String CHARACTER_LIST = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890`~!@#$%^&*()[]{}";
     
-    ArrayList<User> users = new ArrayList<>();
+    ArrayList<User> users = new ArrayList<>(); // Will be loaded in
+    JSONObject books = new JSONObject(); // Will be loaded in
+    
     User currentUser;
     
     /**
@@ -407,9 +416,21 @@ public class frmLibraryManager extends javax.swing.JFrame {
             this.email = email;
             this.fullName = name;
             this.password = password;
-            
-            System.out.println("Creation of new user " + name + "(" + email + ") successful.");
-            this.saveFilePath = "src/Users/" + email + ".txt";
+        }
+    }
+    
+    private class Book {        
+        private String bookTitle;
+        private String author;
+        
+        private int totalStock;
+        private int currentStock;
+        
+        public Book(String bookTitle, String author, int totalStock, int currentStock) {
+            this.bookTitle = bookTitle;
+            this.author = author;
+            this.totalStock = totalStock;
+            this.currentStock = currentStock;
         }
     }
     
@@ -504,7 +525,18 @@ public class frmLibraryManager extends javax.swing.JFrame {
             
             reader.close();
         } catch (IOException e) {
+            System.out.println(e);
+        }
+        
+        try {
+            JSONParser parser = new JSONParser();
+            Reader reader = new FileReader(BOOKS_FILE_SAVE_FILE);
             
+            books = (JSONObject) parser.parse(reader);
+            
+            reader.close();
+        } catch (Exception e) {
+            System.out.println(e);
         }
     }
     
@@ -518,12 +550,20 @@ public class frmLibraryManager extends javax.swing.JFrame {
                 pnlMenuPage.setVisible(false);
                 break;
             case "login":
+                txtEmailLogin.setText("");
+                pwdPasswordLogin.setText("");
+                
                 txtEmailLogin.setEnabled(false);
                 pwdPasswordLogin.setEnabled(false);
                 
                 pnlLoginPage.setVisible(false);
                 break;
             case "signup":
+                txtFullNameSignUp.setText("");
+                txtEmailSignUp.setText("");
+                pwdPassword1SignUp.setText("");
+                pwdPassword2SignUp.setText("");
+                
                 txtFullNameSignUp.setEnabled(false);
                 txtEmailSignUp.setEnabled(false);
                 pwdPassword1SignUp.setEnabled(false);
@@ -532,6 +572,9 @@ public class frmLibraryManager extends javax.swing.JFrame {
                 pnlSignUpPage.setVisible(false);
                 break;
             case "home":
+                btnBorrow.setEnabled(false);
+                btnReturn.setEnabled(false);
+                
                 pnlHomePage.setVisible(false);
                 break;
         }
@@ -554,6 +597,9 @@ public class frmLibraryManager extends javax.swing.JFrame {
                 pnlSignUpPage.setVisible(true);
                 break;
             case "home":
+                btnBorrow.setEnabled(true);
+                btnReturn.setEnabled(true);
+                
                 pnlHomePage.setVisible(true);
                 break;
         }
