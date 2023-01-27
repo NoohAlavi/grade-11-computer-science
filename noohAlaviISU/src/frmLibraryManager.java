@@ -6,6 +6,9 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Reader;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
 import java.util.Random;
 
 import org.json.simple.JSONArray;
@@ -86,6 +89,9 @@ public class frmLibraryManager extends javax.swing.JFrame {
         btnBorrow = new javax.swing.JButton();
         btnReturn = new javax.swing.JButton();
         txtISBN = new javax.swing.JTextField();
+        btnBackHome = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        lsBookList = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -119,7 +125,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
 
         lblInfo.setFont(new java.awt.Font("Andalus", 0, 14)); // NOI18N
         lblInfo.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblInfo.setText("Made by Nooh Alavi (s201119359@ddsbstudent.ca, noohalavidev@gmail.com), 2023. Version 1.0.0. Last updated 25/01/2023.");
+        lblInfo.setText("Made by Nooh Alavi (s201119359@ddsbstudent.ca, noohalavidev@gmail.com), 2023. Version 1.0.0. Last updated 27/01/2023.");
 
         javax.swing.GroupLayout pnlMenuPageLayout = new javax.swing.GroupLayout(pnlMenuPage);
         pnlMenuPage.setLayout(pnlMenuPageLayout);
@@ -355,16 +361,33 @@ public class frmLibraryManager extends javax.swing.JFrame {
             }
         });
 
+        btnBackHome.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        btnBackHome.setText("<- Back");
+        btnBackHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackHomeActionPerformed(evt);
+            }
+        });
+
+        lsBookList.setBorder(javax.swing.BorderFactory.createTitledBorder("Find the perfect book, by exploring our catalog!"));
+        lsBookList.setFont(new java.awt.Font("Cascadia Code", 1, 14)); // NOI18N
+        jScrollPane1.setViewportView(lsBookList);
+
         javax.swing.GroupLayout pnlHomePageLayout = new javax.swing.GroupLayout(pnlHomePage);
         pnlHomePage.setLayout(pnlHomePageLayout);
         pnlHomePageLayout.setHorizontalGroup(
             pnlHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(lblHomeTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
-            .addComponent(btnBorrow, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnReturn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlHomePageLayout.createSequentialGroup()
+            .addGroup(pnlHomePageLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(txtISBN)
+                .addGroup(pnlHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtISBN, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(pnlHomePageLayout.createSequentialGroup()
+                        .addComponent(btnBackHome)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(btnBorrow, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnReturn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
         pnlHomePageLayout.setVerticalGroup(
@@ -372,13 +395,17 @@ public class frmLibraryManager extends javax.swing.JFrame {
             .addGroup(pnlHomePageLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblHomeTitle)
-                .addGap(184, 184, 184)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtISBN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnBorrow)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnReturn)
-                .addContainerGap(233, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 206, Short.MAX_VALUE)
+                .addComponent(btnBackHome)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -562,6 +589,8 @@ public class frmLibraryManager extends javax.swing.JFrame {
                 books.put(txtISBN.getText(), bookUpdated);
                 
                 saveJSON();
+                
+                System.out.println(generateReceipt(book, currentUser, txtISBN.getText()));
             } else {
                 System.out.println("Book is not currently available!");
             }
@@ -569,6 +598,10 @@ public class frmLibraryManager extends javax.swing.JFrame {
             System.out.println(e);
         }
     }//GEN-LAST:event_txtISBNActionPerformed
+
+    private void btnBackHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackHomeActionPerformed
+        changePage("home", "menu");
+    }//GEN-LAST:event_btnBackHomeActionPerformed
 
     private void loadData() {
         try {
@@ -611,6 +644,33 @@ public class frmLibraryManager extends javax.swing.JFrame {
         } catch (Exception e) {
             System.out.println(e);
         }
+    }
+    
+    private String generateReceipt(JSONObject book, User user, String ISBN) {
+        String receipt = "";
+        
+        receipt += "-----*NOOH'S LIBRARY*-----\n";
+
+        receipt += "BOOK NAME: " + book.get("bookTitle") + "\n";
+        receipt += "AUTHOR: " + book.get("author") + "\n";
+        receipt += "ISBN: " + ISBN + "\n";
+
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyy");  
+        
+        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime dueDate = LocalDateTime.now().plusWeeks(2);
+                
+        String currentDateTime = dtf.format(now);
+        String dueDateTime = dtf.format(dueDate);
+        
+        receipt += "BORROWED: " + currentDateTime + "\n";
+        receipt += "DUE DATE: " + dueDateTime + "\n\n";
+
+        receipt += "BORROWED BY: " + user.fullName + " (" + user.email + ").\n";
+
+        receipt += "----------------------\n";
+        
+        return receipt;
     }
     
     void changePage(String currentPage, String targetPage) {
@@ -673,9 +733,26 @@ public class frmLibraryManager extends javax.swing.JFrame {
                 btnBorrow.setEnabled(true);
                 btnReturn.setEnabled(true);
                 
+                setBookList();
+                
                 pnlHomePage.setVisible(true);
                 break;
         }
+    }
+    
+    private void setBookList() {
+        ArrayList<String> booksToList = new ArrayList<>(); 
+        
+        for (Object ISBN : books.keySet()) {
+            JSONObject book = (JSONObject) books.get(ISBN);
+            
+            booksToList.add("'" + book.get("bookTitle") + "' by " + book.get("author").toString().toUpperCase() + " [" + ISBN + "]");
+        }
+        
+        lsBookList.setModel(new javax.swing.AbstractListModel<String>() {
+            public int getSize() { return booksToList.size(); }
+            public String getElementAt(int i) { return booksToList.get(i); }
+        });
     }
     
     private String getEncrypted(String originalMsg) {
@@ -787,6 +864,8 @@ public class frmLibraryManager extends javax.swing.JFrame {
             reader.close();
             writer.close();
             
+            currentUser = newUser;
+            
             System.out.println("Account saved successfully!");
             return true;
         } catch (IOException e) {
@@ -801,6 +880,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
             if (email.equals(user.email)) {
                 if (password.equals(getDecrypted(user.password))) {
                     System.out.println("Successfully logged into " + user.fullName);
+                    currentUser = user;
                     return true;
                 }
             }
@@ -853,6 +933,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBackHome;
     private javax.swing.JButton btnBackLogin;
     private javax.swing.JButton btnBackSignUp;
     private javax.swing.JButton btnBorrow;
@@ -862,11 +943,13 @@ public class frmLibraryManager extends javax.swing.JFrame {
     private javax.swing.JButton btnMakeAccount;
     private javax.swing.JButton btnReturn;
     private javax.swing.JButton btnSignUp;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblHomeTitle;
     private javax.swing.JLabel lblInfo;
     private javax.swing.JLabel lblLoginTitle;
     private javax.swing.JLabel lblSignUpTitle;
     private javax.swing.JLabel lblTitle;
+    private javax.swing.JList<String> lsBookList;
     private javax.swing.JPanel pnlHomePage;
     private javax.swing.JPanel pnlLoginPage;
     private javax.swing.JPanel pnlMenuPage;
