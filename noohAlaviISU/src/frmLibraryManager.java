@@ -545,14 +545,28 @@ public class frmLibraryManager extends javax.swing.JFrame {
     private void txtISBNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtISBNActionPerformed
         try {
             JSONObject book = (JSONObject) books.get(txtISBN.getText());
-            System.out.println("You have selected '" + book.get("bookTitle") + "' by " + book.get("author"));
-            int bookQuantity = Integer.parseInt((String) book.get("quantity"));
+            long bookQuantity = (long) book.get("currentStock");
             
             if (bookQuantity > 0) {
+                System.out.println("You have successfully borrowed '" + book.get("bookTitle") + "' by " + book.get("author"));
                 
+                // Update quantity in the JSON
+                bookQuantity--;
+                
+                JSONObject bookUpdated = new JSONObject();
+                bookUpdated.put("bookTitle", book.get("bookTitle"));
+                bookUpdated.put("author", book.get("author"));
+                bookUpdated.put("maxStock", book.get("maxStock"));
+                bookUpdated.put("currentStock", bookQuantity);
+                        
+                books.put(txtISBN.getText(), bookUpdated);
+                
+                saveJSON();
+            } else {
+                System.out.println("Book is not currently available!");
             }
         } catch (Exception e) {
-            
+            System.out.println(e);
         }
     }//GEN-LAST:event_txtISBNActionPerformed
 
@@ -582,6 +596,18 @@ public class frmLibraryManager extends javax.swing.JFrame {
             books = (JSONObject) parser.parse(reader);
             
             reader.close();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+    
+    private void saveJSON() {
+        try {
+            FileWriter file = new FileWriter(BOOKS_FILE_SAVE_FILE);
+            
+            file.write(books.toJSONString());
+            
+            file.close();
         } catch (Exception e) {
             System.out.println(e);
         }
