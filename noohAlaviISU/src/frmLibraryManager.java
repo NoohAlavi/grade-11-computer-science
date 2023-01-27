@@ -85,6 +85,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
         lblHomeTitle = new javax.swing.JLabel();
         btnBorrow = new javax.swing.JButton();
         btnReturn = new javax.swing.JButton();
+        txtISBN = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -144,7 +145,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
                 .addComponent(btnSignUp)
                 .addGap(75, 75, 75)
                 .addComponent(btnExit)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 156, Short.MAX_VALUE)
                 .addComponent(lblInfo)
                 .addContainerGap())
         );
@@ -204,7 +205,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
                     .addComponent(btnLoginAccount, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(pnlLoginPageLayout.createSequentialGroup()
                         .addComponent(btnBackLogin)
-                        .addGap(0, 692, Short.MAX_VALUE))
+                        .addGap(0, 705, Short.MAX_VALUE))
                     .addComponent(txtEmailLogin)
                     .addComponent(pwdPasswordLogin))
                 .addContainerGap())
@@ -219,7 +220,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
                 .addComponent(pwdPasswordLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnLoginAccount)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 285, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 275, Short.MAX_VALUE)
                 .addComponent(btnBackLogin)
                 .addContainerGap())
         );
@@ -298,7 +299,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
                 .addGroup(pnlSignUpPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pwdPassword1SignUp)
                     .addComponent(txtFullNameSignUp)
-                    .addComponent(lblSignUpTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 781, Short.MAX_VALUE)
+                    .addComponent(lblSignUpTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 788, Short.MAX_VALUE)
                     .addComponent(txtEmailSignUp)
                     .addComponent(pwdPassword2SignUp)
                     .addComponent(btnMakeAccount, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -322,7 +323,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
                 .addComponent(pwdPassword2SignUp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnMakeAccount)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
                 .addComponent(btnBackSignUp)
                 .addContainerGap())
         );
@@ -335,28 +336,49 @@ public class frmLibraryManager extends javax.swing.JFrame {
 
         btnBorrow.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
         btnBorrow.setText("Borrow Book");
+        btnBorrow.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrowActionPerformed(evt);
+            }
+        });
 
         btnReturn.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
         btnReturn.setText("Return Book");
+
+        txtISBN.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtISBN.setBorder(javax.swing.BorderFactory.createTitledBorder("Please enter the book's ISBN number, and click enter."));
+        txtISBN.setVisible(false);
+        txtISBN.setEnabled(false);
+        txtISBN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtISBNActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlHomePageLayout = new javax.swing.GroupLayout(pnlHomePage);
         pnlHomePage.setLayout(pnlHomePageLayout);
         pnlHomePageLayout.setHorizontalGroup(
             pnlHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblHomeTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 801, Short.MAX_VALUE)
+            .addComponent(lblHomeTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
             .addComponent(btnBorrow, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnReturn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlHomePageLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(txtISBN)
+                .addContainerGap())
         );
         pnlHomePageLayout.setVerticalGroup(
             pnlHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlHomePageLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblHomeTitle)
-                .addGap(229, 229, 229)
+                .addGap(184, 184, 184)
+                .addComponent(txtISBN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(btnBorrow)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnReturn)
-                .addContainerGap(237, Short.MAX_VALUE))
+                .addContainerGap(233, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -508,6 +530,31 @@ public class frmLibraryManager extends javax.swing.JFrame {
             changePage("login", "home");
         }
     }//GEN-LAST:event_btnLoginAccountActionPerformed
+
+    private void btnBorrowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrowActionPerformed
+        btnBorrow.setEnabled(false);
+        btnBorrow.setVisible(false);
+        
+        btnReturn.setEnabled(false);
+        btnReturn.setVisible(false);
+        
+        txtISBN.setEnabled(true);
+        txtISBN.setVisible(true);
+    }//GEN-LAST:event_btnBorrowActionPerformed
+
+    private void txtISBNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtISBNActionPerformed
+        try {
+            JSONObject book = (JSONObject) books.get(txtISBN.getText());
+            System.out.println("You have selected '" + book.get("bookTitle") + "' by " + book.get("author"));
+            int bookQuantity = Integer.parseInt((String) book.get("quantity"));
+            
+            if (bookQuantity > 0) {
+                
+            }
+        } catch (Exception e) {
+            
+        }
+    }//GEN-LAST:event_txtISBNActionPerformed
 
     private void loadData() {
         try {
@@ -804,5 +851,6 @@ public class frmLibraryManager extends javax.swing.JFrame {
     private javax.swing.JTextField txtEmailLogin;
     private javax.swing.JTextField txtEmailSignUp;
     private javax.swing.JTextField txtFullNameSignUp;
+    private javax.swing.JTextField txtISBN;
     // End of variables declaration//GEN-END:variables
 }
