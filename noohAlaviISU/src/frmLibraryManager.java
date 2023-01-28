@@ -47,6 +47,12 @@ public class frmLibraryManager extends javax.swing.JFrame {
     
     User currentUser;
     
+    enum Action {
+        BORROW,
+        RETURN
+    }
+    Action action;
+    
     /**
      * Creates new form frmLibraryManager
      */
@@ -352,6 +358,11 @@ public class frmLibraryManager extends javax.swing.JFrame {
 
         btnReturn.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
         btnReturn.setText("Return Book");
+        btnReturn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReturnActionPerformed(evt);
+            }
+        });
 
         txtISBN.setFont(new java.awt.Font("Cascadia Mono", 1, 18)); // NOI18N
         txtISBN.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -470,8 +481,6 @@ public class frmLibraryManager extends javax.swing.JFrame {
     private class User {        
         ArrayList<String> borrowedBooks = new ArrayList<>();
         
-        private String saveFilePath;
-        
         private String email;
         private String fullName;
         private String password;
@@ -574,57 +583,74 @@ public class frmLibraryManager extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLoginAccountActionPerformed
 
     private void btnBorrowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrowActionPerformed
-        btnBorrow.setEnabled(false);
-        btnBorrow.setVisible(false);
-        
-        btnReturn.setEnabled(false);
-        btnReturn.setVisible(false);
-        
-        txtISBN.setEnabled(true);
-        txtISBN.setVisible(true);
-        
-        btnBackHome.setVisible(true);
-        btnBackHome.setEnabled(true);
+        getISBN();
+        action = Action.BORROW;
     }//GEN-LAST:event_btnBorrowActionPerformed
 
     private void txtISBNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtISBNActionPerformed
         try {
-            JSONObject book = (JSONObject) books.get(txtISBN.getText());
-            long bookQuantity = (long) book.get("currentStock");
+            String bookISBN = txtISBN.getText();
             
-            if (bookQuantity > 0) {
-                // Update quantity in the JSON
-                bookQuantity--;
-                
-                JSONObject bookUpdated = new JSONObject();
-                bookUpdated.put("bookTitle", book.get("bookTitle"));
-                bookUpdated.put("author", book.get("author"));
-                bookUpdated.put("maxStock", book.get("maxStock"));
-                bookUpdated.put("currentStock", bookQuantity);
-                        
-                books.put(txtISBN.getText(), bookUpdated);
-                
-                saveJSON();
-                setBookList();
-                
-                String receipt = generateReceipt(book, currentUser, txtISBN.getText());
-                
-                System.out.println(receipt);
-                txtReceipt.setText(receipt);
+            JSONObject book = (JSONObject) books.get(bookISBN);
+            long bookQuantity = (long) book.get("currentStock");
+            String borrower = null;
+            
+            if (action == Action.BORROW) {
+                if (bookQuantity > 0) {
+                    // Update quantity in the JSON
+                    bookQuantity--;
+                    borrower = currentUser.email;
+                    
+                    String receipt = generateReceipt(book, currentUser, txtISBN.getText());
+
+                    System.out.println(receipt);
+                    txtReceipt.setText(receipt);
+                } else {
+                    System.out.println("Book is not currently available!");
+                    txtISBN.setText("Your selected book is currently unavailable!");
+                }
+            } else if (action == Action.RETURN) {
+                String currentBorrower = (String) book.get("borrower");
+                if (currentBorrower.equals(currentUser.email)) {
+                    txtISBN.setText("");
+                    txtReceipt.setText("Book '" + book.get("bookTitle") + "' returned successfully! We hope you enjoyed it!");
+                    bookQuantity++;
+                } else {
+                    txtISBN.setText("You do not have that book borrowed!");
+                    return;
+                }
             } else {
-                System.out.println("Book is not currently available!");
-                txtISBN.setText("Your selected book is currently unavailable!");
+                System.out.println("[ERROR] Action " + action + " is not valid.");
+                return;
             }
+            JSONObject bookUpdated = new JSONObject();
+            bookUpdated.put("bookTitle", book.get("bookTitle"));
+            bookUpdated.put("author", book.get("author"));
+            bookUpdated.put("maxStock", book.get("maxStock"));
+            bookUpdated.put("currentStock", bookQuantity);
+            bookUpdated.put("borrower", borrower);
+
+            books.put(bookISBN, bookUpdated);
+
+            saveJSON();
+            setBookList();
         } catch (Exception e) {
             System.out.println(e);
-            txtISBN.setText("The book you selected cannot be found... did you type the ISBN correctly?");
+            if (action == Action.BORROW) {
+                txtISBN.setText("The book you selected cannot be found... did you type the ISBN correctly?");
+            } else {
+                txtISBN.setText("You do not have that book borrowed!");
+            }
         }
+        
     }//GEN-LAST:event_txtISBNActionPerformed
 
     private void btnBackHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackHomeActionPerformed
         txtISBN.setVisible(false);
         txtISBN.setEnabled(false);
         txtISBN.setText("");
+        
+        txtReceipt.setText("");
         
         btnBorrow.setVisible(true);
         btnBorrow.setEnabled(true);
@@ -636,6 +662,25 @@ public class frmLibraryManager extends javax.swing.JFrame {
         btnBackHome.setEnabled(false);
     }//GEN-LAST:event_btnBackHomeActionPerformed
 
+    private void btnReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturnActionPerformed
+        getISBN();
+        action = Action.RETURN;
+    }//GEN-LAST:event_btnReturnActionPerformed
+
+    private void getISBN() {
+        btnBorrow.setEnabled(false);
+        btnBorrow.setVisible(false);
+        
+        btnReturn.setEnabled(false);
+        btnReturn.setVisible(false);
+        
+        txtISBN.setEnabled(true);
+        txtISBN.setVisible(true);
+        
+        btnBackHome.setVisible(true);
+        btnBackHome.setEnabled(true);
+    }
+    
     private void loadData() {
         try {
             BufferedReader reader = new BufferedReader(new FileReader(USERS_DB_SAVE_FILE));
