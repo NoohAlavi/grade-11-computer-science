@@ -92,6 +92,8 @@ public class frmLibraryManager extends javax.swing.JFrame {
         btnBackHome = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         lsBookList = new javax.swing.JList<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtReceipt = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -373,6 +375,13 @@ public class frmLibraryManager extends javax.swing.JFrame {
         lsBookList.setFont(new java.awt.Font("Cascadia Code", 1, 14)); // NOI18N
         jScrollPane1.setViewportView(lsBookList);
 
+        txtReceipt.setEditable(false);
+        txtReceipt.setColumns(20);
+        txtReceipt.setFont(new java.awt.Font("Fira Sans", 0, 14)); // NOI18N
+        txtReceipt.setRows(5);
+        txtReceipt.setBorder(javax.swing.BorderFactory.createTitledBorder("Your Receipt"));
+        jScrollPane2.setViewportView(txtReceipt);
+
         javax.swing.GroupLayout pnlHomePageLayout = new javax.swing.GroupLayout(pnlHomePage);
         pnlHomePage.setLayout(pnlHomePageLayout);
         pnlHomePageLayout.setHorizontalGroup(
@@ -381,6 +390,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
             .addGroup(pnlHomePageLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2)
                     .addComponent(txtISBN, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(pnlHomePageLayout.createSequentialGroup()
                         .addComponent(btnBackHome)
@@ -403,7 +413,9 @@ public class frmLibraryManager extends javax.swing.JFrame {
                 .addComponent(btnBorrow)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnReturn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 206, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnBackHome)
                 .addContainerGap())
         );
@@ -589,7 +601,10 @@ public class frmLibraryManager extends javax.swing.JFrame {
                 saveJSON();
                 setBookList();
                 
-                System.out.println(generateReceipt(book, currentUser, txtISBN.getText()));
+                String receipt = generateReceipt(book, currentUser, txtISBN.getText());
+                
+                System.out.println(receipt);
+                txtReceipt.setText(receipt);
             } else {
                 System.out.println("Book is not currently available!");
             }
@@ -938,6 +953,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
     private javax.swing.JButton btnReturn;
     private javax.swing.JButton btnSignUp;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblHomeTitle;
     private javax.swing.JLabel lblInfo;
     private javax.swing.JLabel lblLoginTitle;
@@ -955,5 +971,6 @@ public class frmLibraryManager extends javax.swing.JFrame {
     private javax.swing.JTextField txtEmailSignUp;
     private javax.swing.JTextField txtFullNameSignUp;
     private javax.swing.JTextField txtISBN;
+    private javax.swing.JTextArea txtReceipt;
     // End of variables declaration//GEN-END:variables
 }
