@@ -36,8 +36,8 @@ public class frmLibraryManager extends javax.swing.JFrame {
     final String CHAR_1_ALT = "e";
     final String CHAR_2 = "u";
     final String CHAR_2_ALT = "i";
-    final String CHAR_3 = "\\.";
-    final String CHAR_3_ALT = ",";
+    final String CHAR_3 = "\\,";
+    final String CHAR_3_ALT = ":";
     final String TEMP_CHAR = "⠀";
     
     final String CHARACTER_LIST = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890`~!@#$%^&*()[]{}";
