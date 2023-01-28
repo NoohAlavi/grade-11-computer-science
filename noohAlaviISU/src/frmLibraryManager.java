@@ -100,6 +100,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
         lsBookList = new javax.swing.JList<>();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtReceipt = new javax.swing.JTextArea();
+        btnSignOut = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -396,6 +397,13 @@ public class frmLibraryManager extends javax.swing.JFrame {
         txtReceipt.setBorder(javax.swing.BorderFactory.createTitledBorder("Your Receipt"));
         jScrollPane2.setViewportView(txtReceipt);
 
+        btnSignOut.setText("Sign Out");
+        btnSignOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSignOutActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnlHomePageLayout = new javax.swing.GroupLayout(pnlHomePage);
         pnlHomePage.setLayout(pnlHomePageLayout);
         pnlHomePageLayout.setHorizontalGroup(
@@ -408,7 +416,8 @@ public class frmLibraryManager extends javax.swing.JFrame {
                     .addComponent(txtISBN, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(pnlHomePageLayout.createSequentialGroup()
                         .addComponent(btnBackHome)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnSignOut))
                     .addComponent(btnBorrow, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnReturn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING))
@@ -430,7 +439,9 @@ public class frmLibraryManager extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnBackHome)
+                .addGroup(pnlHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnBackHome)
+                    .addComponent(btnSignOut))
                 .addContainerGap())
         );
 
@@ -666,6 +677,12 @@ public class frmLibraryManager extends javax.swing.JFrame {
         getISBN();
         action = Action.RETURN;
     }//GEN-LAST:event_btnReturnActionPerformed
+
+    private void btnSignOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignOutActionPerformed
+        currentUser = null;
+        changePage("home", "menu");
+        System.out.println("Succesfully signed out.");
+    }//GEN-LAST:event_btnSignOutActionPerformed
 
     private void getISBN() {
         btnBorrow.setEnabled(false);
@@ -1015,6 +1032,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
     private javax.swing.JButton btnLoginAccount;
     private javax.swing.JButton btnMakeAccount;
     private javax.swing.JButton btnReturn;
+    private javax.swing.JButton btnSignOut;
     private javax.swing.JButton btnSignUp;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

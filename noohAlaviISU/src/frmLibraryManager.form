@@ -446,7 +446,8 @@
                       <Component id="txtISBN" alignment="1" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="btnBackHome" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="btnSignOut" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Component id="btnBorrow" alignment="1" max="32767" attributes="0"/>
                       <Component id="btnReturn" alignment="1" max="32767" attributes="0"/>
@@ -472,7 +473,10 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jScrollPane2" pref="187" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="btnBackHome" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="btnBackHome" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnSignOut" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -594,6 +598,14 @@
             </Component>
           </SubComponents>
         </Container>
+        <Component class="javax.swing.JButton" name="btnSignOut">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Sign Out"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSignOutActionPerformed"/>
+          </Events>
+        </Component>
       </SubComponents>
     </Container>
   </SubComponents>
