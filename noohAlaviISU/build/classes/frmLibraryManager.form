@@ -509,7 +509,7 @@
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                <TitledBorder title="Please enter the book&apos;s ISBN number, and click enter."/>
+                <TitledBorder title="Please enter the book&apos;s ISBN number (shown in square brackets in the catalog), and click enter."/>
               </Border>
             </Property>
           </Properties>

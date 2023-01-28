@@ -352,7 +352,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
         btnReturn.setText("Return Book");
 
         txtISBN.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtISBN.setBorder(javax.swing.BorderFactory.createTitledBorder("Please enter the book's ISBN number, and click enter."));
+        txtISBN.setBorder(javax.swing.BorderFactory.createTitledBorder("Please enter the book's ISBN number (shown in square brackets in the catalog), and click enter."));
         txtISBN.setVisible(false);
         txtISBN.setEnabled(false);
         txtISBN.addActionListener(new java.awt.event.ActionListener() {
@@ -766,7 +766,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
         // Encryption stage 2: flip some letters
         // a -> e and vice versa
         // u -> i and vice versa
-        // . -> , and vice versa
+        // , -> : and vice versa
         encryptedMsg = encryptedMsg.trim()
                 .replaceAll(CHAR_1, TEMP_CHAR)
                 .replaceAll(CHAR_1_ALT, CHAR_1)
@@ -801,9 +801,9 @@ public class frmLibraryManager extends javax.swing.JFrame {
         }
         
         // Encryption stage 2: unflip the letters
-        // a -> e and vice versa
-        // u -> i and vice versa
-        // . -> , and vice versa
+        // e -> a and vice versa
+        // i -> u and vice versa
+        // : -> , and vice versa
         decryptedMsg = decryptedMsg.trim()
                 .replaceAll(CHAR_1_ALT, TEMP_CHAR)
                 .replaceAll(CHAR_1, CHAR_1_ALT)
