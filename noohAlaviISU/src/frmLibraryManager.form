@@ -470,7 +470,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="btnReturn" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jScrollPane2" pref="194" max="32767" attributes="0"/>
+                  <Component id="jScrollPane2" pref="187" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="btnBackHome" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -509,6 +509,9 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtISBN">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Cascadia Mono" size="18" style="1"/>
+            </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -533,6 +536,9 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBackHomeActionPerformed"/>
           </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_ListenersCodePost" type="java.lang.String" value="btnBackHome.setVisible(false);&#xa;btnBackHome.setEnabled(false);"/>
+          </AuxValues>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">
           <AuxValues>

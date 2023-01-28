@@ -353,6 +353,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
         btnReturn.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
         btnReturn.setText("Return Book");
 
+        txtISBN.setFont(new java.awt.Font("Cascadia Mono", 1, 18)); // NOI18N
         txtISBN.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtISBN.setBorder(javax.swing.BorderFactory.createTitledBorder("Please enter the book's ISBN number (shown in square brackets in the catalog), and click enter."));
         txtISBN.setVisible(false);
@@ -370,6 +371,8 @@ public class frmLibraryManager extends javax.swing.JFrame {
                 btnBackHomeActionPerformed(evt);
             }
         });
+        btnBackHome.setVisible(false);
+        btnBackHome.setEnabled(false);
 
         lsBookList.setBorder(javax.swing.BorderFactory.createTitledBorder("Find the perfect book, by exploring our catalog!"));
         lsBookList.setFont(new java.awt.Font("Cascadia Code", 1, 14)); // NOI18N
@@ -414,7 +417,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnReturn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnBackHome)
                 .addContainerGap())
@@ -579,6 +582,9 @@ public class frmLibraryManager extends javax.swing.JFrame {
         
         txtISBN.setEnabled(true);
         txtISBN.setVisible(true);
+        
+        btnBackHome.setVisible(true);
+        btnBackHome.setEnabled(true);
     }//GEN-LAST:event_btnBorrowActionPerformed
 
     private void txtISBNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtISBNActionPerformed
@@ -607,14 +613,27 @@ public class frmLibraryManager extends javax.swing.JFrame {
                 txtReceipt.setText(receipt);
             } else {
                 System.out.println("Book is not currently available!");
+                txtISBN.setText("Your selected book is currently unavailable!");
             }
         } catch (Exception e) {
             System.out.println(e);
+            txtISBN.setText("The book you selected cannot be found... did you type the ISBN correctly?");
         }
     }//GEN-LAST:event_txtISBNActionPerformed
 
     private void btnBackHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackHomeActionPerformed
-        changePage("home", "menu");
+        txtISBN.setVisible(false);
+        txtISBN.setEnabled(false);
+        txtISBN.setText("");
+        
+        btnBorrow.setVisible(true);
+        btnBorrow.setEnabled(true);
+        
+        btnReturn.setVisible(true);
+        btnReturn.setEnabled(true);
+        
+        btnBackHome.setVisible(false);
+        btnBackHome.setEnabled(false);
     }//GEN-LAST:event_btnBackHomeActionPerformed
 
     private void loadData() {
@@ -760,7 +779,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
         for (Object ISBN : books.keySet()) {
             JSONObject book = (JSONObject) books.get(ISBN);
             
-            booksToList.add("'" + book.get("bookTitle") + "' by " + book.get("author").toString().toUpperCase() + " [" + ISBN + "] - " + book.get("currentStock") + " copy/copies available");
+            booksToList.add("'" + book.get("bookTitle") + "' by " + book.get("author").toString().toUpperCase() + " [" + ISBN + "] - " + book.get("currentStock") + " copies available");
         }
         
         lsBookList.setModel(new javax.swing.AbstractListModel<String>() {
