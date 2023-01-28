@@ -575,8 +575,6 @@ public class frmLibraryManager extends javax.swing.JFrame {
             long bookQuantity = (long) book.get("currentStock");
             
             if (bookQuantity > 0) {
-                System.out.println("You have successfully borrowed '" + book.get("bookTitle") + "' by " + book.get("author"));
-                
                 // Update quantity in the JSON
                 bookQuantity--;
                 
@@ -589,6 +587,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
                 books.put(txtISBN.getText(), bookUpdated);
                 
                 saveJSON();
+                setBookList();
                 
                 System.out.println(generateReceipt(book, currentUser, txtISBN.getText()));
             } else {
@@ -746,7 +745,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
         for (Object ISBN : books.keySet()) {
             JSONObject book = (JSONObject) books.get(ISBN);
             
-            booksToList.add("'" + book.get("bookTitle") + "' by " + book.get("author").toString().toUpperCase() + " [" + ISBN + "]");
+            booksToList.add("'" + book.get("bookTitle") + "' by " + book.get("author").toString().toUpperCase() + " [" + ISBN + "] - " + book.get("currentStock") + " copy/copies available");
         }
         
         lsBookList.setModel(new javax.swing.AbstractListModel<String>() {
@@ -886,11 +885,6 @@ public class frmLibraryManager extends javax.swing.JFrame {
             }
         }
         return false;
-    }
-    
-    String borrowBook() {
-        String receipt = "";
-        return receipt;
     }
     
     void returnBook() {
