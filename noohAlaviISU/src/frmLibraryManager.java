@@ -270,7 +270,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
         pwdPassword1SignUp.setFont(new java.awt.Font("Andalus", 0, 18)); // NOI18N
         pwdPassword1SignUp.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         pwdPassword1SignUp.setToolTipText("");
-        pwdPassword1SignUp.setBorder(javax.swing.BorderFactory.createTitledBorder("Please enter your password, then click enter."));
+        pwdPassword1SignUp.setBorder(javax.swing.BorderFactory.createTitledBorder("Please enter your password, then click enter. Make sure your password is at least three characters long."));
         pwdPassword1SignUp.setEnabled(false);
         pwdPassword1SignUp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -543,8 +543,13 @@ public class frmLibraryManager extends javax.swing.JFrame {
         String password = pwdPassword1SignUp.getText();
         String confirmPassword = pwdPassword2SignUp.getText();
         
-        if (!password.equals(confirmPassword)) {
-            System.out.println("Passwords do not match!");
+        // Make sure passwords match AND are not too short.
+        if (!password.equals(confirmPassword) || password.length() < 4) {
+            return;
+        }
+        
+        // Make sure their email follows the correct format, by having @ and .
+        if (!email.contains("@") || !email.contains(".")) {
             return;
         }
         
@@ -633,6 +638,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
 
             saveJSON();
             setBookList();
+            loadData();
         } catch (Exception e) {
             System.out.println(e);
             if (action == Action.BORROW) {
@@ -771,6 +777,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
                 
                 txtEmailLogin.setEnabled(false);
                 pwdPasswordLogin.setEnabled(false);
+                btnLoginAccount.setEnabled(false);
                 
                 pnlLoginPage.setVisible(false);
                 break;
@@ -784,12 +791,21 @@ public class frmLibraryManager extends javax.swing.JFrame {
                 txtEmailSignUp.setEnabled(false);
                 pwdPassword1SignUp.setEnabled(false);
                 pwdPassword2SignUp.setEnabled(false);
+                btnMakeAccount.setEnabled(false);
                 
                 pnlSignUpPage.setVisible(false);
                 break;
             case "home":
                 btnBorrow.setEnabled(false);
                 btnReturn.setEnabled(false);
+                
+                btnBorrow.setVisible(true);
+                btnReturn.setVisible(true);
+                
+                txtISBN.setVisible(false);
+                
+                txtReceipt.setText("");
+                txtISBN.setText("");
                 
                 pnlHomePage.setVisible(false);
                 break;
@@ -838,7 +854,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
             }
             
             
-            booksToList.add("'" + book.get("bookTitle") + "' by " + book.get("author").toString().toUpperCase() + " [" + ISBN + "] - " + isAvlbl);
+            booksToList.add("'" + book.get("bookTitle") + "' by " + book.get("author").toString().toUpperCase() + " [ISBN:" + ISBN + "] - " + isAvlbl);
         }
         
         lsBookList.setModel(new javax.swing.AbstractListModel<String>() {
@@ -958,7 +974,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
             
             currentUser = newUser;
             
-            System.out.println("Account saved successfully!");
+            loadData();
             return true;
         } catch (IOException e) {
             System.out.println("[ERROR] " + e);
@@ -971,17 +987,12 @@ public class frmLibraryManager extends javax.swing.JFrame {
         for (User user : users) {
             if (email.equals(user.email)) {
                 if (password.equals(getDecrypted(user.password))) {
-                    System.out.println("Successfully logged into " + user.fullName);
                     currentUser = user;
                     return true;
                 }
             }
         }
         return false;
-    }
-    
-    void returnBook() {
-        
     }
     
     /**

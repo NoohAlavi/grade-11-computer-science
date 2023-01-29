@@ -378,7 +378,7 @@
             <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                <TitledBorder title="Please enter your password, then click enter."/>
+                <TitledBorder title="Please enter your password, then click enter. Make sure your password is at least three characters long."/>
               </Border>
             </Property>
             <Property name="enabled" type="boolean" value="false"/>
