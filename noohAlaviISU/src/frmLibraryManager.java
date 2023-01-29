@@ -489,9 +489,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private class User {        
-        ArrayList<String> borrowedBooks = new ArrayList<>();
-        
+    private class User {
         private String email;
         private String fullName;
         private String password;
@@ -500,21 +498,6 @@ public class frmLibraryManager extends javax.swing.JFrame {
             this.email = email;
             this.fullName = name;
             this.password = password;
-        }
-    }
-    
-    private class Book {        
-        private String bookTitle;
-        private String author;
-        
-        private int totalStock;
-        private int currentStock;
-        
-        public Book(String bookTitle, String author, int totalStock, int currentStock) {
-            this.bookTitle = bookTitle;
-            this.author = author;
-            this.totalStock = totalStock;
-            this.currentStock = currentStock;
         }
     }
     
@@ -603,13 +586,13 @@ public class frmLibraryManager extends javax.swing.JFrame {
             String bookISBN = txtISBN.getText();
             
             JSONObject book = (JSONObject) books.get(bookISBN);
-            long bookQuantity = (long) book.get("currentStock");
+            Boolean bookAvailable = (Boolean) book.get("isAvailable");
             String borrower = null;
             
             if (action == Action.BORROW) {
-                if (bookQuantity > 0) {
+                if (bookAvailable) {
                     // Update quantity in the JSON
-                    bookQuantity--;
+                    bookAvailable = false;
                     borrower = currentUser.email;
                     
                     String receipt = generateReceipt(book, currentUser, txtISBN.getText());
@@ -617,7 +600,6 @@ public class frmLibraryManager extends javax.swing.JFrame {
                     System.out.println(receipt);
                     txtReceipt.setText(receipt);
                 } else {
-                    System.out.println("Book is not currently available!");
                     txtISBN.setText("Your selected book is currently unavailable!");
                 }
             } else if (action == Action.RETURN) {
@@ -625,7 +607,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
                 if (currentBorrower.equals(currentUser.email)) {
                     txtISBN.setText("");
                     txtReceipt.setText("Book '" + book.get("bookTitle") + "' returned successfully! We hope you enjoyed it!");
-                    bookQuantity++;
+                    bookAvailable = true;
                 } else {
                     txtISBN.setText("You do not have that book borrowed!");
                     return;
@@ -638,7 +620,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
             bookUpdated.put("bookTitle", book.get("bookTitle"));
             bookUpdated.put("author", book.get("author"));
             bookUpdated.put("maxStock", book.get("maxStock"));
-            bookUpdated.put("currentStock", bookQuantity);
+            bookUpdated.put("isAvailable", bookAvailable);
             bookUpdated.put("borrower", borrower);
 
             books.put(bookISBN, bookUpdated);
@@ -840,8 +822,16 @@ public class frmLibraryManager extends javax.swing.JFrame {
         
         for (Object ISBN : books.keySet()) {
             JSONObject book = (JSONObject) books.get(ISBN);
+            String isAvlbl = "";
             
-            booksToList.add("'" + book.get("bookTitle") + "' by " + book.get("author").toString().toUpperCase() + " [" + ISBN + "] - " + book.get("currentStock") + " copies available");
+            if ((boolean) book.get("isAvailable")) {
+                isAvlbl = "AVAILABLE";
+            } else {
+                isAvlbl = "NOT CURRENTLY AVAILABLE";
+            }
+            
+            
+            booksToList.add("'" + book.get("bookTitle") + "' by " + book.get("author").toString().toUpperCase() + " [" + ISBN + "] - " + isAvlbl);
         }
         
         lsBookList.setModel(new javax.swing.AbstractListModel<String>() {
