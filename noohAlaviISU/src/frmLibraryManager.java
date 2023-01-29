@@ -101,6 +101,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         txtReceipt = new javax.swing.JTextArea();
         btnSignOut = new javax.swing.JButton();
+        lblWelcome = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -404,11 +405,13 @@ public class frmLibraryManager extends javax.swing.JFrame {
             }
         });
 
+        lblWelcome.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblWelcome.setText("Welcome to the library!");
+
         javax.swing.GroupLayout pnlHomePageLayout = new javax.swing.GroupLayout(pnlHomePage);
         pnlHomePage.setLayout(pnlHomePageLayout);
         pnlHomePageLayout.setHorizontalGroup(
             pnlHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblHomeTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
             .addGroup(pnlHomePageLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -420,16 +423,20 @@ public class frmLibraryManager extends javax.swing.JFrame {
                         .addComponent(btnSignOut))
                     .addComponent(btnBorrow, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnReturn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblHomeTitle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 788, Short.MAX_VALUE)
+                    .addComponent(lblWelcome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         pnlHomePageLayout.setVerticalGroup(
             pnlHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlHomePageLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblHomeTitle)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblHomeTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lblWelcome)
+                .addGap(9, 9, 9)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtISBN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -619,7 +626,6 @@ public class frmLibraryManager extends javax.swing.JFrame {
             JSONObject bookUpdated = new JSONObject();
             bookUpdated.put("bookTitle", book.get("bookTitle"));
             bookUpdated.put("author", book.get("author"));
-            bookUpdated.put("maxStock", book.get("maxStock"));
             bookUpdated.put("isAvailable", bookAvailable);
             bookUpdated.put("borrower", borrower);
 
@@ -811,6 +817,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
                 btnReturn.setEnabled(true);
                 
                 setBookList();
+                lblWelcome.setText("Welcome to the library, " + currentUser.fullName + "!");
                 
                 pnlHomePage.setVisible(true);
                 break;
@@ -1031,6 +1038,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
     private javax.swing.JLabel lblLoginTitle;
     private javax.swing.JLabel lblSignUpTitle;
     private javax.swing.JLabel lblTitle;
+    private javax.swing.JLabel lblWelcome;
     private javax.swing.JList<String> lsBookList;
     private javax.swing.JPanel pnlHomePage;
     private javax.swing.JPanel pnlLoginPage;
