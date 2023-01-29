@@ -1,3 +1,8 @@
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.ArrayList;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -25,21 +30,58 @@ public class frmA27 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        spCars = new javax.swing.JScrollPane();
+        lsCars = new javax.swing.JList<>();
+        spAnimals = new javax.swing.JScrollPane();
+        lsAnimals = new javax.swing.JList<>();
+        jButton1 = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        spCars.setViewportView(lsCars);
+
+        spAnimals.setViewportView(lsAnimals);
+
+        jButton1.setText("LOAD DATA!");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(173, 173, 173)
+                        .addComponent(jButton1)
+                        .addGap(0, 174, Short.MAX_VALUE))
+                    .addComponent(spAnimals, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(spCars, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(spCars, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(spAnimals, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        jButton1.setVisible(false);
+        loadData();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -75,7 +117,65 @@ public class frmA27 extends javax.swing.JFrame {
             }
         });
     }
+    
+    private void loadData() {
+        try {
+            // Load cars file
+            
+            ArrayList<String> cars = new ArrayList<>();
+            ArrayList<String> carSpeeds = new ArrayList<>();
+            
+            BufferedReader carsReader = new BufferedReader(new FileReader("src/carSpeeds.csv"));
+            String line;
+            
+            while ((line = carsReader.readLine()) != null) {
+                System.out.println(line);
+                cars.add(line.split(",")[0]);
+                carSpeeds.add(line.split(",")[1]);
+            }
+            
+            carsReader.close();
+            
+            lsCars = new javax.swing.JList<>();
+            lsCars.setModel(new javax.swing.AbstractListModel<String>() {
+                public int getSize() { return cars.size(); }
+                public String getElementAt(int i) { return cars.get(i); }
+            });
+            spCars.setViewportView(lsCars);
+            
+            // Load cars file
+            
+            ArrayList<String> animals = new ArrayList<>();
+            ArrayList<String> animalSpeeds = new ArrayList<>();
+            
+            BufferedReader animalsReader = new BufferedReader(new FileReader("src/animalSpeeds.csv"));
+            String animalsLine;
+            
+            while ((line = animalsReader.readLine()) != null) {
+                System.out.println(line);
+                animals.add(line.split(",")[0]);
+                animalSpeeds.add(line.split(",")[1]);
+            }
+            
+            animalsReader.close();
+            
+            lsAnimals = new javax.swing.JList<>();
+            lsAnimals.setModel(new javax.swing.AbstractListModel<String>() {
+                public int getSize() { return animals.size(); }
+                public String getElementAt(int i) { return animals.get(i); }
+            });
+            spAnimals.setViewportView(lsAnimals);
+            
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JList<String> lsAnimals;
+    private javax.swing.JList<String> lsCars;
+    private javax.swing.JScrollPane spAnimals;
+    private javax.swing.JScrollPane spCars;
     // End of variables declaration//GEN-END:variables
 }

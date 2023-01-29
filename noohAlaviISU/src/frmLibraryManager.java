@@ -102,6 +102,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
         txtReceipt = new javax.swing.JTextArea();
         btnSignOut = new javax.swing.JButton();
         lblWelcome = new javax.swing.JLabel();
+        lblErrorLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -147,7 +148,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
                     .addComponent(btnSignUp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnLogin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnExit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblInfo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblInfo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 888, Short.MAX_VALUE)
                     .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -161,7 +162,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
                 .addComponent(btnSignUp)
                 .addGap(75, 75, 75)
                 .addComponent(btnExit)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 156, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 230, Short.MAX_VALUE)
                 .addComponent(lblInfo)
                 .addContainerGap())
         );
@@ -221,7 +222,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
                     .addComponent(btnLoginAccount, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(pnlLoginPageLayout.createSequentialGroup()
                         .addComponent(btnBackLogin)
-                        .addGap(0, 705, Short.MAX_VALUE))
+                        .addGap(0, 807, Short.MAX_VALUE))
                     .addComponent(txtEmailLogin)
                     .addComponent(pwdPasswordLogin))
                 .addContainerGap())
@@ -236,7 +237,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
                 .addComponent(pwdPasswordLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnLoginAccount)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 275, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 337, Short.MAX_VALUE)
                 .addComponent(btnBackLogin)
                 .addContainerGap())
         );
@@ -315,7 +316,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
                 .addGroup(pnlSignUpPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pwdPassword1SignUp)
                     .addComponent(txtFullNameSignUp)
-                    .addComponent(lblSignUpTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 788, Short.MAX_VALUE)
+                    .addComponent(lblSignUpTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 889, Short.MAX_VALUE)
                     .addComponent(txtEmailSignUp)
                     .addComponent(pwdPassword2SignUp)
                     .addComponent(btnMakeAccount, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -339,7 +340,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
                 .addComponent(pwdPassword2SignUp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnMakeAccount)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 158, Short.MAX_VALUE)
                 .addComponent(btnBackSignUp)
                 .addContainerGap())
         );
@@ -408,6 +409,8 @@ public class frmLibraryManager extends javax.swing.JFrame {
         lblWelcome.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblWelcome.setText("Welcome to the library!");
 
+        lblErrorLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
         javax.swing.GroupLayout pnlHomePageLayout = new javax.swing.GroupLayout(pnlHomePage);
         pnlHomePage.setLayout(pnlHomePageLayout);
         pnlHomePageLayout.setHorizontalGroup(
@@ -415,17 +418,18 @@ public class frmLibraryManager extends javax.swing.JFrame {
             .addGroup(pnlHomePageLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 890, Short.MAX_VALUE)
                     .addComponent(txtISBN, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(pnlHomePageLayout.createSequentialGroup()
-                        .addComponent(btnBackHome)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnSignOut))
                     .addComponent(btnBorrow, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnReturn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblHomeTitle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 788, Short.MAX_VALUE)
-                    .addComponent(lblWelcome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lblHomeTitle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 890, Short.MAX_VALUE)
+                    .addComponent(lblWelcome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlHomePageLayout.createSequentialGroup()
+                        .addComponent(btnBackHome)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnSignOut))
+                    .addComponent(lblErrorLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         pnlHomePageLayout.setVerticalGroup(
@@ -444,11 +448,13 @@ public class frmLibraryManager extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnReturn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblErrorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnBackHome)
-                    .addComponent(btnSignOut))
+                    .addComponent(btnSignOut)
+                    .addComponent(btnBackHome))
                 .addContainerGap())
         );
 
@@ -612,7 +618,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
                     System.out.println(receipt);
                     txtReceipt.setText(receipt);
                 } else {
-                    txtISBN.setText("Your selected book is currently unavailable!");
+                    lblErrorLabel.setText("Your selected book is currently unavailable!");
                 }
             } else if (action == Action.RETURN) {
                 String currentBorrower = (String) book.get("borrower");
@@ -621,7 +627,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
                     txtReceipt.setText("Book '" + book.get("bookTitle") + "' returned successfully! We hope you enjoyed it!");
                     bookAvailable = true;
                 } else {
-                    txtISBN.setText("You do not have that book borrowed!");
+                    lblErrorLabel.setText("You do not have that book borrowed!");
                     return;
                 }
             } else {
@@ -642,9 +648,9 @@ public class frmLibraryManager extends javax.swing.JFrame {
         } catch (Exception e) {
             System.out.println(e);
             if (action == Action.BORROW) {
-                txtISBN.setText("The book you selected cannot be found... did you type the ISBN correctly?");
+                lblErrorLabel.setText("The book you selected cannot be found");
             } else {
-                txtISBN.setText("You do not have that book borrowed!");
+                lblErrorLabel.setText("You do not have that book borrowed!");
             }
         }
         
@@ -806,6 +812,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
                 
                 txtReceipt.setText("");
                 txtISBN.setText("");
+                lblErrorLabel.setText("");
                 
                 pnlHomePage.setVisible(false);
                 break;
@@ -1044,6 +1051,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
     private javax.swing.JButton btnSignUp;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lblErrorLabel;
     private javax.swing.JLabel lblHomeTitle;
     private javax.swing.JLabel lblInfo;
     private javax.swing.JLabel lblLoginTitle;

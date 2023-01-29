@@ -86,7 +86,7 @@
                       <Component id="btnSignUp" max="32767" attributes="0"/>
                       <Component id="btnLogin" alignment="1" max="32767" attributes="0"/>
                       <Component id="btnExit" alignment="1" max="32767" attributes="0"/>
-                      <Component id="lblInfo" alignment="1" max="32767" attributes="0"/>
+                      <Component id="lblInfo" alignment="1" pref="888" max="32767" attributes="0"/>
                       <Component id="lblTitle" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -103,7 +103,7 @@
                   <Component id="btnSignUp" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
                   <Component id="btnExit" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="156" max="32767" attributes="0"/>
+                  <EmptySpace pref="230" max="32767" attributes="0"/>
                   <Component id="lblInfo" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -179,7 +179,7 @@
                       <Component id="btnLoginAccount" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="btnBackLogin" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="705" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="807" max="32767" attributes="0"/>
                       </Group>
                       <Component id="txtEmailLogin" alignment="0" max="32767" attributes="0"/>
                       <Component id="pwdPasswordLogin" alignment="0" max="32767" attributes="0"/>
@@ -198,7 +198,7 @@
                   <Component id="pwdPasswordLogin" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="btnLoginAccount" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="275" max="32767" attributes="0"/>
+                  <EmptySpace pref="337" max="32767" attributes="0"/>
                   <Component id="btnBackLogin" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -290,7 +290,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="pwdPassword1SignUp" max="32767" attributes="0"/>
                       <Component id="txtFullNameSignUp" max="32767" attributes="0"/>
-                      <Component id="lblSignUpTitle" pref="788" max="32767" attributes="0"/>
+                      <Component id="lblSignUpTitle" pref="889" max="32767" attributes="0"/>
                       <Component id="txtEmailSignUp" alignment="0" max="32767" attributes="0"/>
                       <Component id="pwdPassword2SignUp" alignment="0" max="32767" attributes="0"/>
                       <Component id="btnMakeAccount" alignment="1" max="32767" attributes="0"/>
@@ -318,7 +318,7 @@
                   <Component id="pwdPassword2SignUp" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btnMakeAccount" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="96" max="32767" attributes="0"/>
+                  <EmptySpace pref="158" max="32767" attributes="0"/>
                   <Component id="btnBackSignUp" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -441,18 +441,19 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jScrollPane2" max="32767" attributes="0"/>
+                      <Component id="jScrollPane2" pref="890" max="32767" attributes="0"/>
                       <Component id="txtISBN" alignment="1" max="32767" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
+                      <Component id="btnBorrow" alignment="1" max="32767" attributes="0"/>
+                      <Component id="btnReturn" alignment="1" max="32767" attributes="0"/>
+                      <Component id="jScrollPane1" alignment="1" max="32767" attributes="0"/>
+                      <Component id="lblHomeTitle" alignment="1" pref="890" max="32767" attributes="0"/>
+                      <Component id="lblWelcome" alignment="1" max="32767" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
                           <Component id="btnBackHome" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="btnSignOut" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="btnBorrow" alignment="1" max="32767" attributes="0"/>
-                      <Component id="btnReturn" alignment="1" max="32767" attributes="0"/>
-                      <Component id="jScrollPane1" alignment="1" max="32767" attributes="0"/>
-                      <Component id="lblHomeTitle" alignment="1" pref="788" max="32767" attributes="0"/>
-                      <Component id="lblWelcome" alignment="1" max="32767" attributes="0"/>
+                      <Component id="lblErrorLabel" alignment="1" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -474,11 +475,13 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="btnReturn" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jScrollPane2" pref="187" max="32767" attributes="0"/>
+                  <Component id="jScrollPane2" min="-2" pref="210" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="lblErrorLabel" pref="33" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btnBackHome" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnSignOut" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnBackHome" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -613,6 +616,11 @@
           <Properties>
             <Property name="horizontalAlignment" type="int" value="4"/>
             <Property name="text" type="java.lang.String" value="Welcome to the library!"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblErrorLabel">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
           </Properties>
         </Component>
       </SubComponents>
