@@ -1,7 +1,7 @@
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.Collections;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -14,6 +14,11 @@ import java.util.ArrayList;
  */
 public class frmA27 extends javax.swing.JFrame {
 
+    ArrayList<String> carNames = new ArrayList<>();
+    ArrayList<String> carSpeeds = new ArrayList<>();
+    ArrayList<String> animalNames = new ArrayList<>();
+    ArrayList<String> animalSpeeds = new ArrayList<>();
+    
     /**
      * Creates new form frmA27
      */
@@ -30,17 +35,18 @@ public class frmA27 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        spCars = new javax.swing.JScrollPane();
-        lsCars = new javax.swing.JList<>();
-        spAnimals = new javax.swing.JScrollPane();
-        lsAnimals = new javax.swing.JList<>();
         jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtCars = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtAnimals = new javax.swing.JTextArea();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        spCars.setViewportView(lsCars);
-
-        spAnimals.setViewportView(lsAnimals);
 
         jButton1.setText("LOAD DATA!");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -49,30 +55,68 @@ public class frmA27 extends javax.swing.JFrame {
             }
         });
 
+        txtCars.setEditable(false);
+        txtCars.setColumns(20);
+        txtCars.setFont(new java.awt.Font("Cascadia Code", 0, 14)); // NOI18N
+        txtCars.setRows(5);
+        jScrollPane1.setViewportView(txtCars);
+
+        txtAnimals.setEditable(false);
+        txtAnimals.setColumns(20);
+        txtAnimals.setFont(new java.awt.Font("Cascadia Code", 0, 14)); // NOI18N
+        txtAnimals.setRows(5);
+        jScrollPane2.setViewportView(txtAnimals);
+
+        jLabel2.setText("The fastest car is () with a speed of () mpH, and the fastest animal is () with a speed of () mpH.");
+
+        jLabel3.setText("The difference between the fastest car and the fastest animal is () mpH.");
+
+        jLabel4.setText("The slowestCar is () with a speed of () mpH, and the slowest animal is () with a speed of () mpH.");
+
+        jLabel5.setText("The difference between the slowest car and the slowest animal is () mpH.");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(269, 269, 269))
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(173, 173, 173)
-                        .addComponent(jButton1)
-                        .addGap(0, 174, Short.MAX_VALUE))
-                    .addComponent(spAnimals, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(spCars, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(50, 50, 50)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2)
+                    .addComponent(jScrollPane1)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 646, Short.MAX_VALUE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 646, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(spCars, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(spAnimals, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel5)
+                .addGap(83, 83, 83)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addContainerGap())
+                .addGap(21, 21, 21))
         );
 
         pack();
@@ -81,8 +125,9 @@ public class frmA27 extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         jButton1.setVisible(false);
         loadData();
+        calculateNewData();
     }//GEN-LAST:event_jButton1ActionPerformed
-
+    
     /**
      * @param args the command line arguments
      */
@@ -120,62 +165,77 @@ public class frmA27 extends javax.swing.JFrame {
     
     private void loadData() {
         try {
-            // Load cars file
-            
-            ArrayList<String> cars = new ArrayList<>();
-            ArrayList<String> carSpeeds = new ArrayList<>();
-            
+            // Load cars file            
             BufferedReader carsReader = new BufferedReader(new FileReader("src/carSpeeds.csv"));
             String line;
-            
+
             while ((line = carsReader.readLine()) != null) {
-                System.out.println(line);
-                cars.add(line.split(",")[0]);
+                carNames.add(line.split(",")[0]);
                 carSpeeds.add(line.split(",")[1]);
             }
-            
             carsReader.close();
             
-            lsCars = new javax.swing.JList<>();
-            lsCars.setModel(new javax.swing.AbstractListModel<String>() {
-                public int getSize() { return cars.size(); }
-                public String getElementAt(int i) { return cars.get(i); }
-            });
-            spCars.setViewportView(lsCars);
+            String cars = "";
             
-            // Load cars file
+            for (int i = 0; i < carNames.size(); i++) {
+                cars += carNames.get(i) + ": " + carSpeeds.get(i) + " mpH\n";
+            }
             
-            ArrayList<String> animals = new ArrayList<>();
-            ArrayList<String> animalSpeeds = new ArrayList<>();
+            txtCars.setText(cars);
             
+            // Load animals file
             BufferedReader animalsReader = new BufferedReader(new FileReader("src/animalSpeeds.csv"));
             String animalsLine;
             
             while ((line = animalsReader.readLine()) != null) {
-                System.out.println(line);
-                animals.add(line.split(",")[0]);
+                animalNames.add(line.split(",")[0]);
                 animalSpeeds.add(line.split(",")[1]);
             }
-            
             animalsReader.close();
             
-            lsAnimals = new javax.swing.JList<>();
-            lsAnimals.setModel(new javax.swing.AbstractListModel<String>() {
-                public int getSize() { return animals.size(); }
-                public String getElementAt(int i) { return animals.get(i); }
-            });
-            spAnimals.setViewportView(lsAnimals);
+            String animals = "";
             
+            for (int i = 0; i < animalNames.size(); i++) {
+                animals += animalNames.get(i) + ": " + animalSpeeds.get(i) + " mpH\n";
+            }
+            
+            txtAnimals.setText(animals);
+
         } catch (Exception e) {
             System.out.println(e);
         }
     }
+    
+    private void calculateNewData() {
+        int slowestCarSpeed = 2147483647, fastestCarSpeed = 0; //2147483647 is max for ints
+        String slowestCarName = "", fastestCarName = "";
+        
+        for (int i = 0; i < carNames.size(); i++) {
+            int carSpeed = Integer.parseInt(carSpeeds.get(i));
+            
+            if (carSpeed < slowestCarSpeed) {
+                slowestCarSpeed = carSpeed;
+                slowestCarName = carNames.get(i);
+            } 
+            if (carSpeed > fastestCarSpeed) {
+                fastestCarSpeed = carSpeed;
+                fastestCarName = carNames.get(i);
+            }
+        }
+        
+        System.out.println(fastestCarName + " " + fastestCarSpeed);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JList<String> lsAnimals;
-    private javax.swing.JList<String> lsCars;
-    private javax.swing.JScrollPane spAnimals;
-    private javax.swing.JScrollPane spCars;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea txtAnimals;
+    private javax.swing.JTextArea txtCars;
     // End of variables declaration//GEN-END:variables
 }
