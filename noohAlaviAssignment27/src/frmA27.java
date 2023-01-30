@@ -35,23 +35,24 @@ public class frmA27 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        btnLoad = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtCars = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtAnimals = new javax.swing.JTextArea();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        txtFastestNames = new javax.swing.JLabel();
+        txtFastestDiff = new javax.swing.JLabel();
+        txtSlowestNames = new javax.swing.JLabel();
+        txtSlowestDiff = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("LOAD DATA!");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnLoad.setText("LOAD DATA!");
+        btnLoad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnLoadActionPerformed(evt);
             }
         });
 
@@ -59,74 +60,101 @@ public class frmA27 extends javax.swing.JFrame {
         txtCars.setColumns(20);
         txtCars.setFont(new java.awt.Font("Cascadia Code", 0, 14)); // NOI18N
         txtCars.setRows(5);
+        txtCars.setBorder(javax.swing.BorderFactory.createTitledBorder("-Car Data-"));
         jScrollPane1.setViewportView(txtCars);
 
         txtAnimals.setEditable(false);
         txtAnimals.setColumns(20);
         txtAnimals.setFont(new java.awt.Font("Cascadia Code", 0, 14)); // NOI18N
         txtAnimals.setRows(5);
+        txtAnimals.setBorder(javax.swing.BorderFactory.createTitledBorder("-Animal Data-"));
         jScrollPane2.setViewportView(txtAnimals);
 
-        jLabel2.setText("The fastest car is () with a speed of () mpH, and the fastest animal is () with a speed of () mpH.");
+        txtFastestNames.setText("The fastest car is () with a speed of () mpH, and the fastest animal is () with a speed of () mpH.");
+        txtFastestNames.setVisible(false);
 
-        jLabel3.setText("The difference between the fastest car and the fastest animal is () mpH.");
+        txtFastestDiff.setText("The difference between the fastest car and the fastest animal is () mpH.");
+        txtFastestDiff.setVisible(false);
 
-        jLabel4.setText("The slowestCar is () with a speed of () mpH, and the slowest animal is () with a speed of () mpH.");
+        txtSlowestNames.setText("The slowestCar is () with a speed of () mpH, and the slowest animal is () with a speed of () mpH.");
+        txtSlowestNames.setVisible(false);
 
-        jLabel5.setText("The difference between the slowest car and the slowest animal is () mpH.");
+        txtSlowestDiff.setText("The difference between the slowest car and the slowest animal is () mpH.");
+        txtSlowestDiff.setVisible(false);
+
+        jLabel1.setFont(new java.awt.Font("Cascadia Code", 1, 24)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("CAR VS ANIMAL SPEED ANALYSIS TOOL");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 877, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(btnLoad, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtFastestNames, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2)
+                        .addComponent(txtFastestDiff, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtSlowestNames, javax.swing.GroupLayout.DEFAULT_SIZE, 865, Short.MAX_VALUE)
+                        .addComponent(txtSlowestDiff, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 865, Short.MAX_VALUE))
+                    .addContainerGap()))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 478, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jLabel1)
+                    .addGap(28, 28, 28)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(txtFastestNames)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(txtFastestDiff)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(txtSlowestNames)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(txtSlowestDiff)
+                    .addGap(18, 18, 18)
+                    .addComponent(btnLoad)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(269, 269, 269))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jScrollPane2)
-                    .addComponent(jScrollPane1)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 646, Short.MAX_VALUE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 646, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5)
-                .addGap(83, 83, 83)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(21, 21, 21))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        jButton1.setVisible(false);
+    private void btnLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadActionPerformed
+//        btnLoad.setVisible(false);
+        btnLoad.setText("RELOAD DATA!");
         loadData();
         calculateNewData();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnLoadActionPerformed
     
     /**
      * @param args the command line arguments
@@ -207,6 +235,7 @@ public class frmA27 extends javax.swing.JFrame {
     }
     
     private void calculateNewData() {
+        // Calculate car data
         int slowestCarSpeed = 2147483647, fastestCarSpeed = 0; //2147483647 is max for ints
         String slowestCarName = "", fastestCarName = "";
         
@@ -223,19 +252,48 @@ public class frmA27 extends javax.swing.JFrame {
             }
         }
         
-        System.out.println(fastestCarName + " " + fastestCarSpeed);
+        // Calculate animal data
+        int slowestAnimalSpeed = 2147483647, fastestAnimalSpeed = 0; //2147483647 is max for ints
+        String slowestAnimalName = "", fastestAnimalName = "";
+        
+        for (int i = 0; i < animalNames.size(); i++) {
+            int animalSpeed = Integer.parseInt(animalSpeeds.get(i));
+            
+            if (animalSpeed < slowestAnimalSpeed) {
+                slowestAnimalSpeed = animalSpeed;
+                slowestAnimalName = animalNames.get(i);
+            } 
+            if (animalSpeed > fastestAnimalSpeed) {
+                fastestAnimalSpeed = animalSpeed;
+                fastestAnimalName = animalNames.get(i);
+            }
+        }
+        
+        // Output new data
+        
+        txtFastestNames.setText("The fastest car is the '" + fastestCarName + "' with a speed of " + fastestCarSpeed + " mpH, and the fastest animal is the '" + fastestAnimalName + "' with a speed of " + fastestAnimalSpeed + " mpH.");
+        txtFastestDiff.setText("The speed difference between the fastest car and the fastest animal is " + Math.abs(fastestCarSpeed - fastestAnimalSpeed) + " mpH.");
+        
+        txtSlowestNames.setText("The slowest car is the '" + slowestCarName + "' with a speed of " + slowestCarSpeed + " mpH, and the slower animal is the '" + slowestAnimalName + "' with a speed of " + slowestAnimalSpeed + " mpH.");
+        txtSlowestDiff.setText("The speed difference between the slowest car and the slowest animal is " + Math.abs(slowestCarSpeed - slowestAnimalSpeed) + " mpH.");
+    
+        txtFastestNames.setVisible(true);
+        txtFastestDiff.setVisible(true);
+        txtSlowestNames.setVisible(true);
+        txtSlowestDiff.setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnLoad;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea txtAnimals;
     private javax.swing.JTextArea txtCars;
+    private javax.swing.JLabel txtFastestDiff;
+    private javax.swing.JLabel txtFastestNames;
+    private javax.swing.JLabel txtSlowestDiff;
+    private javax.swing.JLabel txtSlowestNames;
     // End of variables declaration//GEN-END:variables
 }
