@@ -570,11 +570,12 @@ public class frmLibraryManager extends javax.swing.JFrame {
         
         // Make sure passwords match AND are not too short.
         if (!password.equals(confirmPassword) || password.length() < 4) {
+            lblErrorLabelSignUp.setText("Ensure passwords match and are at least 3 characters long.");
             return;
         }
-        
-        // Make sure their email follows the correct format, by having @ and .
+       
         if (!email.contains("@") || !email.contains(".")) {
+            lblErrorLabelSignUp.setText("Invalid email!");
             return;
         }
         
