@@ -1,1 +1,116 @@
-{"9798887659053":{"isAvailable":true,"author":"Enthralling History","borrower":null,"bookTitle":"History of Egypt: An Enthralling Overview of Egyptian History"},"978-0-545-79565-4":{"isAvailable":true,"author":"Suzanne Weyn","borrower":null,"bookTitle":"The Haunted Museum: The Phantom Music Box"},"978-1-316-63439-4":{"isAvailable":true,"author":"Tayeb El-Hibri","borrower":null,"bookTitle":"The Abbasid Caliphate: A History"},"978-1-338-11689-2":{"isAvailable":true,"author":"Allan Woodrow","borrower":null,"bookTitle":"Unschooled"},"978-1-44345-084-3":{"isAvailable":true,"author":"Matt Haig","borrower":null,"bookTitle":"The Girl Who Saved Christmas"},"0-689-85779-9":{"isAvailable":true,"author":"Franklin W. Dixon","borrower":null,"bookTitle":"The Hardy Boys: Passport to Danger"},"978-0-00-752755-7":{"isAvailable":true,"author":"Agatha Christie","borrower":null,"bookTitle":"Death on the Nile"},"1":{"isAvailable":true,"author":"J.K. Rowling","borrower":null,"bookTitle":"Harry Potter and the Philosopher's Stone"},"2":{"isAvailable":true,"author":"J.K. Rowling","borrower":null,"bookTitle":"Harry Potter and the Chamber of Secrets"},"3":{"isAvailable":true,"author":"J.K. Rowling","borrower":null,"bookTitle":"Harry Potter and the Prisoner of Azkaban"},"4":{"isAvailable":true,"author":"J.K. Rowling","borrower":null,"bookTitle":"Harry Potter and the Goblet of Fire"},"5":{"isAvailable":true,"author":"J.K. Rowling","borrower":null,"bookTitle":"Harry Potter and the Order of the Phoenix"},"6":{"isAvailable":true,"author":"J.K. Rowling","borrower":null,"bookTitle":"Harry Potter and the Half-Blood Prince"},"7":{"isAvailable":true,"author":"J.K. Rowling","borrower":null,"bookTitle":"Harry Potter and the Deathly Hallows"},"978-81-7599-431-7":{"isAvailable":true,"author":"Sir Arthur Conan Doyle","borrower":null,"bookTitle":"The Complete Novels of Sherlock Holmes"},"0-689-83571-X":{"isAvailable":true,"author":"Sir Arthur Conan Doyle","borrower":null,"bookTitle":"The Hound of the Baskervilles"},"978-1-338-05380-7":{"isAvailable":true,"author":"Gordon Korman","borrower":null,"bookTitle":"Restart"},"978-0-7490-0852-9":{"isAvailable":true,"author":"Laurie R. King","borrower":null,"bookTitle":"The Beekeeper's Apprentice"},"1-4169-6766-4":{"isAvailable":true,"author":"Franklin W. Dixon","borrower":null,"bookTitle":"The Hardy Boys: Double Deception"}}
+{
+	"9798887659053":{
+		"isAvailable":true,
+		"author":"Enthralling History",
+		"borrower":null,
+		"bookTitle":"History of Egypt: An Enthralling Overview of Egyptian History"
+	},
+	"978-0-545-79565-4":{
+		"isAvailable":true,
+		"author":"Suzanne Weyn",
+		"borrower":null,
+		"bookTitle":"The Haunted Museum: The Phantom Music Box"
+	},
+	"978-1-316-63439-4":{
+		"isAvailable":true,
+		"author":"Tayeb El-Hibri",
+		"borrower":null,
+		"bookTitle":"The Abbasid Caliphate: A History"
+	},
+	"978-1-338-11689-2":{
+		"isAvailable":true,
+		"author":"Allan Woodrow",
+		"borrower":null,
+		"bookTitle":"Unschooled"
+	},
+	"978-1-44345-084-3":{
+		"isAvailable":true,
+		"author":"Matt Haig",
+		"borrower":null,
+		"bookTitle":"The Girl Who Saved Christmas"
+	},
+	"0-689-85779-9":{
+		"isAvailable":true,
+		"author":"Franklin W. Dixon",
+		"borrower":null,
+		"bookTitle":"The Hardy Boys: Passport to Danger"
+	},
+	"978-0-00-752755-7":{
+		"isAvailable":true,
+		"author":"Agatha Christie",
+		"borrower":null,
+		"bookTitle":"Death on the Nile"
+	},
+	"1408855895":{
+		"isAvailable":true,
+		"author":"J.K. Rowling",
+		"borrower":null,
+		"bookTitle":"Harry Potter and the Philosopher's Stone"
+	},
+	"1408855666":{
+		"isAvailable":true,
+		"author":"J.K. Rowling",
+		"borrower":null,
+		"bookTitle":"Harry Potter and the Chamber of Secrets"
+	},
+	"1408855917":{
+		"isAvailable":true,
+		"author":"J.K. Rowling",
+		"borrower":null,
+		"bookTitle":"Harry Potter and the Prisoner of Azkaban"
+	},
+	"1408855682":{
+		"isAvailable":true,
+		"author":"J.K. Rowling",
+		"borrower":null,
+		"bookTitle":"Harry Potter and the Goblet of Fire"
+	},
+	"9781408855690":{
+		"isAvailable":true,
+		"author":"J.K. Rowling",
+		"borrower":null,
+		"bookTitle":"Harry Potter and the Order of the Phoenix"
+	},
+	"9781408855706":{
+		"isAvailable":true,
+		"author":"J.K. Rowling",
+		"borrower":null,
+		"bookTitle":"Harry Potter and the Half-Blood Prince"
+	},
+	"1408855712":{
+		"isAvailable":true,
+		"author":"J.K. Rowling",
+		"borrower":null,
+		"bookTitle":"Harry Potter and the Deathly Hallows"
+	},
+	"978-81-7599-431-7":{
+		"isAvailable":true,
+		"author":"Sir Arthur Conan Doyle",
+		"borrower":null,
+		"bookTitle":"The Complete Novels of Sherlock Holmes"
+	},
+	"0-689-83571-X":{
+		"isAvailable":true,
+		"author":"Sir Arthur Conan Doyle",
+		"borrower":null,
+		"bookTitle":"The Hound of the Baskervilles"
+	},
+	"978-1-338-05380-7":{
+		"isAvailable":true,
+		"author":"Gordon Korman",
+		"borrower":null,
+		"bookTitle":"Restart"
+	},
+	"978-0-7490-0852-9":{
+		"isAvailable":true,
+		"author":"Laurie R. King",
+		"borrower":null,
+		"bookTitle":"The Beekeeper's Apprentice"
+	},
+	"1-4169-6766-4":{
+		"isAvailable":true,
+		"author":"Franklin W. Dixon",
+		"borrower":null,
+		"bookTitle":"The Hardy Boys: Double Deception"
+	}
+}
