@@ -82,6 +82,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
         txtEmailLogin = new javax.swing.JTextField();
         pwdPasswordLogin = new javax.swing.JPasswordField();
         btnLoginAccount = new javax.swing.JButton();
+        lblErrorLabelLogin = new javax.swing.JLabel();
         pnlSignUpPage = new javax.swing.JPanel();
         lblSignUpTitle = new javax.swing.JLabel();
         txtFullNameSignUp = new javax.swing.JTextField();
@@ -90,6 +91,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
         pwdPassword2SignUp = new javax.swing.JPasswordField();
         btnMakeAccount = new javax.swing.JButton();
         btnBackSignUp = new javax.swing.JButton();
+        lblErrorLabelSignUp = new javax.swing.JLabel();
         pnlHomePage = new javax.swing.JPanel();
         lblHomeTitle = new javax.swing.JLabel();
         btnBorrow = new javax.swing.JButton();
@@ -136,7 +138,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
 
         lblInfo.setFont(new java.awt.Font("Andalus", 0, 14)); // NOI18N
         lblInfo.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblInfo.setText("Made by Nooh Alavi (s201119359@ddsbstudent.ca, noohalavidev@gmail.com), 2023. Version 1.0.0. Last updated 27/01/2023.");
+        lblInfo.setText("Made by Nooh Alavi (s201119359@ddsbstudent.ca, noohalavidev@gmail.com), 2023. Version 1.0.0. Last updated 29/01/2023.");
 
         javax.swing.GroupLayout pnlMenuPageLayout = new javax.swing.GroupLayout(pnlMenuPage);
         pnlMenuPage.setLayout(pnlMenuPageLayout);
@@ -211,6 +213,8 @@ public class frmLibraryManager extends javax.swing.JFrame {
             }
         });
 
+        lblErrorLabelLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
         javax.swing.GroupLayout pnlLoginPageLayout = new javax.swing.GroupLayout(pnlLoginPage);
         pnlLoginPage.setLayout(pnlLoginPageLayout);
         pnlLoginPageLayout.setHorizontalGroup(
@@ -226,6 +230,11 @@ public class frmLibraryManager extends javax.swing.JFrame {
                     .addComponent(txtEmailLogin)
                     .addComponent(pwdPasswordLogin))
                 .addContainerGap())
+            .addGroup(pnlLoginPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlLoginPageLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(lblErrorLabelLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         pnlLoginPageLayout.setVerticalGroup(
             pnlLoginPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -240,6 +249,11 @@ public class frmLibraryManager extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 337, Short.MAX_VALUE)
                 .addComponent(btnBackLogin)
                 .addContainerGap())
+            .addGroup(pnlLoginPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlLoginPageLayout.createSequentialGroup()
+                    .addGap(314, 314, 314)
+                    .addComponent(lblErrorLabelLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+                    .addGap(315, 315, 315)))
         );
 
         pnlSignUpPage.setVisible(false);
@@ -307,6 +321,8 @@ public class frmLibraryManager extends javax.swing.JFrame {
             }
         });
 
+        lblErrorLabelSignUp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
         javax.swing.GroupLayout pnlSignUpPageLayout = new javax.swing.GroupLayout(pnlSignUpPage);
         pnlSignUpPage.setLayout(pnlSignUpPageLayout);
         pnlSignUpPageLayout.setHorizontalGroup(
@@ -322,7 +338,8 @@ public class frmLibraryManager extends javax.swing.JFrame {
                     .addComponent(btnMakeAccount, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(pnlSignUpPageLayout.createSequentialGroup()
                         .addComponent(btnBackSignUp)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(lblErrorLabelSignUp, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         pnlSignUpPageLayout.setVerticalGroup(
@@ -340,7 +357,9 @@ public class frmLibraryManager extends javax.swing.JFrame {
                 .addComponent(pwdPassword2SignUp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnMakeAccount)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 158, Short.MAX_VALUE)
+                .addGap(28, 28, 28)
+                .addComponent(lblErrorLabelSignUp, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+                .addGap(97, 97, 97)
                 .addComponent(btnBackSignUp)
                 .addContainerGap())
         );
@@ -661,6 +680,8 @@ public class frmLibraryManager extends javax.swing.JFrame {
         txtISBN.setEnabled(false);
         txtISBN.setText("");
         
+        lblErrorLabel.setText("");
+        
         txtReceipt.setText("");
         
         btnBorrow.setVisible(true);
@@ -785,6 +806,8 @@ public class frmLibraryManager extends javax.swing.JFrame {
                 pwdPasswordLogin.setEnabled(false);
                 btnLoginAccount.setEnabled(false);
                 
+                lblErrorLabelLogin.setText("");
+                
                 pnlLoginPage.setVisible(false);
                 break;
             case "signup":
@@ -792,6 +815,8 @@ public class frmLibraryManager extends javax.swing.JFrame {
                 txtEmailSignUp.setText("");
                 pwdPassword1SignUp.setText("");
                 pwdPassword2SignUp.setText("");
+                
+                lblErrorLabelSignUp.setText("");
                 
                 txtFullNameSignUp.setEnabled(false);
                 txtEmailSignUp.setEnabled(false);
@@ -951,7 +976,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
         // check if email exists in db
         for (User user : users) {
             if (email.equals(user.email)) {
-                System.out.println("Please use a unique email!");
+                lblErrorLabelSignUp.setText("Please use a unique email!");
                 return false;
             }
         }
@@ -999,6 +1024,7 @@ public class frmLibraryManager extends javax.swing.JFrame {
                 }
             }
         }
+        lblErrorLabelLogin.setText("Invalid username or password!");
         return false;
     }
     
@@ -1052,6 +1078,8 @@ public class frmLibraryManager extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblErrorLabel;
+    private javax.swing.JLabel lblErrorLabelLogin;
+    private javax.swing.JLabel lblErrorLabelSignUp;
     private javax.swing.JLabel lblHomeTitle;
     private javax.swing.JLabel lblInfo;
     private javax.swing.JLabel lblLoginTitle;

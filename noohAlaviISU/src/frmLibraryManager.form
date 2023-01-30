@@ -159,7 +159,7 @@
               <Font name="Andalus" size="14" style="0"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="4"/>
-            <Property name="text" type="java.lang.String" value="Made by Nooh Alavi (s201119359@ddsbstudent.ca, noohalavidev@gmail.com), 2023. Version 1.0.0. Last updated 27/01/2023."/>
+            <Property name="text" type="java.lang.String" value="Made by Nooh Alavi (s201119359@ddsbstudent.ca, noohalavidev@gmail.com), 2023. Version 1.0.0. Last updated 29/01/2023."/>
           </Properties>
         </Component>
       </SubComponents>
@@ -186,6 +186,13 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
+              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="lblErrorLabelLogin" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -201,6 +208,13 @@
                   <EmptySpace pref="337" max="32767" attributes="0"/>
                   <Component id="btnBackLogin" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
+              </Group>
+              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="314" max="-2" attributes="0"/>
+                      <Component id="lblErrorLabelLogin" pref="33" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="315" max="-2" attributes="0"/>
+                  </Group>
               </Group>
           </Group>
         </DimensionLayout>
@@ -275,6 +289,11 @@
             <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="btnLoginAccount.setEnabled(false);"/>
           </AuxValues>
         </Component>
+        <Component class="javax.swing.JLabel" name="lblErrorLabelLogin">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+        </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="pnlSignUpPage">
@@ -298,6 +317,7 @@
                           <Component id="btnBackSignUp" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
+                      <Component id="lblErrorLabelSignUp" alignment="1" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -318,7 +338,9 @@
                   <Component id="pwdPassword2SignUp" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btnMakeAccount" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="158" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                  <Component id="lblErrorLabelSignUp" pref="33" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
                   <Component id="btnBackSignUp" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -427,6 +449,11 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBackSignUpActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblErrorLabelSignUp">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
