@@ -14,6 +14,7 @@ import java.util.Collections;
  */
 public class frmA27 extends javax.swing.JFrame {
 
+    // Parallel ArrayLists
     ArrayList<String> carNames = new ArrayList<>();
     ArrayList<String> carSpeeds = new ArrayList<>();
     ArrayList<String> animalNames = new ArrayList<>();
